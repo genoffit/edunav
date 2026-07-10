@@ -23,7 +23,9 @@ public/              # Frontend (canlı sayt)
     css/style.css    # Bütün stil sistemi
     js/script.js     # İnteraktivlik (compare, survey, contact modal, snap)
 
-docs/planlama/       # İlkin planlama sənədləri
+docs/
+  original/          # Orijinal brief və materiallar (DOCX, PNG, XLSX)
+  planlama/          # İlkin planlama sənədləri (sistem sxemi, iş axını)
 ```
 
 ## Yerli işə salma
