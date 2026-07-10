@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vakansiyaya müraciət — EduNav.az</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;750;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .vm-wrap{max-width:1100px;margin:0 auto;padding:28px 24px 80px}
+  .vm-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+  @media (max-width:860px){.vm-grid{grid-template-columns:1fr}}
+
+  .vm-form-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+  .vm-form-card h2{font-size:24px;letter-spacing:-.02em;font-weight:800;margin:0 0 6px}
+  .vm-form-card > p{color:var(--ink-mute);margin:0 0 24px;font-size:14.5px}
+
+  .vm-sec{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line-soft)}
+  .vm-sec:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .vm-sec-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--ink-mute);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .vm-sec-title .n{width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--brand);display:grid;place-items:center;font-size:11px;font-weight:800}
+
+  .vm-field{margin-bottom:14px}
+  .vm-field label{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px}
+  .vm-field input,.vm-field select,.vm-field textarea{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:14px;outline:0;font-family:inherit;background:#fff;color:var(--ink);transition:border-color .2s}
+  .vm-field input:focus,.vm-field select:focus,.vm-field textarea:focus{border-color:var(--ink)}
+  .vm-field textarea{resize:vertical;min-height:110px;line-height:1.55}
+  .vm-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:520px){.vm-row{grid-template-columns:1fr}}
+
+  .vm-upload{border:2px dashed var(--line);border-radius:12px;padding:22px;text-align:center;cursor:pointer;transition:all .2s}
+  .vm-upload:hover{border-color:var(--ink);background:var(--surface)}
+  .vm-upload .icon{width:40px;height:40px;border-radius:50%;background:var(--surface);margin:0 auto 10px;display:grid;place-items:center}
+  .vm-upload .icon svg{width:18px;height:18px}
+  .vm-upload strong{display:block;font-size:14px;margin-bottom:3px}
+  .vm-upload small{color:var(--ink-mute);font-size:12px}
+
+  .vm-terms{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:var(--surface);border-radius:10px;margin:16px 0}
+  .vm-terms input{width:18px;height:18px;margin-top:2px;accent-color:var(--ink);flex-shrink:0}
+  .vm-terms label{font-size:12.5px;color:var(--ink-soft);text-transform:none;letter-spacing:0;font-weight:500;margin:0;line-height:1.5}
+  .vm-terms a{text-decoration:underline;color:var(--ink)}
+
+  .vm-actions{display:flex;gap:10px;margin-top:8px}
+  .vm-actions .btn{flex:1;justify-content:center}
+
+  /* Sidebar — vacancy info */
+  .vm-aside{display:flex;flex-direction:column;gap:16px;position:sticky;top:90px;align-self:start}
+  .vm-vac{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden}
+  .vm-vac::before{content:"";position:absolute;top:0;left:22px;right:22px;height:3px;background:var(--brand);border-radius:0 0 3px 3px}
+  .vm-vac-top{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+  .vm-vac-logo{width:48px;height:48px;border-radius:12px;background:#FFF7CC;color:#8B6914;display:grid;place-items:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .vm-vac h3{margin:0 0 3px;font-size:16px;font-weight:700;letter-spacing:-.015em;line-height:1.3}
+  .vm-vac .school{font-size:12.5px;color:var(--ink-mute)}
+  .vm-vac .type-badge{display:inline-block;padding:3px 10px;border-radius:999px;background:rgba(16,185,129,.1);color:#059669;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+  .vm-vac-stats{display:flex;flex-direction:column;gap:10px;padding:14px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);margin-bottom:14px}
+  .vm-vac-stats .item{display:flex;justify-content:space-between;font-size:13px}
+  .vm-vac-stats .item span:first-child{color:var(--ink-mute)}
+  .vm-vac-stats .item span:last-child{font-weight:600}
+  .vm-vac .salary{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .vm-vac .salary small{font-size:12px;font-weight:400;color:var(--ink-mute)}
+  .vm-vac ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .vm-vac ul li{display:flex;gap:8px;font-size:13px;color:var(--ink-soft)}
+  .vm-vac ul li::before{content:"✓";color:var(--brand-deep);font-weight:800;flex-shrink:0}
+
+  .vm-help{background:var(--ink);color:#fff;border-radius:16px;padding:20px;position:relative;overflow:hidden}
+  .vm-help::before{content:"";position:absolute;top:-40px;right:-40px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,0,.2),transparent);filter:blur(20px)}
+  .vm-help > *{position:relative}
+  .vm-help h4{margin:0 0 8px;font-size:15px}
+  .vm-help p{color:#9CA3AF;font-size:13px;margin:0 0 12px;line-height:1.55}
+  .vm-help a{color:var(--brand);font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+</style>
+</head>
+<body class="no-snap">
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">E</span>EduNav<span style="color:var(--brand-deep)">.az</span></a>
+    <div class="nav-links">
+      <a href="index.html">Ana Səhifə</a>
+      <a href="mekteblar.html">Məktəblər</a>
+      <a href="muqayise.html">Müqayisə</a>
+      <a href="vakansiyalar.html" style="color:var(--ink);background:var(--surface)">Vakansiya</a>
+      <a href="xeberler.html">Xəbərlər</a>
+      <a href="elanlar.html">Elanlar</a>
+      <a href="bloq.html">Bloq</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+    <div class="nav-cta">
+      <a href="giris.html" class="btn btn-ghost btn-sm">Giriş</a>
+      <a href="mekteb-elave-et.html" class="btn btn-accent btn-sm">Məktəb əlavə et</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Səhifə</a><span class="sep">/</span>
+      <a href="vakansiyalar.html">Vakansiyalar</a><span class="sep">/</span>
+      <span>Müraciət</span>
+    </div>
+    <div class="head-row">
+      <div>
+        <h1>Vakansiyaya müraciət</h1>
+        <p class="sub">Sənədlərinizi göndərin — məktəb 3 iş günü ərzində əlaqə saxlayacaq.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="vm-wrap">
+  <div class="vm-grid">
+
+    <!-- LEFT: FORM -->
+    <form class="vm-form-card" id="vmForm" onsubmit="event.preventDefault();showSuccess();">
+      <h2>Müraciət forması</h2>
+      <p>Aşağıdakı sahələri doldurub CV-nizi yükləyin.</p>
+
+      <!-- Section 1: Personal info -->
+      <div class="vm-sec">
+        <div class="vm-sec-title"><span class="n">1</span>Şəxsi məlumat</div>
+        <div class="vm-row">
+          <div class="vm-field"><label>Ad</label><input type="text" required placeholder="Adınız"></div>
+          <div class="vm-field"><label>Soyad</label><input type="text" required placeholder="Soyadınız"></div>
+        </div>
+        <div class="vm-row">
+          <div class="vm-field"><label>Email</label><input type="email" required placeholder="email@domain.com"></div>
+          <div class="vm-field"><label>Telefon</label><input type="tel" required placeholder="+994 ..."></div>
+        </div>
+        <div class="vm-row">
+          <div class="vm-field"><label>Doğum tarixi</label><input type="date"></div>
+          <div class="vm-field">
+            <label>Cins</label>
+            <select><option>Seçin</option><option>Qadın</option><option>Kişi</option><option>Deməmək istəyirəm</option></select>
+          </div>
+        </div>
+        <div class="vm-field"><label>Yaşadığınız rayon</label><select><option>Yasamal</option><option>Nəsimi</option><option>Xətai</option><option>Nizami</option><option>Nərimanov</option><option>Səbail</option><option>Digər</option></select></div>
+      </div>
+
+      <!-- Section 2: Education & experience -->
+      <div class="vm-sec">
+        <div class="vm-sec-title"><span class="n">2</span>Təhsil və təcrübə</div>
+        <div class="vm-field"><label>Ən yüksək təhsil dərəcəsi</label><select><option>Bakalavr</option><option>Magistr</option><option>Doktor</option><option>Orta ixtisas</option></select></div>
+        <div class="vm-field"><label>Universitet / İxtisas</label><input type="text" placeholder="BDU · Filologiya"></div>
+        <div class="vm-field"><label>Ümumi pedaqoji təcrübə (il)</label><input type="number" min="0" placeholder="Məs: 5"></div>
+        <div class="vm-field"><label>Əvvəlki iş yerləri</label><textarea placeholder="Son 2-3 iş yerinizi yazın: məktəb adı, vəzifə, iş dövrü"></textarea></div>
+      </div>
+
+      <!-- Section 3: Documents -->
+      <div class="vm-sec">
+        <div class="vm-sec-title"><span class="n">3</span>Sənədlər</div>
+        <div class="vm-field">
+          <label>CV (PDF, DOC)</label>
+          <label class="vm-upload">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+            <strong>CV faylı seç</strong>
+            <small>PDF, DOC, DOCX · maks 5MB</small>
+            <input type="file" accept=".pdf,.doc,.docx" style="display:none">
+          </label>
+        </div>
+        <div class="vm-field">
+          <label>Diplom və sertifikatlar (könüllü)</label>
+          <label class="vm-upload">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <strong>Sənədləri yüklə</strong>
+            <small>Bir neçə fayl seçə bilərsiniz</small>
+            <input type="file" multiple style="display:none">
+          </label>
+        </div>
+      </div>
+
+      <!-- Section 4: Cover letter -->
+      <div class="vm-sec">
+        <div class="vm-sec-title"><span class="n">4</span>Müraciət məktubu</div>
+        <div class="vm-field">
+          <label>Niyə bu vakansiyaya uyğun olduğunuzu qısaca izah edin</label>
+          <textarea placeholder="Təhsil yanaşmanız, motivasiyanız və məktəbə gətirəcəyiniz dəyər haqqında..."></textarea>
+        </div>
+        <div class="vm-row">
+          <div class="vm-field"><label>Gözlənilən maaş (AZN)</label><input type="number" placeholder="1,800"></div>
+          <div class="vm-field"><label>Nə vaxtdan başlaya bilərsiniz?</label><select><option>Dərhal</option><option>1 həftə</option><option>2 həftə</option><option>1 ay</option><option>Razılaşma ilə</option></select></div>
+        </div>
+      </div>
+
+      <!-- Terms -->
+      <div class="vm-terms">
+        <input type="checkbox" id="vm-terms" required>
+        <label for="vm-terms">Mən <a href="#">şəxsi məlumatların işlənməsi</a> və <a href="#">istifadə şərtləri</a> ilə razıyam. Məlumatlarım yalnız bu vakansiya çərçivəsində istifadə ediləcək.</label>
+      </div>
+
+      <div class="vm-actions">
+        <a href="vakansiyalar.html" class="btn btn-ghost">← Ləğv et</a>
+        <button type="submit" class="btn btn-primary">
+          Müraciəti göndər
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- RIGHT: Vacancy info sidebar -->
+    <aside class="vm-aside">
+      <div class="vm-vac">
+        <span class="type-badge">Tam ştat</span>
+        <div class="vm-vac-top">
+          <div class="vm-vac-logo">AM</div>
+          <div>
+            <h3>İngilis dili müəllimi</h3>
+            <div class="school">Atatürk Modern Lisey · Yasamal</div>
+          </div>
+        </div>
+        <div class="salary">1,800–2,400 AZN <small>/ay</small></div>
+        <div class="vm-vac-stats">
+          <div class="item"><span>Təcrübə</span><span>3+ il</span></div>
+          <div class="item"><span>Sinif</span><span>1-11</span></div>
+          <div class="item"><span>İş rejimi</span><span>Ofisdən</span></div>
+          <div class="item"><span>Müraciət sayı</span><span>24</span></div>
+        </div>
+        <ul>
+          <li>Rəsmi əmək müqaviləsi</li>
+          <li>Həftəsonu və bayram günləri tam istirahət</li>
+          <li>Sosial paket və tibbi sığorta</li>
+          <li>İllik peşəkar inkişaf təlimləri</li>
+          <li>Subsidiyalı yeməkxana</li>
+        </ul>
+      </div>
+
+      <div class="vm-help">
+        <h4>Kömək lazımdır?</h4>
+        <p>Müraciət prosesi ilə bağlı sualınız olarsa, bizimlə əlaqə saxlayın.</p>
+        <a href="elaqe.html">Əlaqə saxla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- Success overlay (hidden) -->
+<div id="vmSuccess" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(11,11,15,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:24px;max-width:480px;width:100%;padding:40px 32px;text-align:center">
+    <div style="width:72px;height:72px;border-radius:50%;background:var(--brand);display:grid;place-items:center;margin:0 auto 20px"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <h2 style="font-size:26px;margin:0 0 10px">Müraciətiniz göndərildi!</h2>
+    <p style="color:var(--ink-mute);margin:0 0 22px">Atatürk Modern Lisey 3 iş günü ərzində sizə email vasitəsilə əlaqə saxlayacaq. Uğurlar!</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="vakansiyalar.html" class="btn btn-primary">Digər vakansiyalara bax</a>
+      <a href="index.html" class="btn btn-ghost">Ana səhifəyə</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="grid-footer">
+      <div><a href="index.html" class="logo" style="color:#fff"><span class="logo-mark">E</span>EduNav<span style="color:var(--brand)">.az</span></a><p class="about">Valideynlərin özəl məktəbləri asan tapmasına kömək edən platforma.</p></div>
+      <div><h5>Platforma</h5><ul><li><a href="mekteblar.html">Məktəblər</a></li><li><a href="vakansiyalar.html">Vakansiyalar</a></li></ul></div>
+      <div><h5>Məktəblər üçün</h5><ul><li><a href="mekteb-elave-et.html">Məktəb əlavə et</a></li></ul></div>
+      <div><h5>Dəstək</h5><ul><li><a href="elaqe.html">Əlaqə</a></li></ul></div>
+    </div>
+    <div class="copy"><div>© 2026 EduNav.az</div><div>Made with <span style="color:var(--brand)">★</span> in Bakı</div></div>
+  </div>
+</footer>
+
+<script>
+function showSuccess(){
+  document.getElementById('vmSuccess').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

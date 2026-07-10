@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Məktəblər — EduNav.az</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;750;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="no-snap">
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">E</span>EduNav<span style="color:var(--brand-deep)">.az</span></a>
+    <div class="nav-links">
+      <a href="index.html">Ana Səhifə</a>
+      <a href="mekteblar.html" style="color:var(--ink);background:var(--surface)">Məktəblər</a>
+      <a href="muqayise.html">Müqayisə</a>
+      <a href="vakansiyalar.html">Vakansiya</a>
+      <a href="xeberler.html">Xəbərlər</a>
+      <a href="elanlar.html">Elanlar</a>
+      <a href="bloq.html">Bloq</a>
+      <a href="haqqimizda.html">Haqqımızda</a>
+      <a href="elaqe.html">Əlaqə</a>
+    </div>
+    <div class="nav-cta">
+      <a href="giris.html" class="btn btn-ghost btn-sm">Giriş</a>
+      <a href="mekteb-elave-et.html" class="btn btn-accent btn-sm">Məktəb əlavə et</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<div class="page-head">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Ana Səhifə</a>
+      <span class="sep">/</span>
+      <span>Məktəblər</span>
+    </div>
+    <div class="head-row">
+      <div>
+        <h1>Özəl məktəblər</h1>
+        <p class="sub">Filtr, sırala və bəyəndiyin məktəbləri müqayisəyə əlavə et.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="container">
+  <div class="layout">
+
+    <!-- FILTERS -->
+    <aside class="filter-panel">
+      <div class="flex items-center" style="justify-content:space-between;margin-bottom:20px">
+        <strong style="font-size:15px">Filtr</strong>
+        <button class="btn btn-link" style="font-size:12px">Sıfırla</button>
+      </div>
+
+      <div class="filter-group">
+        <h4>Ərazi</h4>
+        <label><input type="checkbox"> Yasamal <span class="muted" style="margin-left:auto;font-size:12px">42</span></label>
+        <label><input type="checkbox"> Nəsimi <span class="muted" style="margin-left:auto;font-size:12px">38</span></label>
+        <label><input type="checkbox"> Xətai <span class="muted" style="margin-left:auto;font-size:12px">29</span></label>
+        <label><input type="checkbox"> Nizami <span class="muted" style="margin-left:auto;font-size:12px">24</span></label>
+        <label><input type="checkbox"> Nərimanov <span class="muted" style="margin-left:auto;font-size:12px">18</span></label>
+        <label><input type="checkbox"> Səbail <span class="muted" style="margin-left:auto;font-size:12px">14</span></label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Qiymət (AZN/il)</h4>
+        <div class="range">
+          <input type="number" placeholder="Min">
+          <span class="muted">–</span>
+          <input type="number" placeholder="Max">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Tədris Dili</h4>
+        <label><input type="checkbox"> Azərbaycan</label>
+        <label><input type="checkbox"> İngilis</label>
+        <label><input type="checkbox"> Rus</label>
+        <label><input type="checkbox"> Türk</label>
+        <label><input type="checkbox"> Fransız</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Kurrikulum</h4>
+        <label><input type="checkbox"> Milli</label>
+        <label><input type="checkbox"> IB</label>
+        <label><input type="checkbox"> Cambridge</label>
+        <label><input type="checkbox"> Türk</label>
+        <label><input type="checkbox"> Rus</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Xidmətlər</h4>
+        <label><input type="checkbox"> Nəqliyyat</label>
+        <label><input type="checkbox"> Yeməkxana</label>
+        <label><input type="checkbox"> Psixoloq</label>
+        <label><input type="checkbox"> Təhlükəsizlik</label>
+        <label><input type="checkbox"> Yay məktəbi</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>İnfrastruktur</h4>
+        <label><input type="checkbox"> Hovuz</label>
+        <label><input type="checkbox"> İdman zalı</label>
+        <label><input type="checkbox"> Laboratoriya</label>
+        <label><input type="checkbox"> Kitabxana</label>
+        <label><input type="checkbox"> IT Lab</label>
+        <label><input type="checkbox"> Stadion</label>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;justify-content:center">Filtri tətbiq et</button>
+    </aside>
+
+    <!-- RESULTS -->
+    <main>
+      <div class="toolbar">
+        <div class="result"><strong>156</strong> məktəb tapıldı</div>
+        <div class="toolbar-right">
+          <select class="select">
+            <option>Tövsiyə olunan</option>
+            <option>Reytinqə görə</option>
+            <option>Qiymətə görə (ucuz)</option>
+            <option>Qiymətə görə (baha)</option>
+            <option>Baxış sayı</option>
+            <option>Ən yenilər</option>
+          </select>
+          <div class="view-toggle">
+            <button class="active" aria-label="Grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
+            <button aria-label="List"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></button>
+            <button aria-label="Map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- School card 1 -->
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="">
+            <span class="badge-prem">★ Premium</span>
+            <button class="fav" aria-label="Favori"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+          </div>
+          <div class="body">
+            <div class="meta"><span>Yasamal</span>·<span>2010-dan</span>·<span>640 şagird</span></div>
+            <div class="name">Atatürk Modern Lisey</div>
+            <div class="tags"><span class="tag">IB</span><span class="tag">İngilis</span><span class="tag">Türk</span><span class="tag">Hovuz</span></div>
+            <div class="row">
+              <div class="price">8,500 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.9</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" alt=""><span class="badge-prem">★ Premium</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Nəsimi</span>·<span>2008-dən</span>·<span>520 şagird</span></div>
+            <div class="name">Cambridge Private School</div>
+            <div class="tags"><span class="tag">Cambridge</span><span class="tag">İngilis</span><span class="tag">Rus</span><span class="tag">Robotexnika</span></div>
+            <div class="row">
+              <div class="price">12,000 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.8</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" alt=""><span class="badge-prem">★ Premium</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Nizami</span>·<span>2015-dən</span>·<span>380 şagird</span></div>
+            <div class="name">STEAM Academy Baku</div>
+            <div class="tags"><span class="tag">Milli</span><span class="tag">STEAM</span><span class="tag">İngilis</span><span class="tag">IT Lab</span></div>
+            <div class="row">
+              <div class="price">6,900 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.7</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Xətai</span>·<span>2012-dən</span>·<span>280 şagird</span></div>
+            <div class="name">Zəfər Özəl Liseyi</div>
+            <div class="tags"><span class="tag">Milli</span><span class="tag">Azərbaycan</span><span class="tag">İdman zalı</span></div>
+            <div class="row">
+              <div class="price">5,500 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.6</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Nərimanov</span>·<span>2006-dan</span>·<span>710 şagird</span></div>
+            <div class="name">Beynəlxalq Bakı Liseyi</div>
+            <div class="tags"><span class="tag">IB</span><span class="tag">İngilis</span><span class="tag">Fransız</span></div>
+            <div class="row">
+              <div class="price">15,200 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.9</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Səbail</span>·<span>2018-dən</span>·<span>210 şagird</span></div>
+            <div class="name">Green Valley Academy</div>
+            <div class="tags"><span class="tag">Cambridge</span><span class="tag">İngilis</span><span class="tag">Sənət</span></div>
+            <div class="row">
+              <div class="price">9,800 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Yasamal</span>·<span>2014-dən</span>·<span>420 şagird</span></div>
+            <div class="name">Gələcək Liseyi</div>
+            <div class="tags"><span class="tag">Milli</span><span class="tag">Azərbaycan</span><span class="tag">Rus</span></div>
+            <div class="row">
+              <div class="price">4,800 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.4</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e72f?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Nəsimi</span>·<span>2011-dən</span>·<span>340 şagird</span></div>
+            <div class="name">Royal Kids Academy</div>
+            <div class="tags"><span class="tag">İbtidai</span><span class="tag">İngilis</span><span class="tag">Musiqi</span></div>
+            <div class="row">
+              <div class="price">7,200 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.7</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="mekteb-profili.html" class="school-card">
+          <div class="cover"><img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=600&q=80" alt=""><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div>
+          <div class="body">
+            <div class="meta"><span>Xətai</span>·<span>2019-dan</span>·<span>190 şagird</span></div>
+            <div class="name">Da Vinci Kids</div>
+            <div class="tags"><span class="tag">Milli</span><span class="tag">Sənət</span><span class="tag">Robotexnika</span></div>
+            <div class="row">
+              <div class="price">5,900 AZN<small>/il</small></div>
+              <div class="rating"><svg viewBox="0 0 24 24"><polygon points="12,2 15,8.5 22,9.5 17,14.5 18.5,21.5 12,18 5.5,21.5 7,14.5 2,9.5 9,8.5"/></svg>4.3</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex items-center" style="justify-content:center;gap:8px;margin-top:48px">
+        <button class="btn btn-ghost btn-sm">← Əvvəlki</button>
+        <button class="btn btn-primary btn-sm">1</button>
+        <button class="btn btn-ghost btn-sm">2</button>
+        <button class="btn btn-ghost btn-sm">3</button>
+        <span class="muted" style="padding:0 8px">...</span>
+        <button class="btn btn-ghost btn-sm">16</button>
+        <button class="btn btn-ghost btn-sm">Sonrakı →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="grid-footer">
+      <div>
+        <a href="index.html" class="logo" style="color:#fff"><span class="logo-mark">E</span>EduNav<span style="color:var(--brand)">.az</span></a>
+        <p class="about">Valideynlərin Azərbaycandakı özəl məktəbləri asan və şəffaf yolla tapmasına kömək edən platforma.</p>
+      </div>
+      <div><h5>Platforma</h5><ul><li><a href="mekteblar.html">Məktəblər</a></li><li><a href="muqayise.html">Müqayisə</a></li><li><a href="bloq.html">Bloq</a></li></ul></div>
+      <div><h5>Məktəblər üçün</h5><ul><li><a href="mekteb-elave-et.html">Məktəb əlavə et</a></li><li><a href="#">Paketlər</a></li></ul></div>
+      <div><h5>Dəstək</h5><ul><li><a href="elaqe.html">Əlaqə</a></li><li><a href="#">FAQ</a></li></ul></div>
+    </div>
+    <div class="copy"><div>© 2026 EduNav.az</div><div>Made with <span style="color:var(--brand)">★</span> in Bakı</div></div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduNav.az — Funksional Sxem</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#111;
+    --ink-2:#333;
+    --ink-mute:#666;
+    --line:#222;
+    --line-soft:#bbb;
+    --fill:#f6f6f6;
+    --fill-2:#ececec;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.5}
+
+  .wrap{max-width:1280px;margin:0 auto;padding:48px 24px 80px}
+
+  header{text-align:center;padding:0 0 32px;border-bottom:2px solid var(--line);margin-bottom:40px}
+  header h1{font-size:26px;margin:0 0 6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+  header p{margin:0;color:var(--ink-mute);font-size:14px}
+
+  h2{font-size:15px;margin:48px 0 16px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3{font-size:13px;margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;font-weight:700;color:var(--ink-2)}
+
+  /* Tree (horizontal org chart) */
+  .orgchart{text-align:center;padding:20px 0;overflow-x:auto}
+  .orgchart ul{list-style:none;padding:0;margin:0;display:flex;justify-content:center;position:relative}
+  .orgchart ul ul{padding-top:28px}
+  .orgchart li{position:relative;padding:0 6px;flex:0 0 auto}
+  .orgchart .box{
+    display:inline-block;
+    border:1.5px solid var(--line);
+    padding:8px 14px;
+    min-width:110px;
+    background:#fff;
+    font-size:12.5px;
+    font-weight:600;
+    text-align:center;
+  }
+  .orgchart .box.root{background:var(--line);color:#fff;font-size:13px;padding:10px 18px}
+  /* connectors */
+  .orgchart li::before,
+  .orgchart li::after{
+    content:"";position:absolute;top:0;right:50%;
+    border-top:1.5px solid var(--line);width:50%;height:14px;
+  }
+  .orgchart li::after{left:50%;right:auto}
+  .orgchart li:only-child::before,.orgchart li:only-child::after{display:none}
+  .orgchart li:first-child::before,.orgchart li:last-child::after{border:0 none}
+  .orgchart li:last-child::before{border-right:1.5px solid var(--line)}
+  .orgchart li:first-child::after{border-left:1.5px solid var(--line)}
+  .orgchart ul ul::before{
+    content:"";position:absolute;top:0;left:50%;
+    border-left:1.5px solid var(--line);height:14px;
+  }
+
+  /* Page structure grid */
+  .pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .pbox{border:1.5px solid var(--line);background:#fff}
+  .pbox-head{background:var(--line);color:#fff;padding:8px 14px;font-weight:700;font-size:13px;letter-spacing:.5px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
+  .pbox-head .num{background:#fff;color:var(--line);padding:1px 8px;font-size:11px}
+  .pbox-body{padding:14px 16px}
+  .pbox-body ul{margin:0;padding:0 0 0 16px;list-style:square}
+  .pbox-body ul li{margin:4px 0;font-size:13px}
+  .pbox-body ul li strong{font-weight:700}
+  .pbox-body .sub{color:var(--ink-mute);font-size:12.5px;margin-left:6px}
+  .pbox-body .part{border-top:1px dashed var(--line-soft);margin-top:10px;padding-top:10px}
+  .pbox-body .part:first-child{border:0;margin:0;padding:0}
+  .pbox-body .part-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-2);margin-bottom:4px}
+
+  /* Menu tree (vertical indented) */
+  .menutree{border:1.5px solid var(--line);background:#fff}
+  .menutree-head{background:var(--line);color:#fff;padding:8px 14px;font-weight:700;font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+  .menutree ol{list-style:none;padding:0;margin:0}
+  .menutree ol li{border-top:1px solid var(--line-soft);padding:9px 16px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+  .menutree ol li:first-child{border-top:0}
+  .menutree ol li strong{font-weight:700;min-width:140px}
+  .menutree ol li span{color:var(--ink-mute);font-size:12.5px;flex:1;text-align:left}
+
+  .cabinets{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+
+  /* Flow (horizontal steps) */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:10px 0 26px}
+  .flow .step{border:1.5px solid var(--line);background:#fff;padding:10px 14px;font-size:12.5px;min-width:140px;text-align:center;display:flex;align-items:center;justify-content:center}
+  .flow .step.start{background:var(--fill-2)}
+  .flow .step.end{background:var(--line);color:#fff}
+  .flow .arrow{display:flex;align-items:center;padding:0 6px;font-weight:700;color:var(--ink)}
+  .flow-label{font-size:12px;color:var(--ink-mute);margin:4px 0 8px;font-style:italic}
+
+  /* Table style */
+  table{width:100%;border-collapse:collapse;background:#fff;border:1.5px solid var(--line);font-size:13px}
+  th,td{padding:8px 12px;text-align:left;border:1px solid var(--line-soft)}
+  th{background:var(--fill);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+
+  /* Sitemap nav list */
+  .nav-flat{border:1.5px solid var(--line);background:#fff}
+  .nav-flat ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap}
+  .nav-flat li{padding:10px 18px;border-right:1px solid var(--line-soft);font-weight:600;font-size:13px}
+  .nav-flat li:last-child{border-right:0}
+
+  /* Arrows between pages */
+  .goto{border-top:1px dashed var(--line-soft);margin-top:10px;padding-top:8px;font-size:11.5px;color:var(--ink-2)}
+  .goto strong{color:var(--ink)}
+
+  p.note{color:var(--ink-mute);font-size:13px;margin:0 0 18px}
+
+  footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line-soft);color:var(--ink-mute);font-size:12px;text-align:center}
+
+  @media (max-width:700px){
+    .wrap{padding:24px 14px 60px}
+    .orgchart{font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <h1>EduNav.az — Funksional Sxem</h1>
+    <p>Saytın səhifələri, menyuları və istifadəçi keçidlərinin sxematik görünüşü</p>
+  </header>
+
+  <!-- 1. SITEMAP TREE -->
+  <h2>1. Sayt Xəritəsi</h2>
+  <p class="note">Platformanın bütün səhifələrinin iyerarxik strukturu.</p>
+
+  <div class="orgchart">
+    <ul>
+      <li>
+        <div class="box root">EduNav.az</div>
+        <ul>
+          <li><div class="box">Ana Səhifə</div></li>
+          <li>
+            <div class="box">Məktəblər</div>
+            <ul>
+              <li><div class="box">Məktəb Profili</div></li>
+            </ul>
+          </li>
+          <li>
+            <div class="box">Müqayisə</div>
+            <ul>
+              <li><div class="box">PDF Yüklə</div></li>
+            </ul>
+          </li>
+          <li>
+            <div class="box">Bloq</div>
+            <ul>
+              <li><div class="box">Məqalə</div></li>
+            </ul>
+          </li>
+          <li>
+            <div class="box">Məktəb Əlavə Et</div>
+            <ul>
+              <li><div class="box">Ödəniş</div></li>
+            </ul>
+          </li>
+          <li><div class="box">Haqqımızda</div></li>
+          <li><div class="box">Əlaqə</div></li>
+          <li>
+            <div class="box">Giriş / Qeydiyyat</div>
+            <ul>
+              <li><div class="box">Valideyn Kabineti</div></li>
+              <li><div class="box">Məktəb Kabineti</div></li>
+              <li><div class="box">Admin Paneli</div></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2. MAIN NAVIGATION -->
+  <h2>2. Əsas Menyu (Üst Panel)</h2>
+  <p class="note">Hər səhifənin yuxarısında görünən əsas naviqasiya.</p>
+
+  <div class="nav-flat">
+    <ul>
+      <li>Ana Səhifə</li>
+      <li>Məktəblər</li>
+      <li>Müqayisə</li>
+      <li>Bloq</li>
+      <li>Məktəb Əlavə Et</li>
+      <li>Haqqımızda</li>
+      <li>Əlaqə</li>
+      <li>Giriş</li>
+      <li>Qeydiyyat</li>
+    </ul>
+  </div>
+
+  <!-- 3. PAGE STRUCTURES -->
+  <h2>3. Səhifələrin Tərkibi</h2>
+  <p class="note">Hər səhifənin içində nə göstərilir və hansı düymələr mövcuddur.</p>
+
+  <div class="pages">
+
+    <!-- Page 1 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Ana Səhifə</span><span class="num">01</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Üst Banner</div>
+          <ul>
+            <li>Başlıq mesajı</li>
+            <li>Axtarış qutusu</li>
+            <li>Düymə: Axtar</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Sürətli Filtrlər</div>
+          <ul>
+            <li>Ərazi, Qiymət, Dil, Kurrikulum, Növ</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Premium Məktəblər</div>
+          <ul>
+            <li>4–8 məktəb kartı</li>
+            <li>Düymə: Ətraflı bax</li>
+            <li>Düymə: Müqayisə et</li>
+            <li>Düymə: Favori et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Top Reytinq</div>
+          <ul>
+            <li>İlk 10 məktəb</li>
+            <li>Link: Hamısına bax</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Bloq Önizləniş</div>
+          <ul>
+            <li>Son 3 məqalə</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">CTA — Məktəblər üçün</div>
+          <ul>
+            <li>Düymə: Məktəb əlavə et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Footer</div>
+          <ul>
+            <li>Qısa linklər, sosial şəbəkələr, əlaqə</li>
+          </ul>
+        </div>
+        <div class="goto"><strong>Axtar →</strong> Məktəblər siyahısı &nbsp;|&nbsp; <strong>Ətraflı →</strong> Məktəb profili</div>
+      </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Məktəblər Siyahısı</span><span class="num">02</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Sol Panel — Filtrlər</div>
+          <ul>
+            <li>Qiymət (aralıq)</li>
+            <li>Ərazi (rayon)</li>
+            <li>Tədris Dili</li>
+            <li>Kurrikulum</li>
+            <li>Xidmət</li>
+            <li>İnfrastruktur</li>
+            <li>Fəaliyyət</li>
+            <li>Məktəb növü</li>
+            <li>Düymə: Filtri tətbiq et / Təmizlə</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Üst Panel — Sıralama</div>
+          <ul>
+            <li>Qiymət / Reytinq / Baxış / Yenilər</li>
+            <li>Görünüş: Kart / Siyahı / Xəritə</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Məktəb Kartı</div>
+          <ul>
+            <li>Ad, Ərazi, Qiymət, Açılış tarixi</li>
+            <li>Şagird sayı, Dillər, Növ</li>
+            <li>Reytinq, Baxış, Müraciət sayı</li>
+            <li>Premium Badge işarəsi</li>
+            <li>Düymə: Ətraflı bax</li>
+            <li>Düymə: Müqayisəyə əlavə et</li>
+            <li>Düymə: Favori et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Alt Panel</div>
+          <ul>
+            <li>Səhifələmə</li>
+            <li>Nəticə sayı</li>
+          </ul>
+        </div>
+        <div class="goto"><strong>Ətraflı →</strong> Məktəb profili &nbsp;|&nbsp; <strong>+ Müqayisə →</strong> Müqayisə səbəti</div>
+      </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Məktəb Profili</span><span class="num">03</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Üst Hissə</div>
+          <ul>
+            <li>Ad, Ərazi, Reytinq, Baxış</li>
+            <li>Foto slider (5–10 foto)</li>
+            <li>Düymə: Zəng et</li>
+            <li>Düymə: WhatsApp</li>
+            <li>Düymə: Paylaş</li>
+            <li>Düymə: Favori</li>
+            <li>Düymə: Müraciət et</li>
+            <li>Düymə: Müqayisəyə əlavə et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Daxili Bölmələr</div>
+          <ul>
+            <li>Təsvir (tarix, fəlsəfə)</li>
+            <li>Xidmətlər</li>
+            <li>İnfrastruktur</li>
+            <li>Fəaliyyətlər və Klublar</li>
+            <li>Tədris Dilləri</li>
+            <li>Kurrikulum</li>
+            <li>Bloq (məktəb xəbərləri)</li>
+            <li>Media (foto və video)</li>
+            <li>Rəylər</li>
+            <li>FAQ</li>
+            <li>Xəritə (ünvan + marşrut)</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Sağ Sticky Panel</div>
+          <ul>
+            <li>Qiymət aralığı</li>
+            <li>Əlaqə nömrəsi</li>
+            <li>Düymə: Müraciət et</li>
+            <li>Düymə: WhatsApp ilə yaz</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Ən Aşağı</div>
+          <ul>
+            <li>Əlaqəli məktəblər (4 kart)</li>
+          </ul>
+        </div>
+        <div class="goto"><strong>Müraciət et →</strong> Müraciət forması</div>
+      </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Müqayisə Səhifəsi</span><span class="num">04</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Seçilmiş Məktəblər</div>
+          <ul>
+            <li>2–4 məktəb (foto + ad)</li>
+            <li>Düymə: Çıxar</li>
+            <li>Düymə: Əlavə et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Müqayisə Cədvəli</div>
+          <ul>
+            <li>Qiymət, Ərazi, Kurrikulum</li>
+            <li>Tədris Dilləri</li>
+            <li>Xidmətlər (var / yox)</li>
+            <li>İnfrastruktur (var / yox)</li>
+            <li>Fəaliyyətlər (var / yox)</li>
+            <li>Reytinq, Açılış tarixi, Şagird sayı</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Alt Düymələr</div>
+          <ul>
+            <li>PDF olaraq yüklə</li>
+            <li>Paylaş</li>
+            <li>Siyahını sıfırla</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Müraciət Forması</span><span class="num">05</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Form Sahələri</div>
+          <ul>
+            <li>Valideynin adı, soyadı</li>
+            <li>Telefon (SMS təsdiq)</li>
+            <li>Email</li>
+            <li>Şagirdin adı</li>
+            <li>Şagirdin yaşı / sinfi</li>
+            <li>Əlavə qeyd</li>
+            <li>Məxfilik razılığı (checkbox)</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Düymələr</div>
+          <ul>
+            <li>Göndər</li>
+            <li>WhatsApp ilə yaz</li>
+            <li>Ləğv et</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Təşəkkür Səhifəsi</div>
+          <ul>
+            <li>Təsdiq mesajı</li>
+            <li>Düymə: Digər məktəblərə bax</li>
+            <li>Düymə: Ana səhifəyə qayıt</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Bloq Səhifəsi</span><span class="num">06</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Sol Panel — Kateqoriyalar</div>
+          <ul>
+            <li>Təhsil xəbərləri</li>
+            <li>Məktəb elanları</li>
+            <li>Valideyn məsləhətləri</li>
+            <li>Kurrikulum</li>
+            <li>Tədbirlər</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Məqalə Kartı</div>
+          <ul>
+            <li>Foto, Başlıq, Tarix</li>
+            <li>Kateqoriya, Qısa mətn</li>
+            <li>Düymə: Oxu</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Məqalə Səhifəsi</div>
+          <ul>
+            <li>Tam mətn, müəllif</li>
+            <li>Paylaş düymələri</li>
+            <li>Əlaqəli məqalələr</li>
+            <li>Şərh sahəsi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 7 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Məktəb Əlavə Et</span><span class="num">07</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Addım 1 — Əsas Məlumat</div>
+          <ul>
+            <li>Məktəbin adı</li>
+            <li>Ünvan</li>
+            <li>Telefon</li>
+            <li>Email</li>
+            <li>Məsul şəxs</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Addım 2 — Detallar</div>
+          <ul>
+            <li>Açılış tarixi, şagird sayı</li>
+            <li>Qiymət aralığı, kurrikulum</li>
+            <li>Tədris dilləri</li>
+            <li>Loqo və foto yüklə</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Addım 3 — Paket Seçimi</div>
+          <ul>
+            <li>Basic / Standard / Premium</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Addım 4 — Göndər</div>
+          <ul>
+            <li>Düymə: Anketi göndər</li>
+            <li>Gözləmə ekranı (admin yoxlayır)</li>
+          </ul>
+        </div>
+        <div class="goto"><strong>Paket seç →</strong> Ödəniş &nbsp;|&nbsp; <strong>Göndər →</strong> Gözləmə ekranı</div>
+      </div>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="pbox">
+      <div class="pbox-head"><span>Haqqımızda / Əlaqə</span><span class="num">08</span></div>
+      <div class="pbox-body">
+        <div class="part">
+          <div class="part-label">Haqqımızda</div>
+          <ul>
+            <li>Platforma haqqında mətn</li>
+            <li>Missiya və komanda</li>
+            <li>Statistika</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="part-label">Əlaqə</div>
+          <ul>
+            <li>Ünvan, telefon, email</li>
+            <li>Xəritə</li>
+            <li>Əlaqə forması</li>
+            <li>Düymə: Göndər</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 4. USER CABINETS -->
+  <h2>4. Kabinet Menyuları</h2>
+  <p class="note">Qeydiyyatdan sonra istifadəçilərin gördüyü daxili menyular.</p>
+
+  <div class="cabinets">
+
+    <div class="menutree">
+      <div class="menutree-head">Valideyn Kabineti</div>
+      <ol>
+        <li><strong>Dashboard</strong><span>Son müraciətlər və favorilər qısa görünüş</span></li>
+        <li><strong>Profilim</strong><span>Ad, telefon, email, şifrə, foto</span></li>
+        <li><strong>Favori Məktəblər</strong><span>Qeyd edilmiş məktəblərin siyahısı</span></li>
+        <li><strong>Müraciətlərim</strong><span>Status: gözləyir / əlaqə saxlanıldı / bağlandı</span></li>
+        <li><strong>Rəylərim</strong><span>Yazılan rəylər — redaktə / sil</span></li>
+        <li><strong>Bildirişlər</strong><span>Yeni cavablar, təsdiq mesajları</span></li>
+        <li><strong>Ayarlar</strong><span>Bildiriş növləri, dil, məxfilik</span></li>
+        <li><strong>Çıxış</strong><span>Hesabdan çıxış</span></li>
+      </ol>
+    </div>
+
+    <div class="menutree">
+      <div class="menutree-head">Məktəb Kabineti</div>
+      <ol>
+        <li><strong>Dashboard</strong><span>Son lead-lər, baxış sayı, paket statusu</span></li>
+        <li><strong>Profilim</strong><span>Ad, ünvan, təsvir, əlaqə məlumatları</span></li>
+        <li><strong>Media</strong><span>Foto və video əlavə et / sil</span></li>
+        <li><strong>Xidmət və İnfrastruktur</strong><span>Checkbox ilə işarələmə</span></li>
+        <li><strong>Fəaliyyətlər</strong><span>İdman, sənət, texnologiya, zəka</span></li>
+        <li><strong>Kurrikulum və Dillər</strong><span>Tədris növü və dillər</span></li>
+        <li><strong>Bloq Yaz</strong><span>Öz elanlarını dərc et</span></li>
+        <li><strong>Lead-lər</strong><span>Gələn müraciətlər — status və qeyd</span></li>
+        <li><strong>Rəylər</strong><span>Gələn rəylər — cavab yaz</span></li>
+        <li><strong>FAQ İdarəsi</strong><span>Sual-cavab bölməsi</span></li>
+        <li><strong>Statistika</strong><span>Baxış, müqayisə, müraciət sayları</span></li>
+        <li><strong>Paket və Ödəniş</strong><span>Cari paket, yenilənmə tarixi</span></li>
+        <li><strong>Ayarlar</strong><span>Bildiriş, əlaqə şəxsləri</span></li>
+        <li><strong>Çıxış</strong><span>Hesabdan çıxış</span></li>
+      </ol>
+    </div>
+
+    <div class="menutree">
+      <div class="menutree-head">Super Admin Paneli</div>
+      <ol>
+        <li><strong>Dashboard</strong><span>Ümumi statistika: məktəb sayı, lead, gəlir</span></li>
+        <li><strong>Məktəblər</strong><span>Bütün məktəblər: təsdiq / rədd / redaktə / blok</span></li>
+        <li><strong>Valideynlər</strong><span>Qeydiyyatlıların siyahısı</span></li>
+        <li><strong>Lead İdarəetmə</strong><span>Müraciətləri məktəbə yönləndir</span></li>
+        <li><strong>Rəy Moderasiya</strong><span>Yeni rəylər — təsdiq / rədd</span></li>
+        <li><strong>Bloq</strong><span>Platformanın öz məqalələri</span></li>
+        <li><strong>Paketlər və Ödənişlər</strong><span>Paket yarat, qəbzlər</span></li>
+        <li><strong>Kateqoriyalar</strong><span>Ərazi, kurrikulum, dil, xidmət</span></li>
+        <li><strong>Statistika və Hesabatlar</strong><span>Aylıq, illik, məktəb üzrə</span></li>
+        <li><strong>Endirim / Kampaniya</strong><span>Təqaüd və endirimlər</span></li>
+        <li><strong>Bildirişlər</strong><span>Email şablonları, toplu göndərmə</span></li>
+        <li><strong>Sistem Ayarları</strong><span>Logo, əlaqə, SEO, dil</span></li>
+        <li><strong>Admin İstifadəçilər</strong><span>Rollar və icazələr</span></li>
+        <li><strong>Çıxış</strong><span>Hesabdan çıxış</span></li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- 5. USER FLOWS -->
+  <h2>5. İstifadəçi Keçid Axınları</h2>
+  <p class="note">Əsas ssenariləri addım-addım sxem üzərində.</p>
+
+  <h3>Valideyn — Məktəb tapmaqdan müraciətə</h3>
+  <div class="flow">
+    <div class="step start">Ana Səhifə</div><span class="arrow">→</span>
+    <div class="step">Məktəblər</div><span class="arrow">→</span>
+    <div class="step">Filtr seçimi</div><span class="arrow">→</span>
+    <div class="step">Məktəb Profili</div><span class="arrow">→</span>
+    <div class="step">Müqayisə</div><span class="arrow">→</span>
+    <div class="step">Müraciət Forması</div><span class="arrow">→</span>
+    <div class="step end">Təşəkkür Səhifəsi</div>
+  </div>
+
+  <h3>Məktəb — Qeydiyyatdan aktivləşməyə</h3>
+  <div class="flow">
+    <div class="step start">Ana Səhifə</div><span class="arrow">→</span>
+    <div class="step">Məktəb Əlavə Et</div><span class="arrow">→</span>
+    <div class="step">Anket (4 addım)</div><span class="arrow">→</span>
+    <div class="step">Paket Seçimi</div><span class="arrow">→</span>
+    <div class="step">Ödəniş</div><span class="arrow">→</span>
+    <div class="step">Admin Təsdiqi</div><span class="arrow">→</span>
+    <div class="step end">Məktəb Kabineti</div>
+  </div>
+
+  <h3>Admin — Lead-in məktəbə göndərilməsi</h3>
+  <div class="flow">
+    <div class="step start">Yeni Lead</div><span class="arrow">→</span>
+    <div class="step">Lead-i Aç</div><span class="arrow">→</span>
+    <div class="step">Yoxla və Təsdiqlə</div><span class="arrow">→</span>
+    <div class="step">Məktəbə Göndər</div><span class="arrow">→</span>
+    <div class="step">Məktəb Əlaqə Saxlayır</div><span class="arrow">→</span>
+    <div class="step end">Nəticə Qeydi</div>
+  </div>
+
+  <h3>Valideyn — Rəy yazmaq</h3>
+  <div class="flow">
+    <div class="step start">Giriş</div><span class="arrow">→</span>
+    <div class="step">Məktəb Profili</div><span class="arrow">→</span>
+    <div class="step">Rəy Yaz</div><span class="arrow">→</span>
+    <div class="step">Ulduz + Mətn</div><span class="arrow">→</span>
+    <div class="step">Göndər</div><span class="arrow">→</span>
+    <div class="step">Admin Moderasiya</div><span class="arrow">→</span>
+    <div class="step end">Profildə Görünür</div>
+  </div>
+
+  <h3>Valideyn — Müqayisə</h3>
+  <div class="flow">
+    <div class="step start">Məktəblər Siyahısı</div><span class="arrow">→</span>
+    <div class="step">Müqayisəyə Əlavə Et (×2–4)</div><span class="arrow">→</span>
+    <div class="step">Müqayisə Səhifəsi</div><span class="arrow">→</span>
+    <div class="step">Cədvəli bax</div><span class="arrow">→</span>
+    <div class="step end">PDF Yüklə</div>
+  </div>
+
+  <!-- 6. PAGE RELATIONSHIPS -->
+  <h2>6. Səhifələr Arası Keçid Matrisi</h2>
+  <p class="note">Hansı səhifədən hansına keçid mümkündür.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Hazırki Səhifə</th>
+        <th>Düymə / Link</th>
+        <th>Keçid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Ana Səhifə</td><td>Axtar</td><td>Məktəblər siyahısı</td></tr>
+      <tr><td>Ana Səhifə</td><td>Ətraflı bax</td><td>Məktəb profili</td></tr>
+      <tr><td>Ana Səhifə</td><td>Müqayisə et</td><td>Müqayisə səhifəsi</td></tr>
+      <tr><td>Ana Səhifə</td><td>Məktəb əlavə et</td><td>Qeydiyyat anketi</td></tr>
+      <tr><td>Məktəblər Siyahısı</td><td>Ətraflı bax</td><td>Məktəb profili</td></tr>
+      <tr><td>Məktəblər Siyahısı</td><td>+ Müqayisə</td><td>Müqayisə səbəti</td></tr>
+      <tr><td>Məktəb Profili</td><td>Müraciət et</td><td>Müraciət forması</td></tr>
+      <tr><td>Məktəb Profili</td><td>Müqayisəyə əlavə et</td><td>Müqayisə səhifəsi</td></tr>
+      <tr><td>Müqayisə</td><td>PDF yüklə</td><td>Fayl yüklənir</td></tr>
+      <tr><td>Müqayisə</td><td>+ Əlavə et</td><td>Məktəblər siyahısı</td></tr>
+      <tr><td>Müraciət Forması</td><td>Göndər</td><td>Təşəkkür səhifəsi</td></tr>
+      <tr><td>Bloq</td><td>Oxu</td><td>Məqalə səhifəsi</td></tr>
+      <tr><td>Məktəb Əlavə Et</td><td>Paket seç</td><td>Ödəniş səhifəsi</td></tr>
+      <tr><td>Məktəb Əlavə Et</td><td>Göndər</td><td>Gözləmə ekranı</td></tr>
+      <tr><td>Giriş</td><td>Daxil ol (valideyn)</td><td>Valideyn kabineti</td></tr>
+      <tr><td>Giriş</td><td>Daxil ol (məktəb)</td><td>Məktəb kabineti</td></tr>
+      <tr><td>Giriş</td><td>Daxil ol (admin)</td><td>Admin paneli</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>EduNav.az — Funksional Sxem v3.0</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
