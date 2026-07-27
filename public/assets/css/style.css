@@ -300,17 +300,22 @@ input,textarea,select{font-family:inherit}
 }
 .dd.open .dd-chevron{transform:rotate(180deg);color:var(--ink)}
 
+/* Opens upward: the hero search sits at the bottom of the viewport,
+   so a downward panel would be clipped off-screen. */
 .dd-panel{
-  position:absolute;top:calc(100% + 12px);left:0;
-  min-width:230px;max-width:min(320px,90vw);
+  position:absolute;bottom:calc(100% + 14px);left:0;
+  min-width:240px;max-width:min(320px,90vw);
   background:#fff;border:1px solid var(--line);border-radius:18px;
-  box-shadow:var(--shadow-lg);
+  box-shadow:0 -18px 50px -14px rgba(15,15,20,.22),0 -4px 14px -6px rgba(15,15,20,.08);
   padding:8px;z-index:60;
-  max-height:300px;overflow-y:auto;
+  max-height:min(400px,58vh);overflow-y:auto;overscroll-behavior:contain;
   opacity:0;visibility:hidden;pointer-events:none;
-  transform:translateY(-6px) scale(.97);transform-origin:top left;
+  transform:translateY(8px) scale(.97);transform-origin:bottom left;
   transition:opacity .18s var(--ease),transform .18s var(--ease),visibility .18s;
 }
+.dd-panel::-webkit-scrollbar{width:6px}
+.dd-panel::-webkit-scrollbar-track{background:transparent}
+.dd-panel::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
 .dd.open .dd-panel{
   opacity:1;visibility:visible;pointer-events:auto;transform:none;
 }
@@ -329,7 +334,7 @@ input,textarea,select{font-family:inherit}
 @media (max-width:860px){
   .search-xl .search-field.has-dd:hover,
   .search-xl .search-field.has-dd:focus-within{background:transparent}
-  .dd-panel{left:0;right:0;width:100%;max-width:100%;top:calc(100% + 8px)}
+  .dd-panel{left:0;right:0;width:100%;max-width:100%;bottom:calc(100% + 8px)}
 }
 
 /* Popular searches (above search) */
