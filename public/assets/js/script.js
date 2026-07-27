@@ -1,6 +1,57 @@
 (function(){
   'use strict';
 
+  // Custom dropdown (replaces native <select> in hero search)
+  document.querySelectorAll('.dd').forEach(dd=>{
+    const trigger = dd.querySelector('.dd-trigger');
+    const options = dd.querySelectorAll('.dd-option');
+    if(!trigger) return;
+
+    function closeDD(){
+      dd.classList.remove('open');
+      trigger.setAttribute('aria-expanded','false');
+    }
+    function openDD(){
+      document.querySelectorAll('.dd.open').forEach(o=>{
+        if(o!==dd){ o.classList.remove('open'); o.querySelector('.dd-trigger')?.setAttribute('aria-expanded','false'); }
+      });
+      dd.classList.add('open');
+      trigger.setAttribute('aria-expanded','true');
+    }
+
+    trigger.addEventListener('click',(e)=>{
+      e.stopPropagation();
+      dd.classList.contains('open') ? closeDD() : openDD();
+    });
+
+    options.forEach(opt=>{
+      opt.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        options.forEach(o=>{o.classList.remove('selected');o.removeAttribute('aria-selected')});
+        opt.classList.add('selected');
+        opt.setAttribute('aria-selected','true');
+        trigger.textContent = opt.textContent.trim();
+        dd.dataset.value = opt.dataset.value || '';
+        closeDD();
+      });
+    });
+  });
+
+  document.addEventListener('click',()=>{
+    document.querySelectorAll('.dd.open').forEach(dd=>{
+      dd.classList.remove('open');
+      dd.querySelector('.dd-trigger')?.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      document.querySelectorAll('.dd.open').forEach(dd=>{
+        dd.classList.remove('open');
+        dd.querySelector('.dd-trigger')?.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+
   // Module-by-module wheel snap (skip on pages that opt out)
   const sections = Array.from(document.querySelectorAll('body > section, body > .stack-viewport, body > footer'));
   if(sections.length && !document.body.classList.contains('no-snap')){
