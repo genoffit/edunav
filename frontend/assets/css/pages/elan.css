@@ -1,0 +1,218 @@
+/* ==========================================================================
+   elan.css — page styles for elan.html (announcement detail)
+   Every class is prefixed .elan- and is used on that page only.
+   Loaded after style.css; uses the shared tokens, adds none.
+   ========================================================================== */
+
+/* --- meta strip: növ · rayon · tarix · baxış ------------------------------ */
+.elan-meta {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 34px;
+  margin: 0 0 6px;
+  padding: 16px 18px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.elan-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.elan-meta-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.elan-meta-value {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+/* --- sidebar ------------------------------------------------------------- */
+.elan-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.elan-card {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.elan-card--brand {
+  border-color: var(--line-2);
+  background: var(--brand-soft);
+}
+
+.elan-card-title {
+  margin: 0 0 14px;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+
+/* institution block ------------------------------------------------------- */
+.elan-org {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line-4);
+}
+
+.elan-org-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.elan-org-name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.elan-org-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--muted);
+}
+
+/* contact rows ------------------------------------------------------------ */
+.elan-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.elan-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.elan-contact-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.elan-contact-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  transition: color .16s var(--ease);
+}
+
+a.elan-contact-value:hover { color: var(--brand-dark); }
+
+.elan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.elan-note {
+  margin: 14px 0 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+/* fact list --------------------------------------------------------------- */
+.elan-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.elan-fact {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line-4);
+}
+
+.elan-fact:last-child { border-bottom: 0; padding-bottom: 0; }
+.elan-fact:first-child { padding-top: 0; }
+
+.elan-fact-label {
+  flex: none;
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.elan-fact-value {
+  margin: 0;
+  text-align: right;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+/* --- sticky rail on wide screens ----------------------------------------- */
+@media (min-width: 1025px) {
+  .elan-side {
+    position: sticky;
+    top: calc(var(--header-h) + 18px);
+  }
+}
+
+@media (max-width: 560px) {
+  .elan-meta { gap: 12px 24px; padding: 14px 16px; }
+  .elan-card { padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elan-contact-value { transition: none; }
+}

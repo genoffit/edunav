@@ -1,0 +1,228 @@
+/* ==========================================================================
+   EduNav — page styles for bagcalar.html only.
+   Every class here is prefixed .bagcalar- and is loaded after style.css.
+   Nothing in this file may be reused by another page.
+   ========================================================================== */
+
+/* --- two-column shell: filter rail + results ------------------------------ */
+.bagcalar-shell {
+  display: grid;
+  grid-template-columns: 288px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.bagcalar-side {
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.bagcalar-results { min-width: 0; }
+
+/* --- filter panel --------------------------------------------------------- */
+.bagcalar-panel {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.bagcalar-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line-4);
+}
+
+.bagcalar-panel-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.bagcalar-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: var(--r-xxs);
+  background: none;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color .16s var(--ease);
+}
+.bagcalar-reset:hover { color: var(--ink); }
+.bagcalar-reset:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* --- search field inside the panel ---------------------------------------- */
+.bagcalar-search {
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.bagcalar-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.bagcalar-search-icon svg { width: 16px; height: 16px; }
+
+.bagcalar-panel .bagcalar-search-input { padding: 11px 12px 11px 36px; }
+
+/* --- filter groups -------------------------------------------------------- */
+.bagcalar-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bagcalar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.bagcalar-group-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+
+.bagcalar-side-note {
+  margin: 16px 0 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* --- support card under the panel ----------------------------------------- */
+.bagcalar-help {
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.bagcalar-help-title {
+  margin: 10px 0 0;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.bagcalar-help-text {
+  margin: 7px 0 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* --- results toolbar ------------------------------------------------------ */
+.bagcalar-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.bagcalar-toolbar-text { min-width: 0; }
+
+.bagcalar-toolbar-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.026em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.bagcalar-count {
+  margin: 7px 0 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.bagcalar-count-num {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.bagcalar-sort {
+  flex: none;
+  width: 200px;
+}
+
+/* --- results grid --------------------------------------------------------- */
+.bagcalar-grid .ecard { height: 100%; }
+
+.bagcalar-empty { margin-top: 24px; }
+
+.bagcalar-banner { margin-top: 36px; }
+
+/* --- responsive ----------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .bagcalar-shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .bagcalar-side {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .bagcalar-toolbar { align-items: flex-start; }
+}
+
+@media (max-width: 560px) {
+  .bagcalar-panel { padding: 16px; }
+  .bagcalar-sort { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bagcalar-reset { transition: none; }
+}

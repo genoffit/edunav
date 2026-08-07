@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kabinet | EduNav.az</title>
+<meta name="description" content="Valideyn kabineti — müraciətlərinizin statusunu izləyin, seçilmiş məktəb və bağçaları saxlayın, müqayisə siyahınızı, bildirişlərinizi və profil ayarlarınızı idarə edin.">
+<meta name="theme-color" content="#FFC629">
+<meta property="og:site_name" content="EduNav.az">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="az_AZ">
+<meta property="og:title" content="Kabinet | EduNav.az">
+<meta property="og:description" content="Valideyn kabineti — müraciətlərinizin statusunu izləyin, seçilmiş məktəb və bağçaları saxlayın, müqayisə siyahınızı, bildirişlərinizi və profil ayarlarınızı idarə edin.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/pages/kabinet.css?v=2">
+</head>
+<body>
+<a class="skip-link" href="#main">Əsas məzmuna keç</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="EduNav — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+
+    <nav class="nav" aria-label="Əsas naviqasiya">
+      <a class="nav-link" href="mekteblar.html">Məktəblər</a>
+      <a class="nav-link" href="bagcalar.html">Bağçalar</a>
+      <a class="nav-link" href="vakansiyalar.html">Vakansiyalar</a>
+      <a class="nav-link" href="xeberler.html">Xəbərlər</a>
+      <a class="nav-link" href="elanlar.html">Elanlar</a>
+      <a class="nav-link" href="bloglar.html">Bloglar</a>
+      <a class="nav-link" href="sebekeler.html">Şəbəkələr</a>
+      <a class="nav-link" href="haqqimizda.html">Haqqımızda</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn-ghost" href="daxil-ol.html">Daxil ol</a>
+      <a class="btn-brand" href="muessise-elave-et.html">Müəssisə əlavə et</a>
+      <button class="burger" type="button" data-drawer-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="drawer">
+        <span class="burger-line" aria-hidden="true"></span>
+        <span class="burger-line" aria-hidden="true"></span>
+        <span class="burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="drawer-backdrop" data-drawer-close aria-hidden="true"></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menyu">
+    <div class="drawer-head">
+      <span class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo-text">EduNav</span>
+      </span>
+      <button class="drawer-close" type="button" data-drawer-close aria-label="Menyunu bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Mobil naviqasiya">
+      <a class="drawer-link" href="mekteblar.html">Məktəblər</a>
+      <a class="drawer-link" href="bagcalar.html">Bağçalar</a>
+      <a class="drawer-link" href="vakansiyalar.html">Vakansiyalar</a>
+      <a class="drawer-link" href="xeberler.html">Xəbərlər</a>
+      <a class="drawer-link" href="elanlar.html">Elanlar</a>
+      <a class="drawer-link" href="bloglar.html">Bloglar</a>
+      <a class="drawer-link" href="sebekeler.html">Şəbəkələr</a>
+      <a class="drawer-link" href="haqqimizda.html">Haqqımızda</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Sürətli keçidlər</p>
+      <div class="chip-row">
+        <a class="chip" href="muqayise.html">Müqayisə et</a>
+        <a class="chip" href="suallar.html">Suallar</a>
+        <a class="chip" href="elaqe.html">Əlaqə</a>
+        <a class="chip" href="kabinet.html">Kabinet</a>
+      </div>
+    </div>
+
+    <div class="drawer-actions">
+      <a class="btn-ghost" href="daxil-ol.html">Daxil ol</a>
+      <a class="btn-brand" href="muessise-elave-et.html">Müəssisə əlavə et</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Səhifə yolu">
+        <ol class="crumbs">
+          <li><a href="index.html">Ana səhifə</a></li>
+          <li><span aria-current="page">Kabinet</span></li>
+        </ol>
+      </nav>
+      <span class="kicker">Valideyn kabineti</span>
+      <h1 class="h1">Kabinet</h1>
+      <p class="lead">Müraciətlərinizin statusu, seçilmiş müəssisələr, müqayisə siyahınız, bildirişlər və hesab ayarları — hamısı bir yerdə.</p>
+    </div>
+  </div>
+
+  <div class="kabinet-shell">
+
+    <!-- ================================================== HESAB KARTI === -->
+    <section class="section section--tight" aria-labelledby="kabinet-user-title">
+      <div class="container">
+        <h2 class="sr-only" id="kabinet-user-title">Hesab məlumatları</h2>
+
+        <div class="kabinet-user">
+          <span class="avatar avatar--lg avatar--brand" aria-hidden="true">RD</span>
+          <span class="kabinet-user-text">
+            <span class="kabinet-user-name">Rasif Dünyamalı</span>
+            <span class="kabinet-user-meta">rasif.dunyamali@nümunə.az · +994 50 555 21 08 · Bakı, Yasamal r. · hesab 14 mart 2025-dən</span>
+            <span class="kabinet-user-badges">
+              <span class="badge badge--info">Valideyn hesabı</span>
+              <span class="badge badge--ok">E-poçt təsdiqlənib</span>
+              <span class="badge">2 övlad profili</span>
+            </span>
+          </span>
+          <span class="kabinet-user-actions">
+            <a class="btn-ghost" href="#kabinet-ayarlar">Profil ayarları</a>
+            <a class="btn-ghost" href="daxil-ol.html">Hesabdan çıx</a>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== TAB STRIP == -->
+    <div class="kabinet-tabs">
+      <div class="container">
+        <nav class="tabs" aria-label="Kabinet bölmələri">
+          <a class="tab kabinet-tab--1" href="#kabinet-muracietler">Müraciətlərim <span class="kabinet-tab-count">8</span></a>
+          <a class="tab kabinet-tab--2" href="#kabinet-secilmisler">Seçilmişlər <span class="kabinet-tab-count">6</span></a>
+          <a class="tab kabinet-tab--3" href="#kabinet-muqayise">Müqayisə <span class="kabinet-tab-count">3</span></a>
+          <a class="tab kabinet-tab--4" href="#kabinet-bildirisler">Bildirişlər <span class="kabinet-tab-count">8</span></a>
+          <a class="tab kabinet-tab--5" href="#kabinet-ayarlar">Profil ayarları</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ================================================ MÜRACİƏTLƏRİM === -->
+    <section class="section section--tight kabinet-panel" id="kabinet-muracietler" aria-labelledby="kabinet-muracietler-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head-row">
+            <h2 class="sec-title" id="kabinet-muracietler-title">Müraciətlərim</h2>
+            <a class="sec-all" href="mekteblar.html">
+              Yeni müraciət
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+            </a>
+          </div>
+          <p class="sec-sub">EduNav üzərindən göndərdiyiniz bütün müraciətlər və onların cari statusu. Status müəssisə cavab verən kimi avtomatik yenilənir.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <caption class="sr-only">Göndərdiyim müraciətlərin siyahısı və statusu</caption>
+            <thead>
+              <tr>
+                <th scope="col">Müəssisə</th>
+                <th scope="col">Müraciət növü</th>
+                <th scope="col">Göndərilib</th>
+                <th scope="col">Status</th>
+                <th scope="col">Əməliyyat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm avatar--dark" aria-hidden="true">ZM</span>
+                    <strong>Zəka Beynəlxalq Məktəbi</strong>
+                  </div>
+                </td>
+                <td>1-ci sinif qəbulu</td>
+                <td>12 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--info">Müsahibə</span>
+                    <span class="kabinet-status-note">17 avqust, saat 11:00 — ailə görüşü</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=zeka">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">AK</span>
+                    <strong>Atlas Kolleci</strong>
+                  </div>
+                </td>
+                <td>1-ci sinif qəbulu</td>
+                <td>10 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--warn">Baxılır</span>
+                    <span class="kabinet-status-note">Sənədlər qəbul komissiyasındadır</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=atlas">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">XU</span>
+                    <strong>Xoşbəxt Uşaqlar Bağçası</strong>
+                  </div>
+                </td>
+                <td>Bağça qəbulu · 3–5 yaş</td>
+                <td>9 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--ok">Qəbul edildi</span>
+                    <span class="kabinet-status-note">Müqavilə 25 iyulədək imzalanmalıdır</span>
+                  </span>
+                </td>
+                <td><a href="bagca.html?id=xosbext-usaqlar">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">HS</span>
+                    <strong>Horizon School</strong>
+                  </div>
+                </td>
+                <td>1-ci sinif qəbulu</td>
+                <td>8 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge">Göndərildi</span>
+                    <span class="kabinet-status-note">Cavab müddəti — 2 iş günü</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=horizon">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm avatar--dark" aria-hidden="true">BA</span>
+                    <strong>Beynəlxalq Akademiya</strong>
+                  </div>
+                </td>
+                <td>Kampus turu</td>
+                <td>6 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--ok">Qəbul edildi</span>
+                    <span class="kabinet-status-note">20 iyul, saat 10:00 — qeydiyyat təsdiqləndi</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=beynelxalq-akademiya">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">AL</span>
+                    <strong>Alov Liseyi</strong>
+                  </div>
+                </td>
+                <td>5-ci sinif qəbulu</td>
+                <td>4 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--danger">Rədd edildi</span>
+                    <span class="kabinet-status-note">Paralel üzrə boş yer qalmayıb</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=alov">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">BU</span>
+                    <strong>Balaca Ulduzlar</strong>
+                  </div>
+                </td>
+                <td>Bağça qəbulu · 1–3 yaş</td>
+                <td>2 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge badge--warn">Baxılır</span>
+                    <span class="kabinet-status-note">Gözləmə siyahısında 4-cü sıra</span>
+                  </span>
+                </td>
+                <td><a href="bagca.html?id=balaca-ulduzlar">Profilə bax</a></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kabinet-table-org">
+                    <span class="avatar avatar--sm" aria-hidden="true">PS</span>
+                    <strong>Prestige School</strong>
+                  </div>
+                </td>
+                <td>Təhsil haqqı sorğusu</td>
+                <td>1 iyul 2026</td>
+                <td>
+                  <span class="kabinet-status-cell">
+                    <span class="badge">Göndərildi</span>
+                    <span class="kabinet-status-note">Müəssisə hələ cavab verməyib</span>
+                  </span>
+                </td>
+                <td><a href="mekteb.html?id=prestige">Profilə bax</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="kabinet-note">Statuslar: <strong>Göndərildi</strong> — müraciət müəssisəyə çatıb; <strong>Baxılır</strong> — sənədlər yoxlanılır; <strong>Müsahibə</strong> — görüş tarixi təyin edilib; <strong>Qəbul edildi</strong> — müsbət qərar verilib; <strong>Rədd edildi</strong> — müraciət qəbul olunmayıb. Müəssisə 5 iş günü ərzində cavab verməzsə, bizə yazın.</p>
+
+        <div class="kabinet-actions">
+          <a class="btn-brand" href="mekteblar.html">Yeni məktəbə müraciət et</a>
+          <a class="btn-ghost" href="bagcalar.html">Bağçalara bax</a>
+          <button class="btn-ghost" type="button" data-open="contact">Müraciət barədə sual ver</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== SEÇİLMİŞLƏR === -->
+    <section class="section section--tight kabinet-panel" id="kabinet-secilmisler" aria-labelledby="kabinet-secilmisler-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head-row">
+            <h2 class="sec-title" id="kabinet-secilmisler-title">Seçilmişlər</h2>
+            <a class="sec-all" href="mekteblar.html">
+              Kataloqa qayıt
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+            </a>
+          </div>
+          <p class="sec-sub">Ürək işarəsi ilə yadda saxladığınız 6 müəssisə. Qiymət və qəbul statusu dəyişəndə sizə bildiriş göndəririk.</p>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="ecard" data-item
+                   data-id="zeka-beynelxalq-mektebi"
+                   data-name="Zəka Beynəlxalq Məktəbi"
+                   data-mono="ZM"
+                   data-tip="mekteb"
+                   data-rayon="Nəsimi"
+                   data-dil="İngilis,Rus"
+                   data-meta="Nəsimi · 2008-dən"
+                   data-price="12000"
+                   data-added="2008"
+                   data-grad="g1"
+                   data-href="mekteb.html?id=zeka"
+                   data-search="Zəka Beynəlxalq Məktəbi Nəsimi IB robotexnika">
+            <div class="ecard-media g1">
+              <span class="ecard-mono" aria-hidden="true">ZM</span>
+              <span class="ecard-tag">Premium</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Nəsimi · 2008-dən</p>
+              <h3 class="ecard-title"><a href="mekteb.html?id=zeka">Zəka Beynəlxalq Məktəbi</a></h3>
+              <p class="ecard-desc">IB proqramı, üç dildə tədris və robotexnika sinfi.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">12 000 AZN</span>
+                <span class="ecard-per">/il</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ecard" data-item
+                   data-id="atlas-kolleci"
+                   data-name="Atlas Kolleci"
+                   data-mono="AK"
+                   data-tip="mekteb"
+                   data-rayon="Yasamal"
+                   data-dil="İngilis,Azərbaycan"
+                   data-meta="Yasamal · 2010-dan"
+                   data-price="9800"
+                   data-added="2010"
+                   data-grad="g3"
+                   data-href="mekteb.html?id=atlas"
+                   data-search="Atlas Kolleci Yasamal Cambridge üzgüçülük">
+            <div class="ecard-media g3">
+              <span class="ecard-mono" aria-hidden="true">AK</span>
+              <span class="ecard-tag">Premium</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Yasamal · 2010-dan</p>
+              <h3 class="ecard-title"><a href="mekteb.html?id=atlas">Atlas Kolleci</a></h3>
+              <p class="ecard-desc">Cambridge proqramı, iki xarici dil və üzgüçülük.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">9 800 AZN</span>
+                <span class="ecard-per">/il</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ecard" data-item
+                   data-id="horizon-school"
+                   data-name="Horizon School"
+                   data-mono="HS"
+                   data-tip="mekteb"
+                   data-rayon="Binəqədi"
+                   data-dil="Azərbaycan,İngilis"
+                   data-meta="Binəqədi · 2012-dən"
+                   data-price="8500"
+                   data-added="2012"
+                   data-grad="g6"
+                   data-href="mekteb.html?id=horizon"
+                   data-search="Horizon School Binəqədi milli kurikulum idman zalı">
+            <div class="ecard-media g6">
+              <span class="ecard-mono" aria-hidden="true">HS</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Binəqədi · 2012-dən</p>
+              <h3 class="ecard-title"><a href="mekteb.html?id=horizon">Horizon School</a></h3>
+              <p class="ecard-desc">Milli kurikulum, gücləndirilmiş ingilis, idman zalı.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">8 500 AZN</span>
+                <span class="ecard-per">/il</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ecard" data-item
+                   data-id="xosbext-usaqlar"
+                   data-name="Xoşbəxt Uşaqlar"
+                   data-mono="XU"
+                   data-tip="bagca"
+                   data-rayon="Yasamal"
+                   data-dil="Azərbaycan,İngilis"
+                   data-meta="Yasamal · 2014-dən"
+                   data-price="480"
+                   data-added="2014"
+                   data-grad="g2"
+                   data-href="bagca.html?id=xosbext-usaqlar"
+                   data-search="Xoşbəxt Uşaqlar bağça Yasamal Montessori">
+            <div class="ecard-media g2">
+              <span class="ecard-mono" aria-hidden="true">XU</span>
+              <span class="ecard-tag">Premium</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Yasamal · 2014-dən</p>
+              <h3 class="ecard-title"><a href="bagca.html?id=xosbext-usaqlar">Xoşbəxt Uşaqlar</a></h3>
+              <p class="ecard-desc">Montessori metodikası, tam gün və isti yemək.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">480 AZN</span>
+                <span class="ecard-per">/ay</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ecard" data-item
+                   data-id="balaca-ulduzlar"
+                   data-name="Balaca Ulduzlar"
+                   data-mono="BU"
+                   data-tip="bagca"
+                   data-rayon="Nəsimi"
+                   data-dil="Azərbaycan"
+                   data-meta="Nəsimi · 2011-dən"
+                   data-price="450"
+                   data-added="2011"
+                   data-grad="g5"
+                   data-href="bagca.html?id=balaca-ulduzlar"
+                   data-search="Balaca Ulduzlar bağça Nəsimi loqoped">
+            <div class="ecard-media g5">
+              <span class="ecard-mono" aria-hidden="true">BU</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Nəsimi · 2011-dən</p>
+              <h3 class="ecard-title"><a href="bagca.html?id=balaca-ulduzlar">Balaca Ulduzlar</a></h3>
+              <p class="ecard-desc">Loqoped dəstəyi, kiçik qruplar və gündəlik hesabat.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">450 AZN</span>
+                <span class="ecard-per">/ay</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="ecard" data-item
+                   data-id="sevincim-kids"
+                   data-name="Sevincim Kids"
+                   data-mono="SK"
+                   data-tip="bagca"
+                   data-rayon="Xətai"
+                   data-dil="İngilis,Azərbaycan"
+                   data-meta="Xətai · 2013-dən"
+                   data-price="520"
+                   data-added="2013"
+                   data-grad="g3"
+                   data-href="bagca.html?id=sevincim-kids"
+                   data-search="Sevincim Kids bağça Xətai ingilis dilli hovuz">
+            <div class="ecard-media g3">
+              <span class="ecard-mono" aria-hidden="true">SK</span>
+              <span class="ecard-tag">Premium</span>
+              <button class="ecard-fav" type="button" data-fav-toggle aria-pressed="false" aria-label="Seçilmişlərdən çıxar">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+              </button>
+            </div>
+            <div class="ecard-body">
+              <p class="ecard-meta">Xətai · 2013-dən</p>
+              <h3 class="ecard-title"><a href="bagca.html?id=sevincim-kids">Sevincim Kids</a></h3>
+              <p class="ecard-desc">İngilis dilli qruplar, üzgüçülük və inkişaf dərnəkləri.</p>
+              <div class="ecard-foot">
+                <span class="ecard-price">520 AZN</span>
+                <span class="ecard-per">/ay</span>
+                <button class="btn-icon" type="button" data-compare-toggle aria-pressed="false" aria-label="Müqayisəyə əlavə et">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="kabinet-note">Seçilmişlər cihazınızın brauzerində saxlanılır. Başqa telefondan da görmək üçün eyni hesabla daxil olun.</p>
+      </div>
+    </section>
+
+    <!-- ==================================================== MÜQAYİSƏ ==== -->
+    <section class="section section--tight kabinet-panel" id="kabinet-muqayise" aria-labelledby="kabinet-muqayise-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head-row">
+            <h2 class="sec-title" id="kabinet-muqayise-title">Müqayisə siyahım</h2>
+            <a class="sec-all" href="muqayise.html">
+              Tam müqayisəyə keç
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+            </a>
+          </div>
+          <p class="sec-sub">Siyahınızda 3 müəssisə var — daha bir müəssisə əlavə edə bilərsiniz. Tam cədvəldə 18 meyar üzrə müqayisə mümkündür.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <caption class="sr-only">Müqayisə siyahısındakı üç məktəbin əsas göstəriciləri</caption>
+            <thead>
+              <tr>
+                <th scope="col">Meyar</th>
+                <th scope="col">Zəka Beynəlxalq Məktəbi</th>
+                <th scope="col">Atlas Kolleci</th>
+                <th scope="col">Horizon School</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rayon</strong></td>
+                <td>Bakı, Nəsimi r.</td>
+                <td>Bakı, Yasamal r.</td>
+                <td>Bakı, Binəqədi r.</td>
+              </tr>
+              <tr>
+                <td><strong>Təsis ili</strong></td>
+                <td>2008</td>
+                <td>2010</td>
+                <td>2012</td>
+              </tr>
+              <tr>
+                <td><strong>Kurikulum</strong></td>
+                <td>IB · Milli</td>
+                <td>Cambridge · Milli</td>
+                <td>Milli</td>
+              </tr>
+              <tr>
+                <td><strong>Tədris dili</strong></td>
+                <td>Azərbaycan, İngilis, Rus</td>
+                <td>Azərbaycan, İngilis</td>
+                <td>Azərbaycan, İngilis</td>
+              </tr>
+              <tr>
+                <td><strong>İllik ödəniş</strong></td>
+                <td>12 000 AZN</td>
+                <td>9 800 AZN</td>
+                <td>8 500 AZN</td>
+              </tr>
+              <tr>
+                <td><strong>Sinifdə şagird</strong></td>
+                <td>18 nəfər</td>
+                <td>20 nəfər</td>
+                <td>22 nəfər</td>
+              </tr>
+              <tr>
+                <td><strong>Nəqliyyat</strong></td>
+                <td>Var — 9 marşrut</td>
+                <td>Var — 6 marşrut</td>
+                <td>Var — 4 marşrut</td>
+              </tr>
+              <tr>
+                <td><strong>Qəbul statusu</strong></td>
+                <td><span class="badge badge--ok">Açıqdır</span></td>
+                <td><span class="badge badge--ok">Açıqdır</span></td>
+                <td><span class="badge badge--warn">Gözləmə siyahısı</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="kabinet-note">Müqayisə siyahısına eyni anda ən çox 4 müəssisə əlavə edilə bilər. Siyahını istənilən kataloq səhifəsindəki müqayisə düyməsi ilə dəyişə bilərsiniz.</p>
+
+        <div class="kabinet-actions">
+          <a class="btn-brand" href="muqayise.html">Tam müqayisə cədvəli</a>
+          <a class="btn-ghost" href="mekteblar.html">Dördüncü məktəbi seç</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================== BİLDİRİŞLƏR === -->
+    <section class="section section--tight kabinet-panel" id="kabinet-bildirisler" aria-labelledby="kabinet-bildirisler-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head-row">
+            <h2 class="sec-title" id="kabinet-bildirisler-title">Bildirişlər</h2>
+            <a class="sec-all" href="#kabinet-ayarlar">
+              Bildiriş ayarları
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path d="m14 6 6 6-6 6"/></svg>
+            </a>
+          </div>
+          <p class="sec-sub">Son 30 günün bildirişləri — müraciət statusu, qəbul tarixləri, qiymət dəyişikliyi və izlədiyiniz müəssisələrin elanları.</p>
+        </div>
+
+        <div>
+          <a class="ann-row" href="mekteb.html?id=zeka">
+            <span class="ann-body">
+              <span class="ann-title">Müsahibə tarixi təyin olundu — 17 avqust, saat 11:00</span>
+              <span class="ann-meta">Zəka Beynəlxalq Məktəbi · Müraciət statusu</span>
+            </span>
+            <span class="ann-date">14 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="bagca.html?id=xosbext-usaqlar">
+            <span class="ann-body">
+              <span class="ann-title">Müraciətiniz qəbul edildi — müqavilə üçün 25 iyulədək vaxtınız var</span>
+              <span class="ann-meta">Xoşbəxt Uşaqlar Bağçası · Müraciət statusu</span>
+            </span>
+            <span class="ann-date">13 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="vakansiya.html?id=riyaziyyat-muellimi">
+            <span class="ann-body">
+              <span class="ann-title">İzlədiyiniz müəssisə yeni vakansiya yerləşdirdi — Riyaziyyat müəllimi</span>
+              <span class="ann-meta">Zəka Beynəlxalq Məktəbi · Vakansiya</span>
+            </span>
+            <span class="ann-date">12 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="mekteb.html?id=atlas">
+            <span class="ann-body">
+              <span class="ann-title">Sənədləriniz qəbul komissiyasına ötürüldü</span>
+              <span class="ann-meta">Atlas Kolleci · Müraciət statusu</span>
+            </span>
+            <span class="ann-date">11 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="mekteb.html?id=horizon">
+            <span class="ann-body">
+              <span class="ann-title">Seçilmişlərdəki məktəbin illik ödənişi yeniləndi — 8 500 AZN</span>
+              <span class="ann-meta">Horizon School · Qiymət dəyişikliyi</span>
+            </span>
+            <span class="ann-date">10 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="elan.html?id=beynelxalq-akademiya-aciq-qapi">
+            <span class="ann-body">
+              <span class="ann-title">Yeni elan: 2026/2027 qəbulu üçün açıq qapı günü elan edildi</span>
+              <span class="ann-meta">Beynəlxalq Akademiya · Elan</span>
+            </span>
+            <span class="ann-date">9 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="bagca.html?id=balaca-ulduzlar">
+            <span class="ann-body">
+              <span class="ann-title">Gözləmə siyahısında sıranız irəlilədi — indi 4-cü yerdəsiniz</span>
+              <span class="ann-meta">Balaca Ulduzlar · Müraciət statusu</span>
+            </span>
+            <span class="ann-date">7 iyul 2026</span>
+          </a>
+
+          <a class="ann-row" href="xeber.html?id=yeni-tedris-ili">
+            <span class="ann-body">
+              <span class="ann-title">Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq?</span>
+              <span class="ann-meta">EduNav redaksiyası · Xəbər</span>
+            </span>
+            <span class="ann-date">5 iyul 2026</span>
+          </a>
+        </div>
+
+        <p class="kabinet-note">Bildirişlər 90 gün saxlanılır. E-poçt və SMS bildirişlərini «Profil ayarları» bölməsindən söndürə bilərsiniz.</p>
+      </div>
+    </section>
+
+    <!-- =============================================== PROFİL AYARLARI == -->
+    <section class="section section--tight section--last kabinet-panel" id="kabinet-ayarlar" aria-labelledby="kabinet-ayarlar-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head-row">
+            <h2 class="sec-title" id="kabinet-ayarlar-title">Profil ayarları</h2>
+          </div>
+          <p class="sec-sub">Şəxsi məlumatlarınızı, bildiriş kanallarını və şifrənizi buradan yeniləyin. Dəyişikliklər dərhal qüvvəyə minir.</p>
+        </div>
+
+        <div class="kabinet-form-wrap">
+          <form class="form-grid" id="form-kabinet" data-validate novalidate>
+
+            <div class="field field-full">
+              <h3 class="kabinet-fieldset-title">Şəxsi məlumatlar</h3>
+              <p class="field-hint">Bu məlumatlar yalnız müraciət göndərdiyiniz müəssisələrə ötürülür.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-name">Ad <span class="req">*</span></label>
+              <input class="input" id="kab-name" name="name" type="text" autocomplete="given-name" value="Rasif" required data-min="2">
+              <p class="field-error" data-error-for="kab-name" hidden>Adınızı yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-surname">Soyad <span class="req">*</span></label>
+              <input class="input" id="kab-surname" name="surname" type="text" autocomplete="family-name" value="Dünyamalı" required data-min="2">
+              <p class="field-error" data-error-for="kab-surname" hidden>Soyadınızı yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-email">E-poçt <span class="req">*</span></label>
+              <input class="input" id="kab-email" name="email" type="email" autocomplete="email" value="rasif.dunyamali@nümunə.az" required>
+              <p class="field-hint">Ünvanı dəyişsəniz, yeni ünvana təsdiq linki göndəriləcək.</p>
+              <p class="field-error" data-error-for="kab-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-phone">Telefon <span class="req">*</span></label>
+              <input class="input" id="kab-phone" name="phone" type="tel" autocomplete="tel" value="+994 50 555 21 08" required>
+              <p class="field-error" data-error-for="kab-phone" hidden>Telefon nömrəsini yazın.</p>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="kab-rayon-label">Yaşadığınız rayon</span>
+              <div class="dd" data-name="rayon" data-labelledby="kab-rayon-label" data-placeholder="Rayon seçin">
+                <button class="dd-trigger" type="button">
+                  <span class="dd-value">Yasamal</span>
+                  <svg class="dd-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="dd-panel">
+                  <input class="dd-search" type="text" placeholder="Rayon axtar" aria-label="Rayon axtar">
+                  <div class="dd-list">
+                    <button class="dd-option" type="button" data-value="Nəsimi"><span class="dd-label">Nəsimi</span></button>
+                    <button class="dd-option" type="button" data-value="Yasamal" aria-selected="true"><span class="dd-label">Yasamal</span></button>
+                    <button class="dd-option" type="button" data-value="Binəqədi"><span class="dd-label">Binəqədi</span></button>
+                    <button class="dd-option" type="button" data-value="Nərimanov"><span class="dd-label">Nərimanov</span></button>
+                    <button class="dd-option" type="button" data-value="Xətai"><span class="dd-label">Xətai</span></button>
+                    <button class="dd-option" type="button" data-value="Sabunçu"><span class="dd-label">Sabunçu</span></button>
+                    <button class="dd-option" type="button" data-value="Sumqayıt"><span class="dd-label">Sumqayıt</span></button>
+                    <button class="dd-option" type="button" data-value="Gəncə"><span class="dd-label">Gəncə</span></button>
+                  </div>
+                </div>
+              </div>
+              <p class="field-hint">Kataloqda əvvəlcə bu rayonun müəssisələrini göstəririk.</p>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="kab-yas-label">Övladın yaş qrupu</span>
+              <div class="dd dd-multi" data-name="yas" data-labelledby="kab-yas-label" data-placeholder="Yaş qrupu seçin">
+                <button class="dd-trigger" type="button">
+                  <span class="dd-value is-placeholder">Yaş qrupu seçin</span>
+                  <svg class="dd-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="dd-panel">
+                  <div class="dd-list">
+                    <button class="dd-option" type="button" data-value="1-3 yaş"><span class="dd-label">1–3 yaş</span></button>
+                    <button class="dd-option" type="button" data-value="3-5 yaş"><span class="dd-label">3–5 yaş</span></button>
+                    <button class="dd-option" type="button" data-value="5-6 yaş"><span class="dd-label">5–6 yaş</span></button>
+                    <button class="dd-option" type="button" data-value="1-4 sinif"><span class="dd-label">1–4 sinif</span></button>
+                    <button class="dd-option" type="button" data-value="5-9 sinif"><span class="dd-label">5–9 sinif</span></button>
+                    <button class="dd-option" type="button" data-value="10-11 sinif"><span class="dd-label">10–11 sinif</span></button>
+                  </div>
+                  <div class="dd-foot">
+                    <button class="dd-clear" type="button" hidden>Təmizlə</button>
+                    <span class="meta-line">Çoxseçimli</span>
+                  </div>
+                </div>
+              </div>
+              <p class="field-hint">İki övlad profiliniz var — hər ikisi üçün uyğun qrupları seçin.</p>
+            </div>
+
+            <div class="field field-full">
+              <h3 class="kabinet-fieldset-title">Bildiriş ayarları</h3>
+              <p class="field-hint">Hansı hadisələr barədə xəbərdar olmaq istədiyinizi seçin.</p>
+            </div>
+
+            <div class="field field-full">
+              <label class="switch">
+                <input type="checkbox" name="notify-status" checked>
+                <span class="switch-track" aria-hidden="true"></span>
+                <span class="switch-label">Müraciətlərimin statusu dəyişəndə e-poçt göndərilsin</span>
+              </label>
+            </div>
+
+            <div class="field field-full">
+              <label class="switch">
+                <input type="checkbox" name="notify-price" checked>
+                <span class="switch-track" aria-hidden="true"></span>
+                <span class="switch-label">Seçilmiş müəssisələrin qiyməti və qəbul statusu dəyişəndə bildiriş alım</span>
+              </label>
+            </div>
+
+            <div class="field field-full">
+              <label class="switch">
+                <input type="checkbox" name="notify-sms">
+                <span class="switch-track" aria-hidden="true"></span>
+                <span class="switch-label">Müsahibə və görüş xatırlatmaları SMS ilə də gəlsin</span>
+              </label>
+            </div>
+
+            <div class="field field-full">
+              <label class="switch">
+                <input type="checkbox" name="notify-news" checked>
+                <span class="switch-track" aria-hidden="true"></span>
+                <span class="switch-label">Həftəlik EduNav bülleteni — xəbərlər, bloglar və yeni müəssisələr</span>
+              </label>
+            </div>
+
+            <div class="field field-full">
+              <h3 class="kabinet-fieldset-title">Şifrənin dəyişdirilməsi</h3>
+              <p class="field-hint">Şifrəni dəyişmək istəmirsinizsə, bu üç sahəni boş buraxın.</p>
+            </div>
+
+            <div class="field field-full">
+              <label class="field-label" for="kab-pass-old">Cari şifrə</label>
+              <input class="input" id="kab-pass-old" name="password-old" type="password" autocomplete="current-password" placeholder="Cari şifrənizi yazın">
+              <p class="field-error" data-error-for="kab-pass-old" hidden>Cari şifrəni yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-pass-new">Yeni şifrə</label>
+              <input class="input" id="kab-pass-new" name="password-new" type="password" autocomplete="new-password" placeholder="Ən azı 8 simvol" data-min="8">
+              <p class="field-hint">Ən azı 8 simvol, bir böyük hərf və bir rəqəm.</p>
+              <p class="field-error" data-error-for="kab-pass-new" hidden>Ən azı 8 simvol daxil edin.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="kab-pass-new2">Yeni şifrə təkrar</label>
+              <input class="input" id="kab-pass-new2" name="password-new2" type="password" autocomplete="new-password" placeholder="Yeni şifrəni yenidən yazın" data-match="#kab-pass-new">
+              <p class="field-error" data-error-for="kab-pass-new2" hidden>Şifrələr eyni deyil.</p>
+            </div>
+
+            <div class="field field-full">
+              <label class="check">
+                <input type="checkbox" id="kab-terms" name="terms" required checked>
+                <span>Məlumatlarımın <a href="gizlilik.html">gizlilik siyasətinə</a> uyğun saxlanılmasına razıyam.</span>
+              </label>
+              <p class="field-error" data-error-for="kab-terms" hidden>Davam etmək üçün təsdiqləyin.</p>
+            </div>
+
+            <div class="field field-full field-row">
+              <button class="btn-brand" type="submit">Dəyişiklikləri yadda saxla</button>
+              <button class="btn-ghost" type="reset">Ləğv et</button>
+            </div>
+          </form>
+
+          <div class="modal-success" data-form-success hidden>
+            <span class="modal-success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4"/></svg>
+            </span>
+            <h3 class="modal-success-title">Ayarlar yadda saxlanıldı</h3>
+            <p class="modal-success-text">Profil məlumatlarınız və bildiriş seçimləriniz yeniləndi. E-poçt ünvanını dəyişmisinizsə, təsdiq linkini yoxlayın.</p>
+            <a class="btn-brand" href="kabinet.html">Kabinetə qayıt</a>
+          </div>
+        </div>
+
+        <p class="kabinet-note">Hesabınızı bağlamaq istəyirsinizsə <a href="elaqe.html">bizə yazın</a> — müraciət tarixçəniz 30 gün ərzində tam silinir. Platformadan istifadə şərtləri üçün <a href="qaydalar.html">istifadə qaydalarına</a> baxın.</p>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<div class="compare-bar" data-compare-bar aria-hidden="true">
+  <div class="container compare-bar-inner">
+    <div class="cb-left">
+      <div class="cb-avatars" data-cb-avatars aria-hidden="true"></div>
+      <p class="cb-text">
+        <span class="cb-count" data-cb-count aria-live="polite">0</span>
+        müəssisə müqayisə siyahısındadır
+        <span class="cb-hint">Maksimum 4 müəssisə</span>
+      </p>
+    </div>
+    <div class="cb-actions">
+      <button class="btn-ghost btn-sm" type="button" data-cb-clear>Siyahını təmizlə</button>
+      <a class="btn-brand btn-sm" href="muqayise.html">Müqayisə et</a>
+      <button class="cb-close" type="button" data-cb-hide aria-label="Müqayisə panelini gizlət">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="contact" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-contact-title">Əlaqə</h2>
+        <p class="modal-sub">Formu doldurun — 1 iş günü ərzində sizinlə əlaqə saxlayırıq.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="form-grid" id="form-contact" data-form="contact" novalidate>
+        <div class="field">
+          <label class="field-label" for="contact-name">Ad, Soyad</label>
+          <input class="input" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Rasif Dünyamalı" required>
+          <p class="field-error" data-error-for="contact-name" hidden>Adınızı yazın.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="contact-phone">Telefon</label>
+          <input class="input" id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+994 50 000 00 00" required>
+          <p class="field-error" data-error-for="contact-phone" hidden>Telefon nömrəsini yazın.</p>
+        </div>
+        <div class="field field-full">
+          <label class="field-label" for="contact-email">E-poçt</label>
+          <input class="input" id="contact-email" name="email" type="email" autocomplete="email" placeholder="ad@nümunə.az">
+          <p class="field-hint">Cavabı e-poçtla almaq istəyirsinizsə doldurun.</p>
+          <p class="field-error" data-error-for="contact-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+        </div>
+        <div class="field field-full">
+          <label class="field-label" for="contact-message">Mesajınız</label>
+          <textarea class="textarea" id="contact-message" name="message" rows="4" placeholder="Sualınızı yazın — məktəb, bağça, vakansiya və ya əməkdaşlıq barədə." required></textarea>
+          <p class="field-error" data-error-for="contact-message" hidden>Mesaj mətnini yazın.</p>
+        </div>
+      </form>
+      <div class="modal-success" data-modal-success hidden>
+        <span class="modal-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="modal-success-title">Müraciətiniz qəbul olundu</h3>
+        <p class="modal-success-text">Komandamız 1 iş günü ərzində sizinlə əlaqə saxlayacaq.</p>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-modal-close>İmtina</button>
+      <button class="btn-brand" type="submit" form="form-contact" data-modal-submit="contact">Göndər</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="survey" role="dialog" aria-modal="true" aria-labelledby="modal-survey-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-survey-title">Sorğu</h2>
+        <p class="modal-sub">4 sürətli sual — sizə uyğun müəssisələri seçək.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-progress" role="progressbar" aria-label="Sorğunun gedişi" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1">
+        <span class="modal-progress-bar" data-survey-progress></span>
+      </div>
+      <div class="modal-step is-on" data-survey-step="1">
+        <h3 class="modal-step-title">Kimin üçün axtarırsınız?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Məktəb">Məktəb</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Bağça">Bağça</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Bağça + məktəb">Bağça + məktəb</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Hələ qərar verməmişəm">Hələ qərar verməmişəm</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="2">
+        <h3 class="modal-step-title">Hansı şəhər və ya rayonda?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Nəsimi">Bakı, Nəsimi</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Yasamal">Bakı, Yasamal</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Binəqədi">Bakı, Binəqədi</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Digər şəhər">Digər şəhər</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="3">
+        <h3 class="modal-step-title">Tədris dili hansı olsun?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="dil" data-value="Azərbaycan">Azərbaycan</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="İngilis">İngilis</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="Rus">Rus</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="İki dilli">İki dilli</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="4">
+        <h3 class="modal-step-title">Büdcəniz nə qədərdir?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Aylıq 400 AZN-ə qədər">Aylıq 400 AZN-ə qədər</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Aylıq 400–800 AZN">Aylıq 400–800 AZN</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="İllik 10 000 AZN-ə qədər">İllik 10 000 AZN-ə qədər</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Fərq etməz">Fərq etməz</button>
+        </div>
+      </div>
+      <div class="modal-success" data-modal-success hidden>
+        <span class="modal-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="modal-success-title">Seçimləriniz yadda saxlanıldı</h3>
+        <p class="modal-success-text">Cavablarınıza uyğun müəssisələri kataloqda ilk sıralarda göstərəcəyik.</p>
+        <a class="btn-brand" href="mekteblar.html">Nəticələrə bax</a>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-survey-prev>Geri</button>
+      <button class="btn-brand" type="button" data-survey-next>Növbəti</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="guest" role="dialog" aria-modal="true" aria-labelledby="modal-guest-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-guest-title">Hesabınıza daxil olun</h2>
+        <p class="modal-sub">Seçdiyiniz müəssisələri, müqayisə siyahınızı və müraciətlərinizi yadda saxlamaq üçün hesab lazımdır.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <ul class="modal-list">
+        <li class="modal-list-item">Bəyəndiyiniz məktəb və bağçaları favoritlərə əlavə edin.</li>
+        <li class="modal-list-item">4 müəssisəyə qədər müqayisə siyahısı qurun.</li>
+        <li class="modal-list-item">Müraciətlərinizin statusunu kabinetdən izləyin.</li>
+        <li class="modal-list-item">Qəbul tarixləri və yeni vakansiyalar barədə bildiriş alın.</li>
+      </ul>
+      <p class="modal-note">Qeydiyyat valideynlər üçün tamamilə pulsuzdur.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-modal-close>Qonaq kimi davam et</button>
+      <a class="btn-ghost" href="qeydiyyat.html">Qeydiyyatdan keç</a>
+      <a class="btn-brand" href="daxil-ol.html">Daxil ol</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html" aria-label="EduNav — ana səhifə">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo-text">EduNav</span>
+      </a>
+      <p class="footer-about">Təhsil müəssisələri üçün etibarlı platforma. Məktəb və bağçaları kəşf edin, müqayisə edin, birbaşa müraciət göndərin.</p>
+      <ul class="footer-social" aria-label="Sosial şəbəkələr">
+        <li><a class="footer-social-link" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav Facebook səhifəsi">FB</a></li>
+        <li><a class="footer-social-link" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav Instagram səhifəsi">IG</a></li>
+        <li><a class="footer-social-link" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav LinkedIn səhifəsi">IN</a></li>
+        <li><a class="footer-social-link" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav YouTube kanalı">YT</a></li>
+      </ul>
+    </div>
+
+    <nav class="footer-col" aria-labelledby="footer-col-platforma">
+      <h2 class="footer-col-title" id="footer-col-platforma">Platforma</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="mekteblar.html">Məktəblər</a></li>
+        <li><a class="footer-link" href="bagcalar.html">Bağçalar</a></li>
+        <li><a class="footer-link" href="vakansiyalar.html">Vakansiyalar</a></li>
+        <li><a class="footer-link" href="muqayise.html">Müqayisə</a></li>
+        <li><a class="footer-link" href="sebekeler.html">Şəbəkələr</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-sirket">
+      <h2 class="footer-col-title" id="footer-col-sirket">Şirkət</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="haqqimizda.html">Haqqımızda</a></li>
+        <li><a class="footer-link" href="xeberler.html">Xəbərlər</a></li>
+        <li><a class="footer-link" href="elanlar.html">Elanlar</a></li>
+        <li><a class="footer-link" href="bloglar.html">Bloglar</a></li>
+        <li><a class="footer-link" href="elaqe.html">Əlaqə</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-komek">
+      <h2 class="footer-col-title" id="footer-col-komek">Kömək</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="suallar.html">Tez-tez verilən suallar</a></li>
+        <li><a class="footer-link" href="kabinet.html">Kabinet</a></li>
+        <li><a class="footer-link" href="qaydalar.html">İstifadə qaydaları</a></li>
+        <li><a class="footer-link" href="gizlilik.html">Gizlilik siyasəti</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-muessiseler">
+      <h2 class="footer-col-title" id="footer-col-muessiseler">Müəssisələr</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="muessise-elave-et.html">Müəssisə əlavə et</a></li>
+        <li><a class="footer-link" href="qeydiyyat.html">Qeydiyyat</a></li>
+        <li><a class="footer-link" href="daxil-ol.html">Daxil ol</a></li>
+        <li><a class="footer-link" href="elaqe.html">Reklam və əməkdaşlıq</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-news">
+      <h2 class="footer-col-title">Yeniliklərdən xəbərdar olun</h2>
+      <p class="footer-news-text">Ən son yenilikləri e-poçtla alın.</p>
+      <form class="footer-news-form" data-form="newsletter" novalidate>
+        <div class="field">
+          <label class="field-label sr-only" for="footer-news-email">E-poçt ünvanınız</label>
+          <div class="footer-news-row">
+            <input class="input footer-news-input" id="footer-news-email" name="email" type="email" autocomplete="email" placeholder="E-poçt ünvanınız" required>
+            <button class="footer-news-btn" type="submit" aria-label="Abunə ol">
+              <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="field-error" data-error-for="footer-news-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+          <p class="field-hint">Abunə olmaqla <a class="footer-link" href="gizlilik.html">gizlilik siyasəti</a> ilə razılaşırsınız.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="footer-copy">© <span data-year>2026</span> EduNav. Bütün hüquqlar qorunur.</p>
+    <ul class="footer-legal">
+      <li><a class="footer-link" href="qaydalar.html">Qaydalar</a></li>
+      <li><a class="footer-link" href="gizlilik.html">Gizlilik</a></li>
+      <li><a class="footer-link" href="elaqe.html">Əlaqə</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/js/app.js?v=2"></script>
+</body>
+</html>

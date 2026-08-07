@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Təsdiq gözləyənlər | EduNav İdarə Paneli</title>
+<meta name="description" content="EduNav moderasiya növbəsi — müəssisə profilləri, elanlar və valideyn rəyləri üzrə 17 dəyişiklik təsdiq, rədd və ya ətraflı baxış gözləyir.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1420">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../assets/css/admin.css?v=2">
+</head>
+<body class="adm">
+<a class="skip-link" href="#adm-content">Əsas məzmuna keç</a>
+
+<div class="adm-side-backdrop" data-adm-side-close aria-hidden="true"></div>
+<aside class="adm-side" id="adm-side" aria-label="İdarə paneli naviqasiyası">
+  <div class="adm-side-head">
+    <a class="logo" href="index.html" aria-label="EduNav İdarə Paneli — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+    <button class="adm-side-close" type="button" data-adm-side-close aria-label="Menyunu bağla">
+      <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="adm-nav" aria-label="Bölmələr">
+    <p class="adm-nav-group">Ümumi baxış</p>
+    <a class="adm-nav-link" href="index.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 8.4 10 3l7 5.4V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 17v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">İdarə paneli</span>
+    </a>
+    <a class="adm-nav-link" href="statistika.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 17h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 17V9M10 17V4M14 17v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Statistika</span>
+    </a>
+
+    <p class="adm-nav-group">Müəssisələr</p>
+    <a class="adm-nav-link" href="muessiseler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 17V5.5L10 3l6.5 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 17h13M8 17v-4h4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisələr</span>
+    </a>
+    <a class="adm-nav-link" href="muessise-detal.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3.5" y="3" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6.8 7.5h6.4M6.8 10.5h6.4M6.8 13.5h3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisə detalı</span>
+    </a>
+    <a class="adm-nav-link is-active" href="tesdiq.html" aria-current="page">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m6.8 10.3 2.3 2.3 4.1-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Təsdiq gözləyənlər</span>
+      <span class="badge badge--warn adm-nav-badge">7</span>
+    </a>
+
+    <p class="adm-nav-group">Məzmun</p>
+    <a class="adm-nav-link" href="xeberler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8h5M6 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Xəbərlər</span>
+    </a>
+    <a class="adm-nav-link" href="elanlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 8.2v3.6h3l5 3.2V5L7 8.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.8 7.6a4 4 0 0 1 0 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Elanlar</span>
+    </a>
+    <a class="adm-nav-link" href="bloglar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 4.5h8.5L16 8v7.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 4.5V8h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Bloglar</span>
+    </a>
+    <a class="adm-nav-link" href="vakansiyalar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 6.5V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Vakansiyalar</span>
+    </a>
+
+    <p class="adm-nav-group">İcma</p>
+    <a class="adm-nav-link" href="muracietler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M17 12.5a1.8 1.8 0 0 1-1.8 1.8H7.4L4 17.5V5.3A1.8 1.8 0 0 1 5.8 3.5h9.4A1.8 1.8 0 0 1 17 5.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Müraciətlər</span>
+      <span class="badge badge--info adm-nav-badge">12</span>
+    </a>
+    <a class="adm-nav-link" href="reyler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="m10 3.6 1.98 4.02 4.44.64-3.21 3.13.76 4.42L10 13.72l-3.97 2.09.76-4.42L3.58 8.26l4.44-.64z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Rəylər</span>
+    </a>
+    <a class="adm-nav-link" href="istifadeciler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="7.4" r="2.9" stroke="currentColor" stroke-width="1.6"/><path d="M2.8 16.4c0-2.6 2.33-4.4 5.2-4.4s5.2 1.8 5.2 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.2 5.2a2.5 2.5 0 0 1 0 4.6M15.4 12.6c1.4.66 2.3 1.9 2.3 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">İstifadəçilər</span>
+    </a>
+
+    <p class="adm-nav-group">Sistem</p>
+    <a class="adm-nav-link" href="ayarlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8v2M10 15.2v2M17.2 10h-2M4.8 10h-2M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4M15.1 15.1l-1.4-1.4M6.3 6.3 4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Ayarlar</span>
+    </a>
+    <a class="adm-nav-link" href="daxil-ol.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M12.4 14.2v1.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 15.6V4.4A1.4 1.4 0 0 1 5.4 3H11a1.4 1.4 0 0 1 1.4 1.4v1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.6 10h8.2M14.2 7.4 16.8 10l-2.6 2.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Çıxış</span>
+    </a>
+  </nav>
+
+  <div class="adm-user">
+    <span class="adm-avatar" aria-hidden="true">RD</span>
+    <span class="adm-user-text">
+      <span class="adm-user-name">Rasif Dünyamalı</span>
+      <span class="adm-user-role">Baş administrator</span>
+    </span>
+  </div>
+</aside>
+
+<div class="adm-main">
+  <header class="adm-top">
+    <button class="adm-burger" type="button" data-adm-side-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="adm-side">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+    </button>
+
+    <h1 class="adm-top-title">Təsdiq gözləyənlər</h1>
+
+    <form class="adm-top-search" role="search" data-form="adm-search" novalidate>
+      <label class="field-label sr-only" for="adm-search">Axtarış</label>
+      <span class="adm-top-search-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <input class="input adm-top-input" id="adm-search" name="q" type="search" placeholder="Müəssisə, istifadəçi və ya elan axtar" autocomplete="off">
+    </form>
+
+    <div class="adm-top-actions">
+      <button class="adm-bell" type="button" data-adm-notifications aria-label="Bildirişlər — 3 yeni" aria-expanded="false">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M15.2 13.4V9a5.2 5.2 0 1 0-10.4 0v4.4L3.4 15.2h13.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.2 15.2a1.9 1.9 0 0 0 3.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="adm-bell-dot" aria-hidden="true"></span>
+      </button>
+      <span class="adm-avatar" aria-hidden="true">RD</span>
+    </div>
+  </header>
+
+  <main class="adm-content" id="adm-content">
+
+    <!-- Səhifə başlığı -->
+    <div class="adm-toolbar">
+      <h2 class="adm-toolbar-title">Moderasiya növbəsi</h2>
+      <span class="adm-toolbar-count">17 element gözləyir</span>
+      <span class="adm-tag adm-tag--warn">Ən köhnəsi 3 gündür növbədə</span>
+      <div class="adm-toolbar-actions">
+        <a class="btn-ghost btn-sm" href="muessiseler.html">Bütün müəssisələr</a>
+        <a class="btn-brand btn-sm" href="statistika.html">Moderasiya hesabatı</a>
+      </div>
+    </div>
+
+    <!-- Növbə göstəriciləri -->
+    <div class="adm-grid">
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <p class="adm-stat-label">Növbədə gözləyən</p>
+        </div>
+        <p class="adm-stat-value">17</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta badge--warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +5
+          </span>
+          <span class="adm-stat-note">keçən həftəyə nisbətən</span>
+        </div>
+        <div class="adm-spark--info" data-adm-spark data-values="9,11,10,14,12,15,17" data-label="Növbədə gözləyən element, son 7 həftə: 9 → 17"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--info" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V8l8-4 8 4v12"/><path d="M4 20h16M10 20v-5h4v5"/></svg>
+          </span>
+          <p class="adm-stat-label">Müəssisə dəyişikliyi</p>
+        </div>
+        <p class="adm-stat-value">7</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta badge--warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +2
+          </span>
+          <span class="adm-stat-note">4 məktəb, 3 bağça</span>
+        </div>
+        <div class="adm-spark--info" data-adm-spark data-values="4,5,4,6,5,5,7" data-label="Müəssisə dəyişikliyi, son 7 həftə: 4 → 7"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--ok" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 20h18"/><path d="M7 20v-7"/><path d="M12 20V6"/><path d="M17 20v-4"/></svg>
+          </span>
+          <p class="adm-stat-label">Orta gözləmə müddəti</p>
+        </div>
+        <p class="adm-stat-value">1.8 gün</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+            −0.4 gün
+          </span>
+          <span class="adm-stat-note">hədəf: 2 iş günü</span>
+        </div>
+        <div class="adm-spark--ok" data-adm-spark data-values="3.1,2.9,2.6,2.4,2.2,2.2,1.8" data-label="Orta gözləmə müddəti, son 7 həftə: 3.1 → 1.8 gün"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--kg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <p class="adm-stat-label">Bu həftə baxılıb</p>
+        </div>
+        <p class="adm-stat-value">42</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +9
+          </span>
+          <span class="adm-stat-note">34 təsdiq, 8 rədd</span>
+        </div>
+        <div class="adm-spark--ok" data-adm-spark data-values="26,28,31,30,35,38,42" data-label="Bu həftə baxılan element, son 7 həftə: 26 → 42"></div>
+      </article>
+    </div>
+
+    <!-- Növbə bölmələri -->
+    <div class="adm-tabs">
+      <a class="adm-tab is-active" href="#novbe-muessiseler" aria-current="page">Müəssisələr (7)</a>
+      <a class="adm-tab" href="#novbe-elanlar">Elanlar (4)</a>
+      <a class="adm-tab" href="#novbe-reyler">Rəylər (6)</a>
+    </div>
+
+    <!-- Filtrlər -->
+    <div class="adm-filters">
+      <div class="adm-filters-row" data-adm-filter-group="tip">
+        <button class="chip is-on" type="button" data-adm-value="">Hamısı</button>
+        <button class="chip" type="button" data-adm-value="muessise">Müəssisə</button>
+        <button class="chip" type="button" data-adm-value="elan">Elan</button>
+        <button class="chip" type="button" data-adm-value="rey">Rəy</button>
+      </div>
+
+      <span class="adm-filters-sep" aria-hidden="true"></span>
+
+      <div class="dd" data-dd data-name="sebeb" data-adm-filter="sebeb" data-placeholder="Rədd səbəbi" data-label="Rədd səbəbi">
+        <button class="dd-trigger" type="button">
+          <span class="dd-value is-placeholder" data-placeholder="Rədd səbəbi">Rədd səbəbi</span>
+          <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dd-panel">
+          <div class="dd-list">
+            <button class="dd-option" type="button" data-value="Sənədlər natamamdır"><span class="dd-label">Sənədlər natamamdır</span></button>
+            <button class="dd-option" type="button" data-value="Lisenziya müddəti bitib"><span class="dd-label">Lisenziya müddəti bitib</span></button>
+            <button class="dd-option" type="button" data-value="Qiymət məlumatı uyğun deyil"><span class="dd-label">Qiymət məlumatı uyğun deyil</span></button>
+            <button class="dd-option" type="button" data-value="Mətn reklam xarakterlidir"><span class="dd-label">Mətn reklam xarakterlidir</span></button>
+            <button class="dd-option" type="button" data-value="Əlaqə məlumatı təsdiqlənmir"><span class="dd-label">Əlaqə məlumatı təsdiqlənmir</span></button>
+            <button class="dd-option" type="button" data-value="Rəy qaydalara ziddir"><span class="dd-label">Rəy qaydalara ziddir</span></button>
+            <button class="dd-option" type="button" data-value="Təkrar müraciət"><span class="dd-label">Təkrar müraciət</span></button>
+            <button class="dd-option" type="button" data-value="Digər"><span class="dd-label">Digər</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dd" data-dd data-name="novbe" data-adm-filter="novbe" data-placeholder="Gözləmə müddəti" data-label="Gözləmə müddəti">
+        <button class="dd-trigger" type="button">
+          <span class="dd-value is-placeholder" data-placeholder="Gözləmə müddəti">Gözləmə müddəti</span>
+          <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dd-panel">
+          <div class="dd-list">
+            <button class="dd-option" type="button" data-value="Bu gün"><span class="dd-label">Bu gün</span></button>
+            <button class="dd-option" type="button" data-value="1–2 gün"><span class="dd-label">1–2 gün</span></button>
+            <button class="dd-option" type="button" data-value="3 gündən çox"><span class="dd-label">3 gündən çox</span></button>
+          </div>
+        </div>
+      </div>
+
+      <label class="adm-filter-search">
+        <span class="sr-only">Növbədə axtar</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+        <input class="adm-search" type="search" placeholder="Müəssisə, göndərən və ya elan başlığı" autocomplete="off">
+      </label>
+
+      <span class="adm-tag adm-tag--plain"><b data-adm-result-count>17</b> element</span>
+
+      <button class="adm-filters-reset" type="button" data-adm-filter-reset>Filtri sıfırla</button>
+    </div>
+
+    <!-- Toplu əməliyyat -->
+    <div class="adm-toolbar">
+      <h2 class="adm-toolbar-title">Toplu əməliyyat</h2>
+      <span class="adm-toolbar-count" data-adm-selected>0 seçildi</span>
+      <span class="adm-tag adm-tag--info">Seçilmiş elementlərə eyni qərar tətbiq olunur</span>
+      <div class="adm-toolbar-actions">
+        <button class="btn-ghost btn-sm" type="button" data-adm-bulk="approve">Toplu təsdiq</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-bulk="reject">Toplu rədd</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-bulk="archive">Toplu arxiv</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-clear-selection>Seçimi ləğv et</button>
+      </div>
+    </div>
+
+    <!-- ============================ MÜƏSSİSƏLƏR (7) ============================ -->
+    <section class="adm-panel" id="novbe-muessiseler" aria-labelledby="novbe-muessiseler-h">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title" id="novbe-muessiseler-h">Müəssisə profilləri</h2>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">7 gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Müəssisələrin öz panelindən göndərdiyi profil dəyişiklikləri. Təsdiqlənənə qədər kataloqda köhnə dəyər göstərilir.</p>
+      </div>
+      <div class="adm-panel-body adm-panel-body--tight">
+        <div class="chip-row">
+          <span class="adm-tag adm-tag--brand">4 məktəb</span>
+          <span class="adm-tag adm-tag--kg">3 bağça</span>
+          <span class="adm-tag adm-tag--danger">1-i 3 gündən çoxdur növbədə</span>
+          <span class="adm-tag adm-tag--plain">Ən son: 12 iyul 2026, 14:20</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Zəka Beynəlxalq Məktəbi</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Leyla Məmmədova · direktor müavini · 11 iyul 2026, 16:32 · 1 gün 4 saat növbədə</p>
+        <span class="adm-tag adm-tag--brand">Məktəb</span>
+        <span class="adm-tag adm-tag--plain">Nəsimi</span>
+        <span class="adm-tag adm-tag--info">3 sahə dəyişib</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">İllik ödəniş</dt>
+          <dd class="adm-kv-v">12 000 AZN → <b>12 800 AZN</b></dd>
+          <dt class="adm-kv-k">Boş yer (1-ci sinif)</dt>
+          <dd class="adm-kv-v">18 → <b>24</b></dd>
+          <dt class="adm-kv-k">Sənəd</dt>
+          <dd class="adm-kv-v">Yanğın təhlükəsizliyi aktı → <b>yeni fayl əlavə edildi</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Atlas Kolleci</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Elvin Quliyev · inzibatçı · 12 iyul 2026, 11:05 · 6 saat növbədə</p>
+        <span class="adm-tag adm-tag--brand">Məktəb</span>
+        <span class="adm-tag adm-tag--plain">Yasamal</span>
+        <span class="adm-tag adm-tag--info">3 sahə dəyişib</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Kurikulum</dt>
+          <dd class="adm-kv-v">Milli → <b>Cambridge</b></dd>
+          <dt class="adm-kv-k">Tədris dili</dt>
+          <dd class="adm-kv-v">Azərbaycan, İngilis → <b>Azərbaycan, İngilis, Rus</b></dd>
+          <dt class="adm-kv-k">Kataloq təsviri</dt>
+          <dd class="adm-kv-v">Cambridge proqramı, iki xarici dil və üzgüçülük. → <b>Cambridge proqramı, üç xarici dil, üzgüçülük və şahmat məktəbi.</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Prestige School</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Aysel Hüseynova · direktor · 11 iyul 2026, 16:48 · 1 gün 3 saat növbədə</p>
+        <span class="adm-tag adm-tag--brand">Məktəb</span>
+        <span class="adm-tag adm-tag--plain">Sabunçu</span>
+        <span class="adm-tag adm-tag--warn">Paket dəyişikliyi</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Paket</dt>
+          <dd class="adm-kv-v">Baza → <b>Standart</b></dd>
+          <dt class="adm-kv-k">Telefon</dt>
+          <dd class="adm-kv-v">+994 12 310 55 20 → <b>+994 12 310 55 24</b></dd>
+          <dt class="adm-kv-k">İş saatları</dt>
+          <dd class="adm-kv-v">09:00–17:00 → <b>08:30–18:00</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Xoşbəxt Uşaqlar</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Günel Rəhimova · müdir · 11 iyul 2026, 09:32 · 1 gün 10 saat növbədə</p>
+        <span class="adm-tag adm-tag--kg">Bağça</span>
+        <span class="adm-tag adm-tag--plain">Yasamal</span>
+        <span class="adm-tag adm-tag--info">3 sahə dəyişib</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Aylıq ödəniş</dt>
+          <dd class="adm-kv-v">480 AZN → <b>520 AZN</b></dd>
+          <dt class="adm-kv-k">Yaş qrupu</dt>
+          <dd class="adm-kv-v">2–6 yaş → <b>1–6 yaş</b></dd>
+          <dt class="adm-kv-k">Xidmətlər</dt>
+          <dd class="adm-kv-v">Tam gün, Yemək → <b>Tam gün, Yemək, Loqoped</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Bal Arı Bağçası</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Səbinə Əliyeva · müdir · 10 iyul 2026, 15:10 · 2 gün 4 saat növbədə</p>
+        <span class="adm-tag adm-tag--kg">Bağça</span>
+        <span class="adm-tag adm-tag--plain">Sumqayıt</span>
+        <span class="adm-tag adm-tag--danger">Əvvəl rədd edilib</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Profil statusu</dt>
+          <dd class="adm-kv-v">Rədd edildi → <b>Yenidən baxış tələb olunur</b></dd>
+          <dt class="adm-kv-k">Sənəd</dt>
+          <dd class="adm-kv-v">Sanitar-epidemioloji rəy (köhnə skan) → <b>yenidən yükləndi</b></dd>
+          <dt class="adm-kv-k">Aylıq ödəniş</dt>
+          <dd class="adm-kv-v">320 AZN → <b>350 AZN</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">STEM Liseyi</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Tural Məmmədli · metodist · 10 iyul 2026, 12:26 · 2 gün 7 saat növbədə</p>
+        <span class="adm-tag adm-tag--brand">Məktəb</span>
+        <span class="adm-tag adm-tag--plain">Sumqayıt</span>
+        <span class="adm-tag adm-tag--info">3 sahə dəyişib</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Xidmətlər</dt>
+          <dd class="adm-kv-v">Yemək → <b>Yemək, Nəqliyyat, Robotexnika</b></dd>
+          <dt class="adm-kv-k">Şagird sayı</dt>
+          <dd class="adm-kv-v">240 → <b>312</b></dd>
+          <dt class="adm-kv-k">İllik ödəniş</dt>
+          <dd class="adm-kv-v">5 500 AZN → <b>5 900 AZN</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Nur Uşaq Mərkəzi</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Göndərən: Nərmin Əliyeva · müdir müavini · 9 iyul 2026, 17:54 · 3 gün 2 saat növbədə</p>
+        <span class="adm-tag adm-tag--kg">Bağça</span>
+        <span class="adm-tag adm-tag--plain">Xətai</span>
+        <span class="adm-tag adm-tag--danger">Ad dəyişikliyi — əlavə yoxlama</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Ad</dt>
+          <dd class="adm-kv-v">Nur Uşaq Mərkəzi → <b>Nur Erkən İnkişaf Mərkəzi</b></dd>
+          <dt class="adm-kv-k">Aylıq ödəniş</dt>
+          <dd class="adm-kv-v">380 AZN → <b>420 AZN</b></dd>
+          <dt class="adm-kv-k">Kataloq təsviri</dt>
+          <dd class="adm-kv-v">Erkən inkişaf proqramı, ingilis dili, loqoped dəstəyi. → <b>Erkən inkişaf proqramı, ingilis dili, loqoped və sensor otağı.</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="muessise-detal.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <!-- ============================ ELANLAR (4) ============================ -->
+    <section class="adm-panel" id="novbe-elanlar" aria-labelledby="novbe-elanlar-h">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title" id="novbe-elanlar-h">Elanlar</h2>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">4 gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Müəssisələrin dərc etmək istədiyi yeni və redaktə olunmuş elanlar. Təsdiqdən sonra elan 30 gün kataloqda qalır.</p>
+      </div>
+      <div class="adm-panel-body adm-panel-body--tight">
+        <div class="chip-row">
+          <span class="adm-tag adm-tag--info">2 yeni elan</span>
+          <span class="adm-tag adm-tag--warn">2 redaktə</span>
+          <span class="adm-tag adm-tag--plain">Ən son: 11 iyul 2026, 12:14</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Məktəbimizə ibtidai sinif müəllimi tələb olunur</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Zəka Beynəlxalq Məktəbi · Bakı, Yasamal r. · göndərilib 11 iyul 2026, 12:14</p>
+        <span class="adm-tag adm-tag--info">Yeni elan</span>
+        <span class="adm-tag adm-tag--plain">EL-2401</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Maaş aralığı</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>900 – 1200 AZN</b></dd>
+          <dt class="adm-kv-k">Ştat</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>Tam ştat</b></dd>
+          <dt class="adm-kv-k">Bitmə tarixi</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>10 avqust 2026</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="elanlar.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Bağçamıza tərbiyəçi tələb olunur</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Xoşbəxt Uşaqlar Bağçası · Bakı, Nəsimi r. · göndərilib 10 iyul 2026, 18:22</p>
+        <span class="adm-tag adm-tag--warn">Redaktə</span>
+        <span class="adm-tag adm-tag--plain">EL-2388</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Bitmə tarixi</dt>
+          <dd class="adm-kv-v">20 iyul 2026 → <b>5 avqust 2026</b></dd>
+          <dt class="adm-kv-k">Maaş aralığı</dt>
+          <dd class="adm-kv-v">600 – 800 AZN → <b>700 – 950 AZN</b></dd>
+          <dt class="adm-kv-k">Elan mətni</dt>
+          <dd class="adm-kv-v">2–4 yaş qrupu üçün tərbiyəçi axtarırıq. → <b>2–4 yaş qrupu üçün Montessori təcrübəsi olan tərbiyəçi axtarırıq.</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="elanlar.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">İcarəyə sinif otağı verilir</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Horizon School · Bakı, Binəqədi r. · göndərilib 9 iyul 2026, 14:05</p>
+        <span class="adm-tag adm-tag--warn">Redaktə</span>
+        <span class="adm-tag adm-tag--plain">EL-2372</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Kateqoriya</dt>
+          <dd class="adm-kv-v">Vakansiya → <b>İcarə</b></dd>
+          <dt class="adm-kv-k">Qiymət</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>600 AZN / ay</b></dd>
+          <dt class="adm-kv-k">Sahə</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>42 m², 24 yer</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="elanlar.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Açıq qapı günü — 26 iyul</h3>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Atlas Kolleci · Bakı, Yasamal r. · göndərilib 9 iyul 2026, 10:41</p>
+        <span class="adm-tag adm-tag--info">Yeni elan</span>
+        <span class="adm-tag adm-tag--plain">EL-2369</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Tədbir tarixi</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>26 iyul 2026, saat 11:00</b></dd>
+          <dt class="adm-kv-k">Qeydiyyat</dt>
+          <dd class="adm-kv-v">Göstərilməyib → <b>EduNav anketi ilə, 120 yer</b></dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="elanlar.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <!-- ============================ RƏYLƏR (6) ============================ -->
+    <section class="adm-panel" id="novbe-reyler" aria-labelledby="novbe-reyler-h">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title" id="novbe-reyler-h">Valideyn rəyləri</h2>
+        <div class="adm-panel-actions">
+          <span class="badge badge--warn">6 gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Rəy yazmaq üçün hesab telefon nömrəsi ilə təsdiqlənir. Müəssisə rəyi silə bilmir — yalnız cavab yaza bilər.</p>
+      </div>
+      <div class="adm-panel-body adm-panel-body--tight">
+        <div class="chip-row">
+          <span class="adm-tag adm-tag--info">4 yeni rəy</span>
+          <span class="adm-tag adm-tag--warn">1 redaktə</span>
+          <span class="adm-tag adm-tag--danger">1 şikayət</span>
+          <span class="adm-tag adm-tag--plain">Orta reytinq: 4.0</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Aynur Səfərova</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            5.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Zəka Beynəlxalq Məktəbi · Nəsimi · 12 iyul 2026, 08:15</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--info">Yeni rəy</span>
+        <span class="adm-tag adm-tag--plain">RY-1487</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Reytinq</dt>
+          <dd class="adm-kv-v">— → <b>5.0 / 5</b></dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">Oğlum ikinci sinifdədir. IB proqramı ciddi aparılır, müəllimlər hər həftə fərdi geri dönüş göndərir. Robotexnika dərsi ən sevdiyi məşğələdir.</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Elçin Bayramov</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            4.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Atlas Kolleci · Yasamal · 11 iyul 2026, 19:40</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--info">Yeni rəy</span>
+        <span class="adm-tag adm-tag--plain">RY-1488</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Reytinq</dt>
+          <dd class="adm-kv-v">— → <b>4.0 / 5</b></dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">Cambridge proqramı güclüdür, üzgüçülük dərsləri həftədə iki dəfədir. Sinif ölçüsü 24 nəfərdir — bir az çoxdur, amma müəllim köməkçisi var.</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Nigar Hüseynli</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            5.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Xoşbəxt Uşaqlar · Yasamal · 11 iyul 2026, 13:22</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--warn">Redaktə edilib</span>
+        <span class="adm-tag adm-tag--plain">RY-1462</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Reytinq</dt>
+          <dd class="adm-kv-v">3.0 / 5 → <b>5.0 / 5</b></dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">Bağ sahəsi kiçikdir, qruplar sıxdır. → <b>Yeni sensor oyun zonası açıldı, qrup sayı azaldı — övladım səhərlər həvəslə gedir.</b></dd>
+          <dt class="adm-kv-k">Redaktə səbəbi</dt>
+          <dd class="adm-kv-v">Valideyn: şərait düzəldiyi üçün rəyimi yenilədim</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Rəşad Quliyev</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            2.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Horizon School · Binəqədi · 10 iyul 2026, 21:08</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--danger">Müəssisə şikayət edib</span>
+        <span class="adm-tag adm-tag--plain">RY-1479</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Dərc olunub → <b>Şikayət üzrə baxış</b></dd>
+          <dt class="adm-kv-k">Şikayət səbəbi</dt>
+          <dd class="adm-kv-v">Müəssisə: rəydə adı çəkilən hadisə bizim məktəbdə baş verməyib</dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">Avtobus marşrutu iki dəfə ləğv olundu və heç kim xəbər vermədi. Qəbul şöbəsi zənglərə cavab vermir.</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Səbinə Kərimova</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            5.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Sevincim Kids · Xətai · 10 iyul 2026, 10:44</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--info">Yeni rəy</span>
+        <span class="adm-tag adm-tag--plain">RY-1476</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Reytinq</dt>
+          <dd class="adm-kv-v">— → <b>5.0 / 5</b></dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">İngilis dilində tam gün qayğı gözlədiyimizdən yaxşı çıxdı. Sənət studiyasında hazırlanan işləri hər ay evə göndərirlər.</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <article class="adm-panel">
+      <div class="adm-panel-head">
+        <h3 class="adm-panel-title">Orxan Məmmədov</h3>
+        <div class="adm-panel-actions">
+          <span class="rating">
+            <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></svg>
+            3.0
+          </span>
+          <span class="badge badge--warn">Gözləyir</span>
+        </div>
+        <p class="adm-panel-sub">Alov Liseyi · Nərimanov · 9 iyul 2026, 16:30</p>
+        <span class="adm-tag adm-tag--ok">Telefon təsdiqlənib</span>
+        <span class="adm-tag adm-tag--info">Yeni rəy</span>
+        <span class="adm-tag adm-tag--plain">RY-1471</span>
+      </div>
+      <div class="adm-panel-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Vəziyyət</dt>
+          <dd class="adm-kv-v">Yoxdur → <b>Dərc gözləyir</b></dd>
+          <dt class="adm-kv-k">Reytinq</dt>
+          <dd class="adm-kv-v">— → <b>3.0 / 5</b></dd>
+          <dt class="adm-kv-k">Rəy mətni</dt>
+          <dd class="adm-kv-v">Olimpiada hazırlığı həqiqətən güclüdür, fransız dili müəllimləri peşəkardır. Bina köhnədir və idman zalı kiçikdir.</dd>
+        </dl>
+      </div>
+      <div class="adm-panel-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-action="approve">Təsdiqlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="reject">Rədd et</button>
+        <a class="btn-ghost btn-sm" href="reyler.html">Ətraflı</a>
+      </div>
+    </article>
+
+    <!-- ============================ TƏMİZ NÖVBƏ ============================ -->
+    <section class="adm-panel" aria-labelledby="novbe-sebekeler-h">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title" id="novbe-sebekeler-h">Şəbəkə profilləri</h2>
+        <div class="adm-panel-actions">
+          <span class="badge badge--ok">Təmizdir</span>
+        </div>
+        <p class="adm-panel-sub">Zəka Məktəbləri, Horizon Education Group, Atlas Təhsil Şəbəkəsi, Günəş Bağçaları, Premium Education və STEM Azərbaycan üzrə növbə.</p>
+      </div>
+      <div class="adm-panel-body adm-panel-body--flush">
+        <div class="adm-empty">
+          <span class="adm-empty-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <p class="adm-empty-title">Növbə təmizdir</p>
+          <p class="adm-empty-text">Şəbəkə profillərində baxılmamış dəyişiklik qalmayıb. Yeni müraciət daxil olduqda bu bölmə avtomatik doldurulacaq.</p>
+          <div class="adm-empty-actions">
+            <a class="btn-ghost btn-sm" href="muessiseler.html">Müəssisələrə keç</a>
+            <a class="btn-brand btn-sm" href="statistika.html">Moderasiya hesabatı</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="../assets/js/app.js?v=2"></script>
+<script src="../assets/js/admin.js?v=2"></script>
+</body>
+</html>

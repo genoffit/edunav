@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daxil ol | EduNav.az</title>
+<meta name="description" content="EduNav hesabınıza daxil olun — seçilmiş məktəb və bağçalarınızı, müqayisə siyahınızı və müraciətlərinizin statusunu bir yerdən izləyin.">
+<meta name="theme-color" content="#FFC629">
+<meta property="og:site_name" content="EduNav.az">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="az_AZ">
+<meta property="og:title" content="Daxil ol | EduNav.az">
+<meta property="og:description" content="EduNav hesabınıza daxil olun — seçilmiş məktəb və bağçalarınızı, müqayisə siyahınızı və müraciətlərinizin statusunu bir yerdən izləyin.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/pages/daxil-ol.css?v=2">
+</head>
+<body>
+<a class="skip-link" href="#main">Əsas məzmuna keç</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="EduNav — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+
+    <nav class="nav" aria-label="Əsas naviqasiya">
+      <a class="nav-link" href="mekteblar.html">Məktəblər</a>
+      <a class="nav-link" href="bagcalar.html">Bağçalar</a>
+      <a class="nav-link" href="vakansiyalar.html">Vakansiyalar</a>
+      <a class="nav-link" href="xeberler.html">Xəbərlər</a>
+      <a class="nav-link" href="elanlar.html">Elanlar</a>
+      <a class="nav-link" href="bloglar.html">Bloglar</a>
+      <a class="nav-link" href="sebekeler.html">Şəbəkələr</a>
+      <a class="nav-link" href="haqqimizda.html">Haqqımızda</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn-ghost" href="daxil-ol.html">Daxil ol</a>
+      <a class="btn-brand" href="muessise-elave-et.html">Müəssisə əlavə et</a>
+      <button class="burger" type="button" data-drawer-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="drawer">
+        <span class="burger-line" aria-hidden="true"></span>
+        <span class="burger-line" aria-hidden="true"></span>
+        <span class="burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="drawer-backdrop" data-drawer-close aria-hidden="true"></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menyu">
+    <div class="drawer-head">
+      <span class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo-text">EduNav</span>
+      </span>
+      <button class="drawer-close" type="button" data-drawer-close aria-label="Menyunu bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Mobil naviqasiya">
+      <a class="drawer-link" href="mekteblar.html">Məktəblər</a>
+      <a class="drawer-link" href="bagcalar.html">Bağçalar</a>
+      <a class="drawer-link" href="vakansiyalar.html">Vakansiyalar</a>
+      <a class="drawer-link" href="xeberler.html">Xəbərlər</a>
+      <a class="drawer-link" href="elanlar.html">Elanlar</a>
+      <a class="drawer-link" href="bloglar.html">Bloglar</a>
+      <a class="drawer-link" href="sebekeler.html">Şəbəkələr</a>
+      <a class="drawer-link" href="haqqimizda.html">Haqqımızda</a>
+    </nav>
+
+    <div class="drawer-section">
+      <p class="drawer-section-title">Sürətli keçidlər</p>
+      <div class="chip-row">
+        <a class="chip" href="muqayise.html">Müqayisə et</a>
+        <a class="chip" href="suallar.html">Suallar</a>
+        <a class="chip" href="elaqe.html">Əlaqə</a>
+        <a class="chip" href="kabinet.html">Kabinet</a>
+      </div>
+    </div>
+
+    <div class="drawer-actions">
+      <a class="btn-ghost" href="daxil-ol.html">Daxil ol</a>
+      <a class="btn-brand" href="muessise-elave-et.html">Müəssisə əlavə et</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <div class="daxilol-split">
+
+    <div class="daxilol-pane">
+      <div class="daxilol-card">
+        <a class="daxilol-back" href="index.html">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12H4"/><path d="m10 6-6 6 6 6"/></svg>
+          Ana səhifəyə qayıt
+        </a>
+
+        <h1 class="daxilol-title">Hesabınıza daxil olun</h1>
+        <p class="daxilol-sub">Seçdiyiniz müəssisələri, müqayisə siyahınızı və müraciətlərinizi yadda saxlamaq üçün hesab lazımdır.</p>
+
+        <div class="tabs daxilol-tabs">
+          <a class="tab is-active" href="daxil-ol.html?rol=valideyn" aria-current="page">Valideyn kimi daxil ol</a>
+          <a class="tab" href="daxil-ol.html?rol=muessise">Müəssisə kimi daxil ol</a>
+        </div>
+
+        <form class="form-grid daxilol-form" id="form-login" data-validate novalidate>
+          <div class="field field-full">
+            <label class="field-label" for="login-email">E-poçt <span class="req">*</span></label>
+            <input class="input" id="login-email" name="email" type="email" autocomplete="email" placeholder="ad@nümunə.az" required>
+            <p class="field-error" data-error-for="login-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+          </div>
+
+          <div class="field field-full">
+            <label class="field-label" for="login-password">Şifrə <span class="req">*</span></label>
+            <input class="input" id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Şifrənizi daxil edin" required data-min="8">
+            <p class="field-hint">Hesabı yaratdığınız zaman təyin etdiyiniz şifrəni yazın.</p>
+            <p class="field-error" data-error-for="login-password" hidden>Ən azı 8 simvol daxil edin.</p>
+          </div>
+
+          <div class="field field-full daxilol-row">
+            <label class="switch">
+              <input type="checkbox" name="remember" checked>
+              <span class="switch-track" aria-hidden="true"></span>
+              <span class="switch-label">Məni xatırla</span>
+            </label>
+            <a class="daxilol-forgot" href="elaqe.html">Şifrəni unutdum</a>
+          </div>
+
+          <div class="field field-full">
+            <button class="btn-brand btn-block" type="submit">Daxil ol</button>
+          </div>
+        </form>
+
+        <div class="modal-success daxilol-success" data-form-success hidden>
+          <span class="modal-success-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4"/></svg>
+          </span>
+          <h2 class="modal-success-title">Xoş gəldiniz!</h2>
+          <p class="modal-success-text">Hesabınız tanındı. Seçilmişləriniz, müqayisə siyahınız və müraciətləriniz kabinetdə sizi gözləyir.</p>
+          <a class="btn-brand" href="kabinet.html">Kabinetə keç</a>
+        </div>
+
+        <p class="daxilol-divider">və ya</p>
+
+        <div class="daxilol-alt">
+          <a class="btn-ghost btn-block" href="muessise-elave-et.html">Müəssisə kimi qoşul</a>
+          <button class="btn-ghost btn-block" type="button" data-open="guest">Qonaq kimi davam et</button>
+        </div>
+
+        <p class="daxilol-foot">Hesabınız yoxdur? <a href="qeydiyyat.html">Qeydiyyatdan keçin</a> — valideynlər üçün tamamilə pulsuzdur.</p>
+        <p class="daxilol-legal">Daxil olmaqla <a href="qaydalar.html">istifadə qaydaları</a> və <a href="gizlilik.html">gizlilik siyasəti</a> ilə razılaşırsınız. Sualınız var? <a href="elaqe.html">Bizə yazın</a> və ya *8080 nömrəsinə zəng edin.</p>
+      </div>
+    </div>
+
+    <aside class="daxilol-aside" aria-labelledby="daxilol-aside-title">
+      <div class="daxilol-aside-inner">
+        <span class="kicker kicker--brand">EduNav hesabı</span>
+        <h2 class="daxilol-aside-title" id="daxilol-aside-title">Təhsilin doğru ünvanı, <em>gələcəyin</em> güclü addımı.</h2>
+        <p class="daxilol-aside-text">Bakı və regionlarda 1 240 məktəb və bağça bir platformada. Kəşf edin, müqayisə edin və övladınız üçün ən uyğun seçimi bizimlə edin.</p>
+
+        <ul class="daxilol-benefits">
+          <li class="daxilol-benefit">
+            <span class="daxilol-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.3 4.6 13a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9A4.6 4.6 0 1 1 19.4 13z"/></svg>
+            </span>
+            <span class="daxilol-benefit-body">
+              <span class="daxilol-benefit-title">Seçilmişlər əlinizin altında</span>
+              <span class="daxilol-benefit-text">Bəyəndiyiniz məktəb və bağçaları favoritlərə əlavə edin.</span>
+            </span>
+          </li>
+          <li class="daxilol-benefit">
+            <span class="daxilol-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h10"/><path d="M4 17h6"/></svg>
+            </span>
+            <span class="daxilol-benefit-body">
+              <span class="daxilol-benefit-title">Yan-yana müqayisə</span>
+              <span class="daxilol-benefit-text">4 müəssisəyə qədər müqayisə siyahısı qurun.</span>
+            </span>
+          </li>
+          <li class="daxilol-benefit">
+            <span class="daxilol-benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="m8.4 12.3 2.5 2.5 4.7-5.2"/></svg>
+            </span>
+            <span class="daxilol-benefit-body">
+              <span class="daxilol-benefit-title">Müraciət statusu</span>
+              <span class="daxilol-benefit-text">Müraciətlərinizin statusunu kabinetdən izləyin.</span>
+            </span>
+          </li>
+        </ul>
+
+        <ul class="daxilol-stats">
+          <li class="daxilol-stat">
+            <span class="daxilol-stat-num">1 240</span>
+            <span class="daxilol-stat-label">Qeydiyyatdan keçmiş müəssisə</span>
+          </li>
+          <li class="daxilol-stat">
+            <span class="daxilol-stat-num">84</span>
+            <span class="daxilol-stat-label">Açıq vakansiya elanı</span>
+          </li>
+          <li class="daxilol-stat">
+            <span class="daxilol-stat-num">2 318</span>
+            <span class="daxilol-stat-label">Bu ay göndərilən müraciət</span>
+          </li>
+        </ul>
+
+        <p class="daxilol-note">Müəssisə rəhbərisinizsə <a href="muessise-elave-et.html">profil açın</a> — sənədlər 2 iş günü ərzində yoxlanılır, ilk 3 ay baza paket pulsuzdur.</p>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<div class="compare-bar" data-compare-bar aria-hidden="true">
+  <div class="container compare-bar-inner">
+    <div class="cb-left">
+      <div class="cb-avatars" data-cb-avatars aria-hidden="true"></div>
+      <p class="cb-text">
+        <span class="cb-count" data-cb-count aria-live="polite">0</span>
+        müəssisə müqayisə siyahısındadır
+        <span class="cb-hint">Maksimum 4 müəssisə</span>
+      </p>
+    </div>
+    <div class="cb-actions">
+      <button class="btn-ghost btn-sm" type="button" data-cb-clear>Siyahını təmizlə</button>
+      <a class="btn-brand btn-sm" href="muqayise.html">Müqayisə et</a>
+      <button class="cb-close" type="button" data-cb-hide aria-label="Müqayisə panelini gizlət">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="contact" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-contact-title">Əlaqə</h2>
+        <p class="modal-sub">Formu doldurun — 1 iş günü ərzində sizinlə əlaqə saxlayırıq.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="form-grid" id="form-contact" data-form="contact" novalidate>
+        <div class="field">
+          <label class="field-label" for="contact-name">Ad, Soyad</label>
+          <input class="input" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Rasif Dünyamalı" required>
+          <p class="field-error" data-error-for="contact-name" hidden>Adınızı yazın.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="contact-phone">Telefon</label>
+          <input class="input" id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+994 50 000 00 00" required>
+          <p class="field-error" data-error-for="contact-phone" hidden>Telefon nömrəsini yazın.</p>
+        </div>
+        <div class="field field-full">
+          <label class="field-label" for="contact-email">E-poçt</label>
+          <input class="input" id="contact-email" name="email" type="email" autocomplete="email" placeholder="ad@nümunə.az">
+          <p class="field-hint">Cavabı e-poçtla almaq istəyirsinizsə doldurun.</p>
+          <p class="field-error" data-error-for="contact-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+        </div>
+        <div class="field field-full">
+          <label class="field-label" for="contact-message">Mesajınız</label>
+          <textarea class="textarea" id="contact-message" name="message" rows="4" placeholder="Sualınızı yazın — məktəb, bağça, vakansiya və ya əməkdaşlıq barədə." required></textarea>
+          <p class="field-error" data-error-for="contact-message" hidden>Mesaj mətnini yazın.</p>
+        </div>
+      </form>
+      <div class="modal-success" data-modal-success hidden>
+        <span class="modal-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="modal-success-title">Müraciətiniz qəbul olundu</h3>
+        <p class="modal-success-text">Komandamız 1 iş günü ərzində sizinlə əlaqə saxlayacaq.</p>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-modal-close>İmtina</button>
+      <button class="btn-brand" type="submit" form="form-contact" data-modal-submit="contact">Göndər</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="survey" role="dialog" aria-modal="true" aria-labelledby="modal-survey-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-survey-title">Sorğu</h2>
+        <p class="modal-sub">4 sürətli sual — sizə uyğun müəssisələri seçək.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-progress" role="progressbar" aria-label="Sorğunun gedişi" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1">
+        <span class="modal-progress-bar" data-survey-progress></span>
+      </div>
+      <div class="modal-step is-on" data-survey-step="1">
+        <h3 class="modal-step-title">Kimin üçün axtarırsınız?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Məktəb">Məktəb</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Bağça">Bağça</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Bağça + məktəb">Bağça + məktəb</button>
+          <button class="chip" type="button" data-survey-pick="tip" data-value="Hələ qərar verməmişəm">Hələ qərar verməmişəm</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="2">
+        <h3 class="modal-step-title">Hansı şəhər və ya rayonda?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Nəsimi">Bakı, Nəsimi</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Yasamal">Bakı, Yasamal</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Bakı, Binəqədi">Bakı, Binəqədi</button>
+          <button class="chip" type="button" data-survey-pick="rayon" data-value="Digər şəhər">Digər şəhər</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="3">
+        <h3 class="modal-step-title">Tədris dili hansı olsun?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="dil" data-value="Azərbaycan">Azərbaycan</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="İngilis">İngilis</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="Rus">Rus</button>
+          <button class="chip" type="button" data-survey-pick="dil" data-value="İki dilli">İki dilli</button>
+        </div>
+      </div>
+      <div class="modal-step" data-survey-step="4">
+        <h3 class="modal-step-title">Büdcəniz nə qədərdir?</h3>
+        <div class="chip-row">
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Aylıq 400 AZN-ə qədər">Aylıq 400 AZN-ə qədər</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Aylıq 400–800 AZN">Aylıq 400–800 AZN</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="İllik 10 000 AZN-ə qədər">İllik 10 000 AZN-ə qədər</button>
+          <button class="chip" type="button" data-survey-pick="budce" data-value="Fərq etməz">Fərq etməz</button>
+        </div>
+      </div>
+      <div class="modal-success" data-modal-success hidden>
+        <span class="modal-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" focusable="false"><path d="m5 12.6 4.4 4.4L19 7.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <h3 class="modal-success-title">Seçimləriniz yadda saxlanıldı</h3>
+        <p class="modal-success-text">Cavablarınıza uyğun müəssisələri kataloqda ilk sıralarda göstərəcəyik.</p>
+        <a class="btn-brand" href="mekteblar.html">Nəticələrə bax</a>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-survey-prev>Geri</button>
+      <button class="btn-brand" type="button" data-survey-next>Növbəti</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" data-modal="guest" role="dialog" aria-modal="true" aria-labelledby="modal-guest-title" aria-hidden="true">
+  <div class="modal-backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <h2 class="modal-title" id="modal-guest-title">Hesabınıza daxil olun</h2>
+        <p class="modal-sub">Seçdiyiniz müəssisələri, müqayisə siyahınızı və müraciətlərinizi yadda saxlamaq üçün hesab lazımdır.</p>
+      </div>
+      <button class="modal-close" type="button" data-modal-close aria-label="Pəncərəni bağla">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <ul class="modal-list">
+        <li class="modal-list-item">Bəyəndiyiniz məktəb və bağçaları favoritlərə əlavə edin.</li>
+        <li class="modal-list-item">4 müəssisəyə qədər müqayisə siyahısı qurun.</li>
+        <li class="modal-list-item">Müraciətlərinizin statusunu kabinetdən izləyin.</li>
+        <li class="modal-list-item">Qəbul tarixləri və yeni vakansiyalar barədə bildiriş alın.</li>
+      </ul>
+      <p class="modal-note">Qeydiyyat valideynlər üçün tamamilə pulsuzdur.</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" type="button" data-modal-close>Qonaq kimi davam et</button>
+      <a class="btn-ghost" href="qeydiyyat.html">Qeydiyyatdan keç</a>
+      <a class="btn-brand" href="daxil-ol.html">Daxil ol</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html" aria-label="EduNav — ana səhifə">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo-text">EduNav</span>
+      </a>
+      <p class="footer-about">Təhsil müəssisələri üçün etibarlı platforma. Məktəb və bağçaları kəşf edin, müqayisə edin, birbaşa müraciət göndərin.</p>
+      <ul class="footer-social" aria-label="Sosial şəbəkələr">
+        <li><a class="footer-social-link" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav Facebook səhifəsi">FB</a></li>
+        <li><a class="footer-social-link" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav Instagram səhifəsi">IG</a></li>
+        <li><a class="footer-social-link" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav LinkedIn səhifəsi">IN</a></li>
+        <li><a class="footer-social-link" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank" aria-label="EduNav YouTube kanalı">YT</a></li>
+      </ul>
+    </div>
+
+    <nav class="footer-col" aria-labelledby="footer-col-platforma">
+      <h2 class="footer-col-title" id="footer-col-platforma">Platforma</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="mekteblar.html">Məktəblər</a></li>
+        <li><a class="footer-link" href="bagcalar.html">Bağçalar</a></li>
+        <li><a class="footer-link" href="vakansiyalar.html">Vakansiyalar</a></li>
+        <li><a class="footer-link" href="muqayise.html">Müqayisə</a></li>
+        <li><a class="footer-link" href="sebekeler.html">Şəbəkələr</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-sirket">
+      <h2 class="footer-col-title" id="footer-col-sirket">Şirkət</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="haqqimizda.html">Haqqımızda</a></li>
+        <li><a class="footer-link" href="xeberler.html">Xəbərlər</a></li>
+        <li><a class="footer-link" href="elanlar.html">Elanlar</a></li>
+        <li><a class="footer-link" href="bloglar.html">Bloglar</a></li>
+        <li><a class="footer-link" href="elaqe.html">Əlaqə</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-komek">
+      <h2 class="footer-col-title" id="footer-col-komek">Kömək</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="suallar.html">Tez-tez verilən suallar</a></li>
+        <li><a class="footer-link" href="kabinet.html">Kabinet</a></li>
+        <li><a class="footer-link" href="qaydalar.html">İstifadə qaydaları</a></li>
+        <li><a class="footer-link" href="gizlilik.html">Gizlilik siyasəti</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-labelledby="footer-col-muessiseler">
+      <h2 class="footer-col-title" id="footer-col-muessiseler">Müəssisələr</h2>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="muessise-elave-et.html">Müəssisə əlavə et</a></li>
+        <li><a class="footer-link" href="qeydiyyat.html">Qeydiyyat</a></li>
+        <li><a class="footer-link" href="daxil-ol.html">Daxil ol</a></li>
+        <li><a class="footer-link" href="elaqe.html">Reklam və əməkdaşlıq</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-news">
+      <h2 class="footer-col-title">Yeniliklərdən xəbərdar olun</h2>
+      <p class="footer-news-text">Ən son yenilikləri e-poçtla alın.</p>
+      <form class="footer-news-form" data-form="newsletter" novalidate>
+        <div class="field">
+          <label class="field-label sr-only" for="footer-news-email">E-poçt ünvanınız</label>
+          <div class="footer-news-row">
+            <input class="input footer-news-input" id="footer-news-email" name="email" type="email" autocomplete="email" placeholder="E-poçt ünvanınız" required>
+            <button class="footer-news-btn" type="submit" aria-label="Abunə ol">
+              <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="field-error" data-error-for="footer-news-email" hidden>E-poçt ünvanı düzgün deyil.</p>
+          <p class="field-hint">Abunə olmaqla <a class="footer-link" href="gizlilik.html">gizlilik siyasəti</a> ilə razılaşırsınız.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p class="footer-copy">© <span data-year>2026</span> EduNav. Bütün hüquqlar qorunur.</p>
+    <ul class="footer-legal">
+      <li><a class="footer-link" href="qaydalar.html">Qaydalar</a></li>
+      <li><a class="footer-link" href="gizlilik.html">Gizlilik</a></li>
+      <li><a class="footer-link" href="elaqe.html">Əlaqə</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="assets/js/app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* ==========================================================================
+   EduNav.az — elaqe.html only
+   Loaded AFTER assets/css/style.css. Every selector is prefixed .el- and is
+   used on this single page. Nothing here overrides a shared class.
+   Tokens come from style.css :root — no new colours, radii or shadows.
+   ========================================================================== */
+
+
+/* --- contact methods -------------------------------------------------------- */
+.el-method {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  height: 100%;
+  padding: 22px 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+.el-method:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-5);
+  box-shadow: var(--sh-2);
+}
+.el-method-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+}
+.el-method-icon svg { width: 20px; height: 20px; }
+.el-method-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.el-method-value {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.022em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+a.el-method-value:hover { color: var(--brand-dark); }
+.el-method-text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+
+/* --- departments ------------------------------------------------------------ */
+.el-depts {
+  padding: 4px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+.el-dept {
+  padding: 17px 0 18px;
+  border-bottom: 1px solid var(--line-3);
+}
+.el-dept:last-child { border-bottom: 0; }
+.el-dept-title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.el-dept-text {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.el-dept-mail {
+  display: inline-block;
+  margin-top: 9px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--info);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.el-dept-mail:hover { color: var(--ink); }
+
+
+/* --- aside rhythm -------------------------------------------------------------- */
+.el-aside > * + * { margin-top: 13px; }
+.el-aside > .h4 + * { margin-top: 13px; }
+.el-aside > * + .h4 { margin-top: 28px; }
+
+
+/* --- office / hours card --------------------------------------------------------- */
+.el-card {
+  padding: 4px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+.el-hours {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line-4);
+}
+.el-hours:last-child { border-bottom: 0; }
+.el-hours-day {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-2);
+}
+.el-hours-time {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+
+/* --- office map placeholder ------------------------------------------------- */
+.el-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(58% 68% at 20% 16%, rgba(255, 198, 41, .24), rgba(255, 198, 41, 0) 70%),
+    radial-gradient(54% 64% at 86% 84%, rgba(44, 99, 196, .12), rgba(44, 99, 196, 0) 72%),
+    repeating-linear-gradient(90deg, var(--line-3) 0 1px, rgba(255, 255, 255, 0) 1px 68px),
+    repeating-linear-gradient(0deg, var(--line-3) 0 1px, rgba(255, 255, 255, 0) 1px 68px);
+}
+.el-map::before,
+.el-map::after {
+  content: "";
+  position: absolute;
+  background: var(--bg);
+}
+.el-map::before {
+  left: -12%;
+  right: -12%;
+  top: 44%;
+  height: 26px;
+  transform: rotate(-7deg);
+}
+.el-map::after {
+  top: -14%;
+  bottom: -14%;
+  left: 64%;
+  width: 18px;
+  transform: rotate(10deg);
+}
+.el-map-pin {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border: 3px solid var(--bg);
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--ink);
+  box-shadow: var(--sh-1);
+}
+.el-map-pin svg { width: 20px; height: 20px; }
+.el-map-card {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  max-width: 340px;
+  padding: 15px 17px 16px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  box-shadow: var(--sh-2);
+}
+.el-map-title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.el-map-text {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.el-map-note {
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+
+/* --- responsive --------------------------------------------------------------- */
+@media (max-width: 560px) {
+  .el-method { padding: 20px 18px 22px; }
+  .el-depts { padding: 2px 16px; }
+  .el-method-value { font-size: 17px; }
+
+  .el-map { min-height: 250px; }
+  .el-map-card { left: 12px; right: 12px; bottom: 12px; padding: 13px 15px 14px; }
+  .el-map-pin { top: 34%; }
+}

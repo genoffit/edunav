@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xəbərlər | EduNav İdarə Paneli</title>
+<meta name="description" content="EduNav idarə panelində xəbər idarəetməsi: redaksiya materiallarını kateqoriya, müəllif və dərc statusu üzrə süzgəcdən keçirin, yeni xəbər yazıb planlaşdırın.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1420">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../assets/css/admin.css?v=2">
+</head>
+<body class="adm">
+<a class="skip-link" href="#adm-content">Əsas məzmuna keç</a>
+
+<div class="adm-side-backdrop" data-adm-side-close aria-hidden="true"></div>
+<aside class="adm-side" id="adm-side" aria-label="İdarə paneli naviqasiyası">
+  <div class="adm-side-head">
+    <a class="logo" href="index.html" aria-label="EduNav İdarə Paneli — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+    <button class="adm-side-close" type="button" data-adm-side-close aria-label="Menyunu bağla">
+      <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="adm-nav" aria-label="Bölmələr">
+    <p class="adm-nav-group">Ümumi baxış</p>
+    <a class="adm-nav-link" href="index.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 8.4 10 3l7 5.4V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 17v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">İdarə paneli</span>
+    </a>
+    <a class="adm-nav-link" href="statistika.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 17h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 17V9M10 17V4M14 17v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Statistika</span>
+    </a>
+
+    <p class="adm-nav-group">Müəssisələr</p>
+    <a class="adm-nav-link" href="muessiseler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 17V5.5L10 3l6.5 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 17h13M8 17v-4h4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisələr</span>
+    </a>
+    <a class="adm-nav-link" href="muessise-detal.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3.5" y="3" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6.8 7.5h6.4M6.8 10.5h6.4M6.8 13.5h3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisə detalı</span>
+    </a>
+    <a class="adm-nav-link" href="tesdiq.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m6.8 10.3 2.3 2.3 4.1-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Təsdiq gözləyənlər</span>
+      <span class="badge badge--warn adm-nav-badge">7</span>
+    </a>
+
+    <p class="adm-nav-group">Məzmun</p>
+    <a class="adm-nav-link is-active" href="xeberler.html" aria-current="page">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8h5M6 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Xəbərlər</span>
+    </a>
+    <a class="adm-nav-link" href="elanlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 8.2v3.6h3l5 3.2V5L7 8.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.8 7.6a4 4 0 0 1 0 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Elanlar</span>
+    </a>
+    <a class="adm-nav-link" href="bloglar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 4.5h8.5L16 8v7.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 4.5V8h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Bloglar</span>
+    </a>
+    <a class="adm-nav-link" href="vakansiyalar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 6.5V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Vakansiyalar</span>
+    </a>
+
+    <p class="adm-nav-group">İcma</p>
+    <a class="adm-nav-link" href="muracietler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M17 12.5a1.8 1.8 0 0 1-1.8 1.8H7.4L4 17.5V5.3A1.8 1.8 0 0 1 5.8 3.5h9.4A1.8 1.8 0 0 1 17 5.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Müraciətlər</span>
+      <span class="badge badge--info adm-nav-badge">12</span>
+    </a>
+    <a class="adm-nav-link" href="reyler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="m10 3.6 1.98 4.02 4.44.64-3.21 3.13.76 4.42L10 13.72l-3.97 2.09.76-4.42L3.58 8.26l4.44-.64z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Rəylər</span>
+    </a>
+    <a class="adm-nav-link" href="istifadeciler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="7.4" r="2.9" stroke="currentColor" stroke-width="1.6"/><path d="M2.8 16.4c0-2.6 2.33-4.4 5.2-4.4s5.2 1.8 5.2 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.2 5.2a2.5 2.5 0 0 1 0 4.6M15.4 12.6c1.4.66 2.3 1.9 2.3 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">İstifadəçilər</span>
+    </a>
+
+    <p class="adm-nav-group">Sistem</p>
+    <a class="adm-nav-link" href="ayarlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8v2M10 15.2v2M17.2 10h-2M4.8 10h-2M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4M15.1 15.1l-1.4-1.4M6.3 6.3 4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Ayarlar</span>
+    </a>
+    <a class="adm-nav-link" href="daxil-ol.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M12.4 14.2v1.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 15.6V4.4A1.4 1.4 0 0 1 5.4 3H11a1.4 1.4 0 0 1 1.4 1.4v1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.6 10h8.2M14.2 7.4 16.8 10l-2.6 2.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Çıxış</span>
+    </a>
+  </nav>
+
+  <div class="adm-user">
+    <span class="adm-avatar" aria-hidden="true">RD</span>
+    <span class="adm-user-text">
+      <span class="adm-user-name">Rasif Dünyamalı</span>
+      <span class="adm-user-role">Baş administrator</span>
+    </span>
+  </div>
+</aside>
+
+<div class="adm-main">
+  <header class="adm-top">
+    <button class="adm-burger" type="button" data-adm-side-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="adm-side">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+    </button>
+
+    <h1 class="adm-top-title">Xəbərlər</h1>
+
+    <form class="adm-top-search" role="search" data-form="adm-search" novalidate>
+      <label class="field-label sr-only" for="adm-search">Axtarış</label>
+      <span class="adm-top-search-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <input class="input adm-top-input" id="adm-search" name="q" type="search" placeholder="Müəssisə, istifadəçi və ya elan axtar" autocomplete="off">
+    </form>
+
+    <div class="adm-top-actions">
+      <button class="adm-bell" type="button" data-adm-notifications aria-label="Bildirişlər — 3 yeni" aria-expanded="false">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M15.2 13.4V9a5.2 5.2 0 1 0-10.4 0v4.4L3.4 15.2h13.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.2 15.2a1.9 1.9 0 0 0 3.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="adm-bell-dot" aria-hidden="true"></span>
+      </button>
+      <span class="adm-avatar" aria-hidden="true">RD</span>
+    </div>
+  </header>
+
+  <main class="adm-content" id="adm-content">
+
+    <div class="adm-toolbar">
+      <h2 class="adm-toolbar-title">Xəbər idarəetməsi</h2>
+      <span class="adm-toolbar-count">14 qeyd · 2 qaralama</span>
+      <div class="adm-toolbar-actions">
+        <a class="btn-ghost btn-sm" href="../xeberler.html">Saytda bax</a>
+        <button class="btn-brand btn-sm" type="button" data-adm-drawer="xeber-yeni">Yeni xəbər</button>
+      </div>
+    </div>
+
+    <div data-adm-table data-page-size="8">
+      <div class="adm-filters">
+        <div class="adm-filters-row" data-adm-filter-group="derc">
+          <button class="chip is-on" type="button" data-adm-value="">Hamısı</button>
+          <button class="chip" type="button" data-adm-value="Dərc olunub">Dərc olunub</button>
+          <button class="chip" type="button" data-adm-value="Qaralama">Qaralama</button>
+          <button class="chip" type="button" data-adm-value="Planlaşdırılıb">Planlaşdırılıb</button>
+        </div>
+
+        <span class="adm-filters-sep" aria-hidden="true"></span>
+
+        <div class="dd" data-dd data-name="kateqoriya" data-adm-filter="kateqoriya" data-placeholder="Kateqoriya" data-label="Kateqoriya">
+          <button class="dd-trigger" type="button">
+            <span class="dd-value is-placeholder" data-placeholder="Kateqoriya">Kateqoriya</span>
+            <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd-panel">
+            <div class="dd-list">
+              <button class="dd-option" type="button" data-value="Qaydalar"><span class="dd-label">Qaydalar</span></button>
+              <button class="dd-option" type="button" data-value="İmtahan"><span class="dd-label">İmtahan</span></button>
+              <button class="dd-option" type="button" data-value="Sektor"><span class="dd-label">Sektor</span></button>
+              <button class="dd-option" type="button" data-value="Tədbir"><span class="dd-label">Tədbir</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dd" data-dd data-name="muellif" data-adm-filter="muellif" data-placeholder="Müəllif" data-label="Müəllif">
+          <button class="dd-trigger" type="button">
+            <span class="dd-value is-placeholder" data-placeholder="Müəllif">Müəllif</span>
+            <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd-panel">
+            <div class="dd-list">
+              <button class="dd-option" type="button" data-value="Rasif Dünyamalı"><span class="dd-label">Rasif Dünyamalı</span></button>
+              <button class="dd-option" type="button" data-value="Nərmin Əliyeva"><span class="dd-label">Nərmin Əliyeva</span></button>
+              <button class="dd-option" type="button" data-value="Aysel Məmmədova"><span class="dd-label">Aysel Məmmədova</span></button>
+              <button class="dd-option" type="button" data-value="Elçin Hüseynov"><span class="dd-label">Elçin Hüseynov</span></button>
+            </div>
+          </div>
+        </div>
+
+        <label class="adm-filter-search">
+          <span class="sr-only">Cədvəldə axtar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          <input class="adm-search" type="search" placeholder="Başlıq, müəllif və ya açar söz üzrə axtar" autocomplete="off">
+        </label>
+
+        <span class="adm-tag adm-tag--plain"><b data-adm-result-count>14</b> nəticə</span>
+
+        <button class="adm-filters-reset" type="button" data-adm-filter-reset>Filtri sıfırla</button>
+      </div>
+
+      <section class="adm-panel">
+        <div class="adm-panel-head">
+          <h2 class="adm-panel-title">Redaksiya materialları</h2>
+          <div class="adm-panel-actions">
+            <span class="adm-tag adm-tag--ok">10 dərcdə</span>
+            <span class="adm-tag adm-tag--info">2 planda</span>
+          </div>
+          <p class="adm-panel-sub">Qaralama və planlaşdırılmış xəbərlər saytda görünmür. Planlaşdırılmış material təyin olunan tarixdə səhər saat 09:00-da avtomatik dərc olunur.</p>
+        </div>
+
+        <div class="adm-toolbar adm-toolbar--bulk" aria-hidden="true">
+          <span class="adm-toolbar-count" data-adm-selected>0 seçildi</span>
+          <div class="adm-toolbar-actions">
+            <button class="btn-ghost btn-sm" type="button" data-adm-bulk="approve" disabled>Toplu dərc</button>
+            <button class="btn-ghost btn-sm" type="button" data-adm-bulk="archive" disabled>Toplu arxiv</button>
+            <button class="btn-ghost btn-sm" type="button" data-adm-clear-selection>Seçimi ləğv et</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="adm-table">
+            <caption class="sr-only">Xəbər lentinin redaksiya siyahısı — 14 material</caption>
+            <thead>
+              <tr>
+                <th class="adm-col-check" scope="col">
+                  <input class="adm-check" type="checkbox" data-adm-check-all aria-label="Hamısını seç">
+                </th>
+                <th scope="col" data-sort="text">
+                  <button class="adm-sort" type="button">
+                    Başlıq
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text">
+                  <button class="adm-sort" type="button">
+                    Kateqoriya
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text">
+                  <button class="adm-sort" type="button">
+                    Müəllif
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="date">
+                  <button class="adm-sort" type="button">
+                    Dərc tarixi
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="num">
+                  <button class="adm-sort" type="button">
+                    Baxış
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text">
+                  <button class="adm-sort" type="button">
+                    Status
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col">Əməliyyat</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Qaydalar" data-muellif="Rasif Dünyamalı" data-adm-label="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq?" data-adm-search="kurikulum elektron jurnal qiymətləndirmə əsas xəbər">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=yeni-tedris-ili" data-adm-cell="ad">Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq?</a>
+                  <span class="adm-cell-sub">Xəbər #418 · yeni-tedris-ili · Əsas xəbər</span>
+                </td>
+                <td><span class="adm-tag adm-tag--info" data-adm-cell="kateqoriya">Qaydalar</span></td>
+                <td data-adm-cell="muellif">Rasif Dünyamalı</td>
+                <td data-adm-cell="tarix">12 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">18 420</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="İmtahan" data-muellif="Nərmin Əliyeva" data-adm-label="Buraxılış imtahanlarının nəticələri 20 iyulda açıqlanacaq" data-adm-search="buraxılış imtahan nəticə apellyasiya abituriyent">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Buraxılış imtahanlarının nəticələri 20 iyulda açıqlanacaq sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=imtahan-neticeleri" data-adm-cell="ad">Buraxılış imtahanlarının nəticələri 20 iyulda açıqlanacaq</a>
+                  <span class="adm-cell-sub">Xəbər #417 · imtahan-neticeleri</span>
+                </td>
+                <td><span class="adm-tag adm-tag--brand" data-adm-cell="kateqoriya">İmtahan</span></td>
+                <td data-adm-cell="muellif">Nərmin Əliyeva</td>
+                <td data-adm-cell="tarix">11 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">12 860</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Buraxılış imtahanlarının nəticələri — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Buraxılış imtahanlarının nəticələri — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Buraxılış imtahanlarının nəticələri — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Sektor" data-muellif="Rasif Dünyamalı" data-adm-label="Özəl məktəblərə qəbul müraciətləri keçən illə müqayisədə 18% artıb" data-adm-search="qəbul müraciət statistika sektor artım">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Özəl məktəblərə qəbul müraciətləri keçən illə müqayisədə 18% artıb sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=qebul-artimi" data-adm-cell="ad">Özəl məktəblərə qəbul müraciətləri keçən illə müqayisədə 18% artıb</a>
+                  <span class="adm-cell-sub">Xəbər #416 · qebul-artimi</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Rasif Dünyamalı</td>
+                <td data-adm-cell="tarix">10 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">9 745</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Özəl məktəblərə qəbul müraciətləri artıb — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Özəl məktəblərə qəbul müraciətləri artıb — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Özəl məktəblərə qəbul müraciətləri artıb — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Sektor" data-muellif="Nərmin Əliyeva" data-adm-label="Şagirdlərin motivasiyasını artırmağın 5 yolu" data-adm-search="motivasiya metodika müəllim şagird">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Şagirdlərin motivasiyasını artırmağın 5 yolu sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=motivasiya" data-adm-cell="ad">Şagirdlərin motivasiyasını artırmağın 5 yolu</a>
+                  <span class="adm-cell-sub">Xəbər #415 · motivasiya</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Nərmin Əliyeva</td>
+                <td data-adm-cell="tarix">8 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">8 190</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Şagirdlərin motivasiyasını artırmağın 5 yolu — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Şagirdlərin motivasiyasını artırmağın 5 yolu — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Şagirdlərin motivasiyasını artırmağın 5 yolu — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Tədbir" data-muellif="Elçin Hüseynov" data-adm-label="Bakıda açıq qapı günləri iyulun sonunadək davam edir" data-adm-search="açıq qapı günü valideyn ziyarət təqvim">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Bakıda açıq qapı günləri iyulun sonunadək davam edir sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=aciq-qapi-gunleri" data-adm-cell="ad">Bakıda açıq qapı günləri iyulun sonunadək davam edir</a>
+                  <span class="adm-cell-sub">Xəbər #414 · aciq-qapi-gunleri</span>
+                </td>
+                <td><span class="adm-tag adm-tag--kg" data-adm-cell="kateqoriya">Tədbir</span></td>
+                <td data-adm-cell="muellif">Elçin Hüseynov</td>
+                <td data-adm-cell="tarix">7 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">6 508</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Bakıda açıq qapı günləri — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Bakıda açıq qapı günləri — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Bakıda açıq qapı günləri — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Qaydalar" data-muellif="Rasif Dünyamalı" data-adm-label="Özəl bağçalarda qrup ölçüsü üçün yeni normativlər təsdiqləndi" data-adm-search="bağça qrup normativ tərbiyəçi say">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Özəl bağçalarda qrup ölçüsü üçün yeni normativlər təsdiqləndi sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=bagca-normativleri" data-adm-cell="ad">Özəl bağçalarda qrup ölçüsü üçün yeni normativlər təsdiqləndi</a>
+                  <span class="adm-cell-sub">Xəbər #413 · bagca-normativleri</span>
+                </td>
+                <td><span class="adm-tag adm-tag--info" data-adm-cell="kateqoriya">Qaydalar</span></td>
+                <td data-adm-cell="muellif">Rasif Dünyamalı</td>
+                <td data-adm-cell="tarix">6 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">7 312</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Özəl bağçalarda qrup ölçüsü normativləri — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Özəl bağçalarda qrup ölçüsü normativləri — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Özəl bağçalarda qrup ölçüsü normativləri — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Sektor" data-muellif="Elçin Hüseynov" data-adm-label="STEM təhsilinin üstünlükləri və gələcəyi" data-adm-search="STEM robotexnika laboratoriya proqramlaşdırma">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="STEM təhsilinin üstünlükləri və gələcəyi sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=stem-tehsili" data-adm-cell="ad">STEM təhsilinin üstünlükləri və gələcəyi</a>
+                  <span class="adm-cell-sub">Xəbər #412 · stem-tehsili</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Elçin Hüseynov</td>
+                <td data-adm-cell="tarix">5 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">5 964</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="STEM təhsilinin üstünlükləri və gələcəyi — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="STEM təhsilinin üstünlükləri və gələcəyi — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="STEM təhsilinin üstünlükləri və gələcəyi — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="İmtahan" data-muellif="Nərmin Əliyeva" data-adm-label="Müəllimlərin sertifikasiya imtahanına qeydiyyat 15 iyulda başlayır" data-adm-search="sertifikasiya müəllim qeydiyyat imtahan">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Müəllimlərin sertifikasiya imtahanına qeydiyyat 15 iyulda başlayır sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=sertifikasiya" data-adm-cell="ad">Müəllimlərin sertifikasiya imtahanına qeydiyyat 15 iyulda başlayır</a>
+                  <span class="adm-cell-sub">Xəbər #411 · sertifikasiya</span>
+                </td>
+                <td><span class="adm-tag adm-tag--brand" data-adm-cell="kateqoriya">İmtahan</span></td>
+                <td data-adm-cell="muellif">Nərmin Əliyeva</td>
+                <td data-adm-cell="tarix">4 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">11 236</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Müəllimlərin sertifikasiya imtahanına qeydiyyat — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Müəllimlərin sertifikasiya imtahanına qeydiyyat — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Müəllimlərin sertifikasiya imtahanına qeydiyyat — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Tədbir" data-muellif="Aysel Məmmədova" data-adm-label="Müəllimlər üçün yay metodiki məktəbi Gəncədə keçiriləcək" data-adm-search="metodiki məktəb təlim Gəncə yay">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Müəllimlər üçün yay metodiki məktəbi Gəncədə keçiriləcək sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=metodiki-mekteb" data-adm-cell="ad">Müəllimlər üçün yay metodiki məktəbi Gəncədə keçiriləcək</a>
+                  <span class="adm-cell-sub">Xəbər #410 · metodiki-mekteb</span>
+                </td>
+                <td><span class="adm-tag adm-tag--kg" data-adm-cell="kateqoriya">Tədbir</span></td>
+                <td data-adm-cell="muellif">Aysel Məmmədova</td>
+                <td data-adm-cell="tarix">3 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">4 128</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Yay metodiki məktəbi Gəncədə — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Yay metodiki məktəbi Gəncədə — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Yay metodiki məktəbi Gəncədə — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Dərc olunub" data-kateqoriya="Qaydalar" data-muellif="Rasif Dünyamalı" data-adm-label="Təhsil haqqının ödəniş qaydalarına dair valideynlərə izah" data-adm-search="təhsil haqqı ödəniş müqavilə valideyn güzəşt">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Təhsil haqqının ödəniş qaydalarına dair valideynlərə izah sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=odenis-qaydalari" data-adm-cell="ad">Təhsil haqqının ödəniş qaydalarına dair valideynlərə izah</a>
+                  <span class="adm-cell-sub">Xəbər #409 · odenis-qaydalari</span>
+                </td>
+                <td><span class="adm-tag adm-tag--info" data-adm-cell="kateqoriya">Qaydalar</span></td>
+                <td data-adm-cell="muellif">Rasif Dünyamalı</td>
+                <td data-adm-cell="tarix">2 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">9 054</td>
+                <td><span class="badge badge--ok" data-adm-status>Dərc olunub</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Təhsil haqqının ödəniş qaydaları — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn" type="button" data-adm-action="archive" aria-label="Təhsil haqqının ödəniş qaydaları — arxivlə">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Təhsil haqqının ödəniş qaydaları — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Planlaşdırılıb" data-kateqoriya="Qaydalar" data-muellif="Rasif Dünyamalı" data-adm-label="Elektron jurnal avqustdan bütün özəl məktəblərdə icbari olur" data-adm-search="elektron jurnal rəqəmsal hesabat icbari avqust">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Elektron jurnal avqustdan bütün özəl məktəblərdə icbari olur sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=elektron-jurnal" data-adm-cell="ad">Elektron jurnal avqustdan bütün özəl məktəblərdə icbari olur</a>
+                  <span class="adm-cell-sub">Xəbər #419 · elektron-jurnal · 09:00-da dərc</span>
+                </td>
+                <td><span class="adm-tag adm-tag--info" data-adm-cell="kateqoriya">Qaydalar</span></td>
+                <td data-adm-cell="muellif">Rasif Dünyamalı</td>
+                <td data-adm-cell="tarix">18 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">0</td>
+                <td><span class="badge badge--info" data-adm-status>Planlaşdırılıb</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Elektron jurnal icbari olur — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--ok" type="button" data-adm-action="approve" aria-label="Elektron jurnal icbari olur — indi dərc et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Elektron jurnal icbari olur — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Planlaşdırılıb" data-kateqoriya="Sektor" data-muellif="Elçin Hüseynov" data-adm-label="Sumqayıtda yeni özəl lisey üçün lisenziya verildi" data-adm-search="Sumqayıt lisey lisenziya açılış sektor">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Sumqayıtda yeni özəl lisey üçün lisenziya verildi sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=sumqayit-lisenziya" data-adm-cell="ad">Sumqayıtda yeni özəl lisey üçün lisenziya verildi</a>
+                  <span class="adm-cell-sub">Xəbər #420 · sumqayit-lisenziya · 09:00-da dərc</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Elçin Hüseynov</td>
+                <td data-adm-cell="tarix">16 iyul 2026</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">0</td>
+                <td><span class="badge badge--info" data-adm-status>Planlaşdırılıb</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Sumqayıtda yeni özəl lisey — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--ok" type="button" data-adm-action="approve" aria-label="Sumqayıtda yeni özəl lisey — indi dərc et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Sumqayıtda yeni özəl lisey — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Qaralama" data-kateqoriya="Sektor" data-muellif="Aysel Məmmədova" data-adm-label="Beynəlxalq Akademiya IB Diploma proqramına akkreditasiya aldı" data-adm-search="IB Diploma akkreditasiya Beynəlxalq Akademiya Xətai">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Beynəlxalq Akademiya IB Diploma proqramına akkreditasiya aldı sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=ib-akkreditasiya" data-adm-cell="ad">Beynəlxalq Akademiya IB Diploma proqramına akkreditasiya aldı</a>
+                  <span class="adm-cell-sub">Xəbər #421 · ib-akkreditasiya · Son redaktə 12 iyul 2026</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Aysel Məmmədova</td>
+                <td data-adm-cell="tarix">—</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">0</td>
+                <td><span class="badge" data-adm-status>Qaralama</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="IB Diploma akkreditasiyası — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--ok" type="button" data-adm-action="approve" aria-label="IB Diploma akkreditasiyası — dərc et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="IB Diploma akkreditasiyası — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-derc="Qaralama" data-kateqoriya="Sektor" data-muellif="Nərmin Əliyeva" data-adm-label="Payız semestrində müəllim vakansiyalarında 12% artım gözlənilir" data-adm-search="vakansiya müəllim payız semestr proqnoz əmək bazarı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Payız semestrində müəllim vakansiyalarında 12% artım gözlənilir sətrini seç"></td>
+                <td>
+                  <a class="adm-cell-main" href="../xeber.html?id=vakansiya-proqnozu" data-adm-cell="ad">Payız semestrində müəllim vakansiyalarında 12% artım gözlənilir</a>
+                  <span class="adm-cell-sub">Xəbər #422 · vakansiya-proqnozu · Son redaktə 11 iyul 2026</span>
+                </td>
+                <td><span class="adm-tag adm-tag--plain" data-adm-cell="kateqoriya">Sektor</span></td>
+                <td data-adm-cell="muellif">Nərmin Əliyeva</td>
+                <td data-adm-cell="tarix">—</td>
+                <td class="adm-cell-num" data-adm-cell="baxis">0</td>
+                <td><span class="badge" data-adm-status>Qaralama</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="xeber" aria-label="Müəllim vakansiyalarında artım proqnozu — bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--ok" type="button" data-adm-action="approve" aria-label="Müəllim vakansiyalarında artım proqnozu — dərc et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Müəllim vakansiyalarında artım proqnozu — sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+            <tfoot>
+              <tr data-adm-norow>
+                <td colspan="5">Cəmi 14 xəbər · 10 dərcdə · 2 planda · 2 qaralama</td>
+                <td class="adm-cell-num">93 417</td>
+                <td colspan="2">Son 30 gün üzrə baxış</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="adm-empty" hidden>
+          <span class="adm-empty-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h6M7 13h10"/></svg>
+          </span>
+          <p class="adm-empty-title">Nəticə tapılmadı</p>
+          <p class="adm-empty-text">Filtri dəyişib yenidən cəhd edin.</p>
+          <div class="adm-empty-actions">
+            <button class="btn-ghost btn-sm" type="button" data-adm-filter-reset>Filtri sıfırla</button>
+          </div>
+        </div>
+
+        <nav class="adm-pager" aria-label="Səhifələmə">
+          <span class="adm-pager-info">1–8 / 14 nəticə</span>
+          <div class="adm-pager-nav">
+            <button class="adm-pager-btn" type="button" disabled>Əvvəlki</button>
+            <button class="adm-pager-btn is-active" type="button" aria-current="page">1</button>
+            <button class="adm-pager-btn" type="button">2</button>
+            <button class="adm-pager-btn" type="button">Sonrakı</button>
+          </div>
+        </nav>
+      </section>
+    </div>
+
+    <div class="adm-grid adm-grid--2">
+      <section class="adm-panel">
+        <div class="adm-panel-head">
+          <h2 class="adm-panel-title">Dərc qaydaları</h2>
+          <p class="adm-panel-sub">Hər xəbər dərcdən əvvəl bu beş şərt üzrə yoxlanılır.</p>
+        </div>
+        <div class="adm-panel-body">
+          <dl class="adm-kv">
+            <dt class="adm-kv-k">Başlıq</dt>
+            <dd class="adm-kv-v">60–90 simvol. Axtarış nəticəsində kəsilməsin deyə nöqtə ilə bitmir.</dd>
+            <dt class="adm-kv-k">Mənbə</dt>
+            <dd class="adm-kv-v">Rəsmi qərar və ya müəssisənin öz bildirişi mətnin sonunda göstərilir.</dd>
+            <dt class="adm-kv-k">Örtük şəkli</dt>
+            <dd class="adm-kv-v">1200×630 piksel, maksimum 400 KB. Şəkilsiz xəbər dərc olunmur.</dd>
+            <dt class="adm-kv-k">Redaktə</dt>
+            <dd class="adm-kv-v">Dərcdən sonrakı düzəlişlər mətnin altında “Yenilənib” qeydi ilə işarələnir.</dd>
+            <dt class="adm-kv-k">Planlaşdırma</dt>
+            <dd class="adm-kv-v">Təyin olunan tarixdə saat 09:00-da avtomatik dərc olunur.</dd>
+          </dl>
+        </div>
+        <div class="adm-panel-foot">
+          <a class="btn-ghost btn-sm" href="../xeberler.html">Saytdakı xəbər lentinə bax</a>
+        </div>
+      </section>
+
+      <section class="adm-panel">
+        <div class="adm-panel-head">
+          <h2 class="adm-panel-title">Son redaksiya hərəkətləri</h2>
+          <div class="adm-panel-actions">
+            <a class="btn-ghost btn-sm" href="statistika.html">Hesabata bax</a>
+          </div>
+        </div>
+        <div class="adm-panel-body adm-panel-body--flush">
+          <ul class="adm-log">
+            <li class="adm-log-item">
+              <span class="adm-log-dot adm-log-dot--ok" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+              </span>
+              <div class="adm-log-body">
+                <p class="adm-log-text"><b>Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq?</b> xəbəri əsas xəbər kimi dərc olundu.</p>
+                <span class="adm-log-time">12 iyul 2026 · 09:00</span>
+              </div>
+            </li>
+            <li class="adm-log-item">
+              <span class="adm-log-dot adm-log-dot--info" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div class="adm-log-body">
+                <p class="adm-log-text"><b>Elektron jurnal avqustdan icbari olur</b> xəbəri 18 iyul tarixinə planlaşdırıldı.</p>
+                <span class="adm-log-time">12 iyul 2026 · 11:42</span>
+              </div>
+            </li>
+            <li class="adm-log-item">
+              <span class="adm-log-dot adm-log-dot--warn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h4L20 8l-4-4L4 16z"/><path d="m14.5 5.5 4 4"/></svg>
+              </span>
+              <div class="adm-log-body">
+                <p class="adm-log-text"><b>Nərmin Əliyeva</b> buraxılış imtahanı xəbərinə apellyasiya tarixini əlavə etdi.</p>
+                <span class="adm-log-time">11 iyul 2026 · 16:18</span>
+              </div>
+            </li>
+            <li class="adm-log-item">
+              <span class="adm-log-dot" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+              </span>
+              <div class="adm-log-body">
+                <p class="adm-log-text"><b>Aysel Məmmədova</b> IB akkreditasiyası ilə bağlı yeni qaralama yaratdı.</p>
+                <span class="adm-log-time">11 iyul 2026 · 10:05</span>
+              </div>
+            </li>
+            <li class="adm-log-item">
+              <span class="adm-log-dot adm-log-dot--danger" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </span>
+              <div class="adm-log-body">
+                <p class="adm-log-text"><b>Rasif Dünyamalı</b> təsdiqlənməmiş mənbəyə əsaslanan bir qaralamanı sildi.</p>
+                <span class="adm-log-time">10 iyul 2026 · 17:30</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <aside class="adm-drawer" data-adm-drawer-id="xeber" aria-labelledby="drawer-xeber-title">
+      <div class="adm-drawer-head">
+        <div>
+          <h2 class="adm-drawer-title" id="drawer-xeber-title" data-adm-field="ad">Xəbər detalı</h2>
+          <span class="adm-drawer-sub" data-adm-field="muellif">Müəllif seçilməyib</span>
+        </div>
+        <button class="adm-drawer-close" type="button" data-adm-drawer-close aria-label="Bağla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="adm-drawer-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Kateqoriya</dt>
+          <dd class="adm-kv-v" data-adm-field="kateqoriya">—</dd>
+          <dt class="adm-kv-k">Müəllif</dt>
+          <dd class="adm-kv-v" data-adm-field="muellif">—</dd>
+          <dt class="adm-kv-k">Dərc tarixi</dt>
+          <dd class="adm-kv-v" data-adm-field="tarix">—</dd>
+          <dt class="adm-kv-k">Baxış</dt>
+          <dd class="adm-kv-v" data-adm-field="baxis">—</dd>
+          <dt class="adm-kv-k">Status</dt>
+          <dd class="adm-kv-v"><span class="adm-tag adm-tag--plain" data-adm-field="derc">—</span></dd>
+        </dl>
+
+        <ul class="adm-log">
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--info" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Mətn redaksiyada <b>korrektə</b> mərhələsindən keçdi.</p>
+              <span class="adm-log-time">Orta hazırlıq müddəti 2 saat 15 dəq</span>
+            </div>
+          </li>
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--ok" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Örtük şəkli və SEO sahələri <b>tam doldurulub</b>.</p>
+              <span class="adm-log-time">Şəkil ölçüsü 1200×630 · 312 KB</span>
+            </div>
+          </li>
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--warn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Xəbər lenti hər 15 dəqiqədən bir <b>yenidən qurulur</b>.</p>
+              <span class="adm-log-time">Növbəti yeniləmə: 15 dəqiqə sonra</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="adm-drawer-foot">
+        <button class="btn-brand btn-sm" type="button" data-adm-drawer="xeber-yeni">Redaktora keç</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="archive">Arxivlə</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-drawer-close>Bağla</button>
+      </div>
+    </aside>
+
+    <aside class="adm-drawer" data-adm-drawer-id="xeber-yeni" aria-labelledby="drawer-xeber-yeni-title">
+      <div class="adm-drawer-head">
+        <div>
+          <h2 class="adm-drawer-title" id="drawer-xeber-yeni-title">Yeni xəbər</h2>
+          <span class="adm-drawer-sub">Qaralama istənilən anda saxlanıla bilər</span>
+        </div>
+        <button class="adm-drawer-close" type="button" data-adm-drawer-close aria-label="Bağla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="adm-drawer-body">
+        <form id="form-xeber" data-adm-demo data-adm-demo-msg="Xəbər yadda saxlanıldı" novalidate>
+          <div class="field">
+            <label class="field-label" for="xb-basliq">Başlıq <span class="req">*</span></label>
+            <input class="input" id="xb-basliq" name="basliq" type="text" placeholder="Yeni tədris ilində məktəblərdə hansı yeniliklər olacaq?" required>
+            <p class="field-hint">60–90 simvol tövsiyə olunur; sonda nöqtə qoymayın.</p>
+            <p class="field-error" data-error-for="xb-basliq" hidden>Xəbərin başlığını yazın.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-slug">Slug <span class="req">*</span></label>
+            <input class="input" id="xb-slug" name="slug" type="text" placeholder="yeni-tedris-ili" required>
+            <p class="field-hint">Ünvan belə görünəcək: xeber.html?id=yeni-tedris-ili</p>
+            <p class="field-error" data-error-for="xb-slug" hidden>Slug yazın — yalnız kiçik hərf və defis.</p>
+          </div>
+
+          <div class="field">
+            <span class="field-label" id="xb-kateqoriya-label">Kateqoriya <span class="req">*</span></span>
+            <div class="dd" data-dd data-name="xb-kateqoriya" data-placeholder="Kateqoriya seçin" data-labelledby="xb-kateqoriya-label">
+              <button class="dd-trigger" type="button">
+                <span class="dd-value is-placeholder" data-placeholder="Kateqoriya seçin">Kateqoriya seçin</span>
+                <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dd-panel">
+                <div class="dd-list">
+                  <button class="dd-option" type="button" data-value="Qaydalar"><span class="dd-label">Qaydalar</span></button>
+                  <button class="dd-option" type="button" data-value="İmtahan"><span class="dd-label">İmtahan</span></button>
+                  <button class="dd-option" type="button" data-value="Sektor"><span class="dd-label">Sektor</span></button>
+                  <button class="dd-option" type="button" data-value="Tədbir"><span class="dd-label">Tədbir</span></button>
+                </div>
+              </div>
+            </div>
+            <p class="field-hint">Kateqoriya saytdakı süzgəc çiplərini idarə edir.</p>
+          </div>
+
+          <div class="field">
+            <span class="field-label" id="xb-muellif-label">Müəllif <span class="req">*</span></span>
+            <div class="dd" data-dd data-name="xb-muellif" data-placeholder="Müəllif seçin" data-labelledby="xb-muellif-label">
+              <button class="dd-trigger" type="button">
+                <span class="dd-value is-placeholder" data-placeholder="Müəllif seçin">Müəllif seçin</span>
+                <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dd-panel">
+                <div class="dd-list">
+                  <button class="dd-option" type="button" data-value="Rasif Dünyamalı" aria-selected="true"><span class="dd-label">Rasif Dünyamalı</span></button>
+                  <button class="dd-option" type="button" data-value="Nərmin Əliyeva"><span class="dd-label">Nərmin Əliyeva</span></button>
+                  <button class="dd-option" type="button" data-value="Aysel Məmmədova"><span class="dd-label">Aysel Məmmədova</span></button>
+                  <button class="dd-option" type="button" data-value="Elçin Hüseynov"><span class="dd-label">Elçin Hüseynov</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-tarix">Dərc tarixi</label>
+            <input class="input" id="xb-tarix" name="tarix" type="date" value="2026-07-18">
+            <p class="field-hint">Gələcək tarix seçilərsə xəbər həmin gün saat 09:00-da avtomatik dərc olunur.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-tesvir">Qısa təsvir <span class="req">*</span></label>
+            <textarea class="textarea" id="xb-tesvir" name="tesvir" rows="3" placeholder="Lentdə və sosial şəbəkə paylaşımında görünən 1–2 cümlə." required></textarea>
+            <p class="field-hint">Maksimum 220 simvol.</p>
+            <p class="field-error" data-error-for="xb-tesvir" hidden>Qısa təsviri yazın.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-mezmun">Məzmun <span class="req">*</span></label>
+            <textarea class="textarea" id="xb-mezmun" name="mezmun" rows="9" placeholder="Xəbərin tam mətni. Alt başlıqlar üçün sətrin əvvəlinə ## yazın, siyahı üçün tire istifadə edin." required></textarea>
+            <p class="field-hint">Rəsmi qərara istinad linkini mətnin sonunda göstərin.</p>
+            <p class="field-error" data-error-for="xb-mezmun" hidden>Xəbərin mətnini yazın.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-ortuk">Örtük şəkli</label>
+            <input class="input" id="xb-ortuk" name="ortuk" type="text" placeholder="ortuk-yeni-tedris-ili.jpg">
+            <p class="field-hint">Şəkil kitabxanasındakı fayl adı — 1200×630 piksel, maksimum 400 KB.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-seo-basliq">SEO başlıq</label>
+            <input class="input" id="xb-seo-basliq" name="seo_basliq" type="text" placeholder="Yeni tədris ilinin yenilikləri — EduNav.az">
+            <p class="field-hint">Boş buraxılsa xəbərin öz başlığı istifadə olunur.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="xb-seo-tesvir">SEO təsviri</label>
+            <textarea class="textarea" id="xb-seo-tesvir" name="seo_tesvir" rows="3" placeholder="Axtarış nəticəsində görünən 120–160 simvolluq izah."></textarea>
+            <p class="field-hint">Açar sözü ilk 60 simvolda saxlayın.</p>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Dərc ayarları</span>
+            <div class="field-row">
+              <label class="switch">
+                <input type="checkbox" data-adm-switch="Əsas səhifədə göstər">
+                <span class="switch-track"></span>
+                <span class="switch-label">Əsas səhifədə göstər</span>
+              </label>
+            </div>
+            <p class="field-hint">Yalnız bir xəbər eyni anda əsas xəbər ola bilər.</p>
+          </div>
+        </form>
+      </div>
+      <div class="adm-drawer-foot">
+        <button class="btn-brand btn-sm" type="submit" form="form-xeber">Dərc et</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-action="save">Qaralama saxla</button>
+        <button class="btn-ghost btn-sm" type="button" data-adm-drawer-close>İmtina</button>
+      </div>
+    </aside>
+
+  </main>
+</div>
+<script src="../assets/js/app.js?v=2"></script>
+<script src="../assets/js/admin.js?v=2"></script>
+</body>
+</html>

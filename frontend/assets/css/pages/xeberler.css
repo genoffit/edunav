@@ -1,0 +1,127 @@
+/* ==========================================================================
+   EduNav — page styles for xeberler.html only.
+   Every class here is prefixed .xeberler- and is loaded after style.css.
+   Nothing in this file may be reused by another page.
+   ========================================================================== */
+
+/* --- filter toolbar (chips + result count) -------------------------------- */
+.xeberler-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.xeberler-count {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+/* --- featured news item --------------------------------------------------- */
+.xeberler-feature {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--bg);
+  transition:
+    border-color .18s var(--ease),
+    box-shadow .18s var(--ease),
+    transform .18s var(--ease);
+}
+.xeberler-feature:hover {
+  border-color: var(--line-5);
+  box-shadow: var(--sh-2);
+  transform: translateY(-3px);
+}
+.xeberler-feature:focus-within { border-color: var(--ink); }
+
+.xeberler-feature-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  background: linear-gradient(140deg, #0F1420, #243049);
+}
+
+.xeberler-feature-mono {
+  font-family: var(--font-head);
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: rgba(255, 255, 255, .22);
+}
+
+.xeberler-feature-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 28px 30px;
+}
+
+.xeberler-feature-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.026em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.xeberler-feature-title a { color: inherit; }
+.xeberler-feature-title a:hover { color: var(--brand-dark); }
+
+.xeberler-feature-desc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.xeberler-feature-foot {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* --- the list section head and grid --------------------------------------- */
+.xeberler-sec { margin-top: 36px; }
+
+/* the grid gap supplies the rhythm — drop the stacked-list margin */
+.xeberler-grid .news-card + .news-card { margin-top: 0; }
+.xeberler-grid .news-card { height: 100%; }
+
+.xeberler-empty { margin-top: 24px; }
+
+/* --- responsive ----------------------------------------------------------- */
+@media (max-width: 900px) {
+  .xeberler-feature { grid-template-columns: minmax(0, 1fr); }
+  .xeberler-feature-media { min-height: 174px; }
+  .xeberler-feature-mono { font-size: 34px; }
+}
+
+@media (max-width: 560px) {
+  .xeberler-toolbar { align-items: flex-start; }
+  .xeberler-feature-body { padding: 20px 18px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xeberler-feature { transition: none; }
+  .xeberler-feature:hover { transform: none; }
+}

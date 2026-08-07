@@ -1,0 +1,228 @@
+/* ==========================================================================
+   EduNav — page styles for mekteblar.html only.
+   Every class here is prefixed .mekteblar- and is loaded after style.css.
+   Nothing in this file may be reused by another page.
+   ========================================================================== */
+
+/* --- two-column shell: filter rail + results ------------------------------ */
+.mekteblar-shell {
+  display: grid;
+  grid-template-columns: 288px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.mekteblar-side {
+  position: sticky;
+  top: calc(var(--header-h) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.mekteblar-results { min-width: 0; }
+
+/* --- filter panel --------------------------------------------------------- */
+.mekteblar-panel {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.mekteblar-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line-4);
+}
+
+.mekteblar-panel-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.mekteblar-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: var(--r-xxs);
+  background: none;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color .16s var(--ease);
+}
+.mekteblar-reset:hover { color: var(--ink); }
+.mekteblar-reset:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* --- search field inside the panel ---------------------------------------- */
+.mekteblar-search {
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.mekteblar-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.mekteblar-search-icon svg { width: 16px; height: 16px; }
+
+.mekteblar-panel .mekteblar-search-input { padding: 11px 12px 11px 36px; }
+
+/* --- filter groups -------------------------------------------------------- */
+.mekteblar-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mekteblar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mekteblar-group-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+
+.mekteblar-side-note {
+  margin: 16px 0 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* --- support card under the panel ----------------------------------------- */
+.mekteblar-help {
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.mekteblar-help-title {
+  margin: 10px 0 0;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.mekteblar-help-text {
+  margin: 7px 0 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* --- results toolbar ------------------------------------------------------ */
+.mekteblar-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mekteblar-toolbar-text { min-width: 0; }
+
+.mekteblar-toolbar-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.026em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.mekteblar-count {
+  margin: 7px 0 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.mekteblar-count-num {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.mekteblar-sort {
+  flex: none;
+  width: 200px;
+}
+
+/* --- results grid --------------------------------------------------------- */
+.mekteblar-grid .ecard { height: 100%; }
+
+.mekteblar-empty { margin-top: 24px; }
+
+.mekteblar-banner { margin-top: 36px; }
+
+/* --- responsive ----------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .mekteblar-shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .mekteblar-side {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mekteblar-toolbar { align-items: flex-start; }
+}
+
+@media (max-width: 560px) {
+  .mekteblar-panel { padding: 16px; }
+  .mekteblar-sort { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mekteblar-reset { transition: none; }
+}

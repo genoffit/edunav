@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayarlar | EduNav İdarə Paneli</title>
+<meta name="description" content="EduNav idarə panelinin ayarları: sayt məlumatları, moderasiya qaydaları, Baza-Standart-Premium paketləri, bildirişlər, inteqrasiyalar və təhlükəsizlik parametrləri.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1420">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../assets/css/admin.css?v=2">
+</head>
+<body class="adm">
+<a class="skip-link" href="#adm-content">Əsas məzmuna keç</a>
+
+<div class="adm-side-backdrop" data-adm-side-close aria-hidden="true"></div>
+<aside class="adm-side" id="adm-side" aria-label="İdarə paneli naviqasiyası">
+  <div class="adm-side-head">
+    <a class="logo" href="index.html" aria-label="EduNav İdarə Paneli — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+    <button class="adm-side-close" type="button" data-adm-side-close aria-label="Menyunu bağla">
+      <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="adm-nav" aria-label="Bölmələr">
+    <p class="adm-nav-group">Ümumi baxış</p>
+    <a class="adm-nav-link" href="index.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 8.4 10 3l7 5.4V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 17v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">İdarə paneli</span>
+    </a>
+    <a class="adm-nav-link" href="statistika.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 17h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 17V9M10 17V4M14 17v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Statistika</span>
+    </a>
+
+    <p class="adm-nav-group">Müəssisələr</p>
+    <a class="adm-nav-link" href="muessiseler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 17V5.5L10 3l6.5 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 17h13M8 17v-4h4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisələr</span>
+    </a>
+    <a class="adm-nav-link" href="muessise-detal.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3.5" y="3" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6.8 7.5h6.4M6.8 10.5h6.4M6.8 13.5h3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisə detalı</span>
+    </a>
+    <a class="adm-nav-link" href="tesdiq.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m6.8 10.3 2.3 2.3 4.1-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Təsdiq gözləyənlər</span>
+      <span class="badge badge--warn adm-nav-badge">7</span>
+    </a>
+
+    <p class="adm-nav-group">Məzmun</p>
+    <a class="adm-nav-link" href="xeberler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8h5M6 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Xəbərlər</span>
+    </a>
+    <a class="adm-nav-link" href="elanlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 8.2v3.6h3l5 3.2V5L7 8.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.8 7.6a4 4 0 0 1 0 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Elanlar</span>
+    </a>
+    <a class="adm-nav-link" href="bloglar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 4.5h8.5L16 8v7.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 4.5V8h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Bloglar</span>
+    </a>
+    <a class="adm-nav-link" href="vakansiyalar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 6.5V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Vakansiyalar</span>
+    </a>
+
+    <p class="adm-nav-group">İcma</p>
+    <a class="adm-nav-link" href="muracietler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M17 12.5a1.8 1.8 0 0 1-1.8 1.8H7.4L4 17.5V5.3A1.8 1.8 0 0 1 5.8 3.5h9.4A1.8 1.8 0 0 1 17 5.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Müraciətlər</span>
+      <span class="badge badge--info adm-nav-badge">12</span>
+    </a>
+    <a class="adm-nav-link" href="reyler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="m10 3.6 1.98 4.02 4.44.64-3.21 3.13.76 4.42L10 13.72l-3.97 2.09.76-4.42L3.58 8.26l4.44-.64z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Rəylər</span>
+    </a>
+    <a class="adm-nav-link" href="istifadeciler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="7.4" r="2.9" stroke="currentColor" stroke-width="1.6"/><path d="M2.8 16.4c0-2.6 2.33-4.4 5.2-4.4s5.2 1.8 5.2 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.2 5.2a2.5 2.5 0 0 1 0 4.6M15.4 12.6c1.4.66 2.3 1.9 2.3 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">İstifadəçilər</span>
+    </a>
+
+    <p class="adm-nav-group">Sistem</p>
+    <a class="adm-nav-link is-active" href="ayarlar.html" aria-current="page">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8v2M10 15.2v2M17.2 10h-2M4.8 10h-2M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4M15.1 15.1l-1.4-1.4M6.3 6.3 4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Ayarlar</span>
+    </a>
+    <a class="adm-nav-link" href="daxil-ol.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M12.4 14.2v1.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 15.6V4.4A1.4 1.4 0 0 1 5.4 3H11a1.4 1.4 0 0 1 1.4 1.4v1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.6 10h8.2M14.2 7.4 16.8 10l-2.6 2.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Çıxış</span>
+    </a>
+  </nav>
+
+  <div class="adm-user">
+    <span class="adm-avatar" aria-hidden="true">RD</span>
+    <span class="adm-user-text">
+      <span class="adm-user-name">Rasif Dünyamalı</span>
+      <span class="adm-user-role">Baş administrator</span>
+    </span>
+  </div>
+</aside>
+
+<div class="adm-main">
+  <header class="adm-top">
+    <button class="adm-burger" type="button" data-adm-side-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="adm-side">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+    </button>
+
+    <h1 class="adm-top-title">Ayarlar</h1>
+
+    <form class="adm-top-search" role="search" data-form="adm-search" novalidate>
+      <label class="field-label sr-only" for="adm-search">Axtarış</label>
+      <span class="adm-top-search-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <input class="input adm-top-input" id="adm-search" name="q" type="search" placeholder="Müəssisə, istifadəçi və ya elan axtar" autocomplete="off">
+    </form>
+
+    <div class="adm-top-actions">
+      <button class="adm-bell" type="button" data-adm-notifications aria-label="Bildirişlər — 3 yeni" aria-expanded="false">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M15.2 13.4V9a5.2 5.2 0 1 0-10.4 0v4.4L3.4 15.2h13.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.2 15.2a1.9 1.9 0 0 0 3.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="adm-bell-dot" aria-hidden="true"></span>
+      </button>
+      <span class="adm-avatar" aria-hidden="true">RD</span>
+    </div>
+  </header>
+
+  <main class="adm-content" id="adm-content">
+
+    <!-- 1. Səhifə başlığı -->
+    <div class="adm-toolbar">
+      <h2 class="adm-toolbar-title">Platforma ayarları</h2>
+      <span class="adm-toolbar-count">Son dəyişiklik: 12 iyul 2026 · 14:20</span>
+      <div class="adm-toolbar-actions">
+        <a class="btn-ghost btn-sm" href="istifadeciler.html">İcazələr</a>
+        <a class="btn-brand btn-sm" href="#ayar-yadda">Yadda saxlamağa keç</a>
+      </div>
+    </div>
+
+    <!-- 2. Bölmə raylı -->
+    <div class="adm-tabs" role="navigation" aria-label="Ayarlar bölmələri">
+      <a class="adm-tab is-active" href="#ayar-umumi" aria-current="true">Ümumi</a>
+      <a class="adm-tab" href="#ayar-mezmun">Məzmun</a>
+      <a class="adm-tab" href="#ayar-paketler">Paketlər</a>
+      <a class="adm-tab" href="#ayar-bildirisler">Bildirişlər</a>
+      <a class="adm-tab" href="#ayar-inteqrasiyalar">İnteqrasiyalar</a>
+      <a class="adm-tab" href="#ayar-tehlukesizlik">Təhlükəsizlik</a>
+    </div>
+
+    <!-- 3. Ümumi -->
+    <section class="adm-panel adm-panel--overflow" id="ayar-umumi">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Ümumi məlumatlar</h2>
+        <div class="adm-panel-actions">
+          <span class="adm-tag adm-tag--ok">Sayt aktivdir</span>
+        </div>
+        <p class="adm-panel-sub">Saytın adı, əlaqə kanalları və dil parametrləri. Dəyişikliklər başlıq, altlıq və əlaqə səhifəsində dərhal görünür.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Ümumi ayarlar yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field">
+              <label class="field-label" for="ayar-ad">Saytın adı <span class="req">*</span></label>
+              <input class="input" id="ayar-ad" name="sayt_adi" type="text" value="EduNav.az" required>
+              <p class="field-error" data-error-for="ayar-ad" hidden>Saytın adını yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-shuar">Qısa şüar</label>
+              <input class="input" id="ayar-shuar" name="shuar" type="text" value="Təhsil müəssisələri üçün etibarlı platforma">
+              <p class="field-hint">Brauzer başlığında və sosial paylaşımlarda görünür.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-epoct">Əlaqə e-poçtu <span class="req">*</span></label>
+              <input class="input" id="ayar-epoct" name="epoct" type="email" value="info@edunav.az" autocomplete="email" required>
+              <p class="field-error" data-error-for="ayar-epoct" hidden>E-poçt ünvanı düzgün deyil.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-destek">Dəstək telefonu <span class="req">*</span></label>
+              <input class="input" id="ayar-destek" name="destek" type="tel" value="*8080" required>
+              <p class="field-hint">Qısa nömrə bütün mobil operatorlardan pulsuzdur.</p>
+              <p class="field-error" data-error-for="ayar-destek" hidden>Dəstək nömrəsini yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-saat">İş saatları</label>
+              <input class="input" id="ayar-saat" name="is_saatlari" type="text" value="İş günləri 09:00–18:00">
+              <p class="field-hint">Şənbə 10:00–14:00, bazar günü qeyri-iş günüdür.</p>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="ayar-dil-label">Standart dil</span>
+              <div class="dd" data-dd data-name="dil" data-placeholder="Dil seçin" data-labelledby="ayar-dil-label">
+                <button class="dd-trigger" type="button">
+                  <span class="dd-value" data-placeholder="Dil seçin">Azərbaycan</span>
+                  <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="dd-panel">
+                  <div class="dd-list">
+                    <button class="dd-option" type="button" data-value="Azərbaycan" aria-selected="true"><span class="dd-label">Azərbaycan</span></button>
+                    <button class="dd-option" type="button" data-value="Rus"><span class="dd-label">Rus</span></button>
+                    <button class="dd-option" type="button" data-value="İngilis"><span class="dd-label">İngilis</span></button>
+                  </div>
+                </div>
+              </div>
+              <p class="field-hint">Rus və ingilis versiyaları hazırlıq mərhələsindədir.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-qursaq">Saat qurşağı</label>
+              <input class="input" id="ayar-qursaq" name="qursaq" type="text" value="(UTC+04:00) Bakı">
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-domen">Sayt ünvanı</label>
+              <input class="input" id="ayar-domen" name="domen" type="url" value="https://edunav.az">
+              <p class="field-error" data-error-for="ayar-domen" hidden>Ünvanı düzgün yazın.</p>
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-unvan">Ofis ünvanı</label>
+              <input class="input" id="ayar-unvan" name="unvan" type="text" value="Bakı, Nəsimi rayonu, Nizami küçəsi 118, 4-cü mərtəbə">
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-tesvir">Altlıq təsviri</label>
+              <textarea class="textarea" id="ayar-tesvir" name="tesvir" rows="3">Təhsil müəssisələri üçün etibarlı platforma. Məktəb və bağçaları kəşf edin, müqayisə edin, birbaşa müraciət göndərin.</textarea>
+              <p class="field-hint">Altlıqda və axtarış nəticələrində görünən 1–2 cümlə.</p>
+            </div>
+
+            <div class="field field--full">
+              <span class="field-label">Sayt rejimi</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Qeydiyyat" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni istifadəçi qeydiyyatı açıqdır</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Baxım rejimi">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Baxım rejimi — sayt yalnız administratorlara açıq olur</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. Məzmun və moderasiya -->
+    <section class="adm-panel" id="ayar-mezmun">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Məzmun və moderasiya</h2>
+        <div class="adm-panel-actions">
+          <a class="btn-ghost btn-sm" href="tesdiq.html">Təsdiq növbəsi</a>
+        </div>
+        <p class="adm-panel-sub">Yeni profillərin, rəylərin və elanların hansı hallarda əl ilə yoxlanacağını müəyyən edir.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Moderasiya qaydaları yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field field--full">
+              <span class="field-label">Avtomatik təsdiq</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Profillərin avtomatik təsdiqi">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni müəssisə profillərini avtomatik təsdiqlə</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Rəylərin avtomatik dərci">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Rəyləri moderasiyasız dərc et</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Vakansiyaların avtomatik dərci" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Təsdiqlənmiş müəssisələrin vakansiyalarını avtomatik dərc et</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Sənəd tələbi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Profil təsdiqi üçün lisenziya sənədini tələb et</span>
+                </label>
+              </div>
+              <p class="field-hint">Avtomatik təsdiq söndürülübsə, hər profil təsdiq növbəsinə düşür — hazırda növbədə 17 müəssisə var.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-rey-hedd">Rəy yoxlama həddi (ulduz) <span class="req">*</span></label>
+              <input class="input" id="ayar-rey-hedd" name="rey_hedd" type="number" min="1" max="5" step="1" value="3" required>
+              <p class="field-hint">Bu qiymətdən aşağı rəylər dərc olunmadan əvvəl əl ilə oxunur.</p>
+              <p class="field-error" data-error-for="ayar-rey-hedd" hidden>1 ilə 5 arasında rəqəm yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-sikayet">Şikayət həddi <span class="req">*</span></label>
+              <input class="input" id="ayar-sikayet" name="sikayet_hedd" type="number" min="1" max="20" step="1" value="3" required>
+              <p class="field-hint">Bu qədər şikayət toplayan rəy avtomatik gizlədilir və moderatora göndərilir.</p>
+              <p class="field-error" data-error-for="ayar-sikayet" hidden>Şikayət həddini yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-gunluk">Gündəlik avtomatik təsdiq limiti</label>
+              <input class="input" id="ayar-gunluk" name="gunluk_limit" type="number" min="0" max="200" step="5" value="25">
+              <p class="field-hint">Limit dolduqda qalan profillər növbəyə keçir.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-min-tesvir">Profil təsvirinin minimum uzunluğu</label>
+              <input class="input" id="ayar-min-tesvir" name="min_tesvir" type="number" min="40" max="600" step="10" value="120">
+              <p class="field-hint">Simvol sayı. Qısa təsvirlər kataloqda zəif görünür.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-max-sekil">Profil üçün maksimum şəkil</label>
+              <input class="input" id="ayar-max-sekil" name="max_sekil" type="number" min="1" max="60" step="1" value="12">
+              <p class="field-hint">Paket limitindən yuxarı ola bilməz.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-arxiv">Elanın avtomatik arxivləşməsi (gün)</label>
+              <input class="input" id="ayar-arxiv" name="elan_arxiv" type="number" min="7" max="180" step="1" value="45">
+              <p class="field-hint">Vakansiya və elanlar bu müddətdən sonra arxivə keçir.</p>
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-sozler">Qadağan olunmuş sözlər</label>
+              <textarea class="textarea" id="ayar-sozler" name="qadagan_sozler" rows="3">zəmanətli qəbul, rüşvət, təhqir, saxta diplom, pulsuz imtahan cavabı</textarea>
+              <p class="field-hint">Vergüllə ayırın. Bu ifadələri işlədən rəy və elanlar birbaşa moderasiyaya düşür.</p>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+      <div class="adm-panel-foot">
+        <span class="adm-tag adm-tag--warn">Növbədə 17 müəssisə</span>
+        <span class="adm-tag adm-tag--info">38 rəy moderasiya gözləyir</span>
+        <span class="adm-tag adm-tag--plain">Orta yoxlama müddəti: 6 saat</span>
+      </div>
+    </section>
+
+    <!-- 5. Paketlər -->
+    <section class="adm-panel" id="ayar-paketler">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Paketlər və qiymətlər</h2>
+        <div class="adm-panel-actions">
+          <a class="btn-ghost btn-sm" href="muessiseler.html">Paket üzrə süz</a>
+        </div>
+        <p class="adm-panel-sub">Müəssisələrə təklif olunan üç paket. Qiymətlər ƏDV daxil, manatla göstərilir.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="adm-table">
+          <caption class="sr-only">Baza, Standart və Premium paketlərinin qiymət və limitləri</caption>
+          <thead>
+            <tr>
+              <th scope="col">Paket</th>
+              <th scope="col">Aylıq</th>
+              <th scope="col">İllik</th>
+              <th scope="col">Şəkil limiti</th>
+              <th scope="col">Vakansiya limiti</th>
+              <th scope="col">Kataloq sırası</th>
+              <th scope="col">Müəssisə</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="adm-cell-main">Baza</span>
+                <span class="adm-cell-sub">Yeni qeydiyyatdan keçən müəssisələr üçün</span>
+              </td>
+              <td class="adm-cell-num">0 AZN</td>
+              <td class="adm-cell-num">0 AZN</td>
+              <td class="adm-cell-num">4</td>
+              <td class="adm-cell-num">1</td>
+              <td>Standart sıralama</td>
+              <td class="adm-cell-num">612</td>
+              <td><span class="adm-tag adm-tag--plain">Aktiv</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="adm-cell-main">Standart</span>
+                <span class="adm-cell-sub">Qalereya, vakansiya paneli və statistika</span>
+              </td>
+              <td class="adm-cell-num">49 AZN</td>
+              <td class="adm-cell-num">490 AZN</td>
+              <td class="adm-cell-num">12</td>
+              <td class="adm-cell-num">5</td>
+              <td>Yüksəldilmiş sıralama</td>
+              <td class="adm-cell-num">428</td>
+              <td><span class="adm-tag adm-tag--info">Aktiv</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="adm-cell-main">Premium</span>
+                <span class="adm-cell-sub">Kataloqda ilk sıra, nişan və prioritet dəstək</span>
+              </td>
+              <td class="adm-cell-num">129 AZN</td>
+              <td class="adm-cell-num">1 290 AZN</td>
+              <td class="adm-cell-num">30</td>
+              <td class="adm-cell-num">Limitsiz</td>
+              <td>İlk sıra + Premium nişanı</td>
+              <td class="adm-cell-num">200</td>
+              <td><span class="adm-tag adm-tag--brand">Aktiv</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr data-adm-norow>
+              <td colspan="6">Cəmi</td>
+              <td class="adm-cell-num">1 240</td>
+              <td>3 paket</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Paket qiymətləri yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field">
+              <label class="field-label" for="ayar-standart-qiymet">Standart paket — aylıq (AZN) <span class="req">*</span></label>
+              <input class="input" id="ayar-standart-qiymet" name="standart_qiymet" type="number" min="0" max="999" step="1" value="49" required>
+              <p class="field-error" data-error-for="ayar-standart-qiymet" hidden>Qiyməti rəqəmlə yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-premium-qiymet">Premium paket — aylıq (AZN) <span class="req">*</span></label>
+              <input class="input" id="ayar-premium-qiymet" name="premium_qiymet" type="number" min="0" max="999" step="1" value="129" required>
+              <p class="field-error" data-error-for="ayar-premium-qiymet" hidden>Qiyməti rəqəmlə yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-illik-endirim">İllik ödənişdə endirim (%)</label>
+              <input class="input" id="ayar-illik-endirim" name="illik_endirim" type="number" min="0" max="50" step="1" value="17">
+              <p class="field-hint">İllik qiymət 12 aylıq məbləğdən bu faiz qədər aşağıdır.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-sinaq">Pulsuz sınaq müddəti (gün)</label>
+              <input class="input" id="ayar-sinaq" name="sinaq" type="number" min="0" max="90" step="1" value="14">
+              <p class="field-hint">Standart və Premium paketlərə ilk dəfə keçən müəssisələr üçün.</p>
+            </div>
+
+            <div class="field field--full">
+              <span class="field-label">Ödəniş qaydaları</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Avtomatik uzatma" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Paketi müddət bitəndə avtomatik uzat</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Ödəniş xatırlatması" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Müddət bitməmişdən 7 gün əvvəl xatırlatma göndər</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Paket endirimi">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Şəbəkə müəssisələrinə 10% endirim tətbiq et</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 6. Bildirişlər -->
+    <section class="adm-panel" id="ayar-bildirisler">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Bildirişlər</h2>
+        <div class="adm-panel-actions">
+          <span class="adm-tag adm-tag--info">3 yeni bildiriş</span>
+        </div>
+        <p class="adm-panel-sub">Panel komandasının hansı hadisələrdən xəbərdar olacağını seçin.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Bildiriş ayarları yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field field--full">
+              <span class="field-label">E-poçt bildirişləri</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Yeni müəssisə bildirişi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni müəssisə qeydiyyatdan keçəndə</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Təsdiq növbəsi xülasəsi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Təsdiq növbəsinin gündəlik xülasəsi</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Yeni müraciət bildirişi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Valideyn müraciəti daxil olanda</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Rəy və şikayət bildirişi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni rəy və ya şikayət qeydə alınanda</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Həftəlik statistika" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Həftəlik statistika hesabatı</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Marketinq bülleteni">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Marketinq və kampaniya xəbərləri</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <span class="field-label">SMS və panel bildirişləri</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Sistem xətası SMS-i">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Sistem xətalarında SMS göndər</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Panel bildirişləri" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Paneldə zəng ikonu ilə göstər</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Səsli xəbərdarlıq">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni bildirişdə səsli xəbərdarlıq</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-bildiris-epoct">Bildiriş e-poçtu <span class="req">*</span></label>
+              <input class="input" id="ayar-bildiris-epoct" name="bildiris_epoct" type="email" value="admin@edunav.az" autocomplete="email" required>
+              <p class="field-error" data-error-for="ayar-bildiris-epoct" hidden>E-poçt ünvanı düzgün deyil.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-kopya">Kopya (CC) ünvanı</label>
+              <input class="input" id="ayar-kopya" name="kopya_epoct" type="email" value="moderasiya@edunav.az" autocomplete="email">
+              <p class="field-error" data-error-for="ayar-kopya" hidden>E-poçt ünvanı düzgün deyil.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-xulase-saat">Gündəlik xülasənin saatı</label>
+              <input class="input" id="ayar-xulase-saat" name="xulase_saat" type="time" value="09:00">
+              <p class="field-hint">Bakı vaxtı ilə göndərilir.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-sms-nomre">SMS nömrəsi</label>
+              <input class="input" id="ayar-sms-nomre" name="sms_nomre" type="tel" value="+994 50 000 00 00" autocomplete="tel">
+              <p class="field-hint">Yalnız kritik sistem xəbərdarlıqları üçün istifadə olunur.</p>
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-imza">E-poçt imzası</label>
+              <textarea class="textarea" id="ayar-imza" name="imza" rows="3">Hörmətlə, EduNav komandası · *8080 · info@edunav.az</textarea>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 7. İnteqrasiyalar -->
+    <section class="adm-panel adm-panel--overflow" id="ayar-inteqrasiyalar">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">İnteqrasiyalar</h2>
+        <div class="adm-panel-actions">
+          <span class="adm-tag adm-tag--warn">Açarlar maskalanıb</span>
+        </div>
+        <p class="adm-panel-sub">Xarici xidmətlərlə bağlantılar. API açarları yalnız maskalanmış şəkildə göstərilir — tam dəyər heç vaxt paneldə saxlanılmır.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="İnteqrasiya ayarları yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field">
+              <label class="field-label" for="ayar-api-live">Canlı API açarı</label>
+              <div class="field-row">
+                <input class="input" id="ayar-api-live" name="api_live" type="text" value="sk_live_••••••••••••4821" readonly>
+                <button class="btn-ghost btn-sm" type="button">Yenilə</button>
+              </div>
+              <p class="field-hint">Açar yalnız yaradıldığı an bir dəfə tam görünür. Yeniləmə köhnə açarı dərhal etibarsız edir.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-api-test">Test API açarı</label>
+              <div class="field-row">
+                <input class="input" id="ayar-api-test" name="api_test" type="text" value="sk_test_••••••••••••1907" readonly>
+                <button class="btn-ghost btn-sm" type="button">Yenilə</button>
+              </div>
+              <p class="field-hint">Yalnız sınaq mühitində işləyir, real məlumata toxunmur.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-webhook-secret">Webhook gizli açarı</label>
+              <div class="field-row">
+                <input class="input" id="ayar-webhook-secret" name="webhook_secret" type="text" value="whsec_••••••••••••3350" readonly>
+                <button class="btn-ghost btn-sm" type="button">Yenilə</button>
+              </div>
+              <p class="field-hint">Gələn sorğuların imzasını yoxlamaq üçün istifadə olunur.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-xerite-acar">Xəritə xidməti açarı</label>
+              <div class="field-row">
+                <input class="input" id="ayar-xerite-acar" name="xerite_acar" type="text" value="map_••••••••••••8624" readonly>
+                <button class="btn-ghost btn-sm" type="button">Yenilə</button>
+              </div>
+              <p class="field-hint">Müəssisə profillərindəki ünvan xəritəsi üçün.</p>
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-webhook-url">Webhook ünvanı</label>
+              <input class="input" id="ayar-webhook-url" name="webhook_url" type="url" value="https://edunav.az/api/webhooks/muracietler">
+              <p class="field-hint">Hər yeni müraciətdə bu ünvana POST sorğusu göndərilir.</p>
+              <p class="field-error" data-error-for="ayar-webhook-url" hidden>Ünvanı düzgün yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-analitika">Analitika hesab kodu</label>
+              <input class="input" id="ayar-analitika" name="analitika" type="text" value="EDU-AZ-4471">
+              <p class="field-hint">Statistika səhifəsindəki rəqəmlər bu hesabdan yığılır.</p>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="ayar-sms-provider-label">SMS provayderi</span>
+              <div class="dd" data-dd data-name="sms_provayder" data-placeholder="Provayder seçin" data-labelledby="ayar-sms-provider-label">
+                <button class="dd-trigger" type="button">
+                  <span class="dd-value" data-placeholder="Provayder seçin">Milli SMS Gateway</span>
+                  <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="dd-panel">
+                  <div class="dd-list">
+                    <button class="dd-option" type="button" data-value="Milli SMS Gateway" aria-selected="true"><span class="dd-label">Milli SMS Gateway</span></button>
+                    <button class="dd-option" type="button" data-value="Operator birbaşa kanal"><span class="dd-label">Operator birbaşa kanal</span></button>
+                    <button class="dd-option" type="button" data-value="Söndürülüb"><span class="dd-label">Söndürülüb</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <span class="field-label">Aktiv bağlantılar</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Açıq API" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Müəssisələr üçün açıq API-ni aktiv saxla</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Webhook" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Müraciət webhook-unu göndər</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Xəritə inteqrasiyası" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Profil səhifəsində xəritəni göstər</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Sosial paylaşım">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni xəbərləri sosial şəbəkələrə avtomatik paylaş</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+      <div class="adm-panel-foot">
+        <span class="adm-tag adm-tag--ok">Son sorğu: bu gün 08:52</span>
+        <span class="adm-tag adm-tag--plain">Sutkalıq limit: 20 000 sorğu</span>
+        <span class="adm-tag adm-tag--info">Xəta payı: 0.3%</span>
+      </div>
+    </section>
+
+    <!-- 8. Təhlükəsizlik -->
+    <section class="adm-panel" id="ayar-tehlukesizlik">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Təhlükəsizlik</h2>
+        <div class="adm-panel-actions">
+          <a class="btn-ghost btn-sm" href="istifadeciler.html">Panel istifadəçiləri</a>
+        </div>
+        <p class="adm-panel-sub">Sessiya, şifrə və giriş qaydaları. Dəyişikliklər bütün panel istifadəçilərinə tətbiq olunur.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Təhlükəsizlik ayarları yadda saxlanıldı" novalidate>
+          <div class="adm-form-grid">
+            <div class="field">
+              <label class="field-label" for="ayar-sessiya">Sessiya müddəti (dəqiqə) <span class="req">*</span></label>
+              <input class="input" id="ayar-sessiya" name="sessiya" type="number" min="5" max="240" step="5" value="30" required>
+              <p class="field-hint">Hərəkətsizlikdən sonra istifadəçi avtomatik çıxarılır.</p>
+              <p class="field-error" data-error-for="ayar-sessiya" hidden>Müddəti dəqiqə ilə yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-cehd">Uğursuz giriş cəhdi limiti <span class="req">*</span></label>
+              <input class="input" id="ayar-cehd" name="cehd_limiti" type="number" min="3" max="20" step="1" value="5" required>
+              <p class="field-error" data-error-for="ayar-cehd" hidden>Cəhd limitini yazın.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-blok">Bloklama müddəti (dəqiqə)</label>
+              <input class="input" id="ayar-blok" name="blok_muddeti" type="number" min="5" max="120" step="5" value="15">
+              <p class="field-hint">Limit aşıldıqda hesab bu müddətə bağlanır.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-sifre-uzunluq">Minimum şifrə uzunluğu</label>
+              <input class="input" id="ayar-sifre-uzunluq" name="sifre_uzunluq" type="number" min="6" max="32" step="1" value="10">
+              <p class="field-hint">Şifrədə ən azı bir rəqəm və bir böyük hərf tələb olunur.</p>
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-sifre-omru">Şifrə yeniləmə tezliyi (gün)</label>
+              <input class="input" id="ayar-sifre-omru" name="sifre_omru" type="number" min="30" max="365" step="15" value="90">
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="ayar-jurnal">Audit jurnalının saxlanma müddəti (gün)</label>
+              <input class="input" id="ayar-jurnal" name="jurnal_muddeti" type="number" min="30" max="365" step="30" value="90">
+              <p class="field-hint">Müddət bitəndə qeydlər avtomatik silinir.</p>
+            </div>
+
+            <div class="field field--full">
+              <span class="field-label">Giriş qoruması</span>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="İki mərhələli doğrulama" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">İki mərhələli doğrulama (2FA) bütün administratorlar üçün məcburidir</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Yeni cihaz bildirişi" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Yeni cihazdan girişi e-poçtla bildir</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="IP məhdudiyyəti">
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Panelə yalnız icazəli IP ünvanlarından girişə icazə ver</span>
+                </label>
+              </div>
+              <div class="field-row">
+                <label class="switch">
+                  <input type="checkbox" data-adm-switch="Audit jurnalı" checked>
+                  <span class="switch-track"></span>
+                  <span class="switch-label">Bütün əməliyyatları audit jurnalına yaz</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label class="field-label" for="ayar-ip">İcazəli IP ünvanları</label>
+              <textarea class="textarea" id="ayar-ip" name="icazeli_ip" rows="3">85.132.44.0/24
+5.191.20.118
+94.20.62.201</textarea>
+              <p class="field-hint">Hər sətirdə bir ünvan və ya alt şəbəkə. Boş buraxılsa məhdudiyyət tətbiq olunmur.</p>
+            </div>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">İmtina</button>
+          </div>
+        </form>
+      </div>
+      <div class="adm-panel-foot">
+        <span class="adm-tag adm-tag--ok">2FA aktiv: 6 istifadəçidən 6-sı</span>
+        <span class="adm-tag adm-tag--plain">Son giriş: 12 iyul 2026 · 14:20</span>
+        <span class="adm-tag adm-tag--warn">Son 30 gündə 4 uğursuz cəhd</span>
+      </div>
+    </section>
+
+    <!-- 9. Yadda saxlama zolağı -->
+    <section class="adm-panel" id="ayar-yadda">
+      <div class="adm-panel-head">
+        <h2 class="adm-panel-title">Dəyişiklikləri tətbiq et</h2>
+        <div class="adm-panel-actions">
+          <a class="btn-ghost btn-sm" href="index.html">İdarə panelinə qayıt</a>
+        </div>
+        <p class="adm-panel-sub">Bütün bölmələrdəki dəyişiklikləri bir dəfəyə yadda saxlayın. Panel demo rejimindədir — məlumat serverə göndərilmir.</p>
+      </div>
+      <div class="adm-panel-body">
+        <form data-validate data-adm-demo data-adm-demo-msg="Bütün ayarlar yadda saxlanıldı" novalidate>
+          <dl class="adm-kv">
+            <dt class="adm-kv-k">Son dəyişiklik</dt>
+            <dd class="adm-kv-v">12 iyul 2026 · 14:20 — Rasif Dünyamalı</dd>
+            <dt class="adm-kv-k">Dəyişən bölmələr</dt>
+            <dd class="adm-kv-v">Məzmun və moderasiya · Paketlər</dd>
+            <dt class="adm-kv-k">Konfiqurasiya versiyası</dt>
+            <dd class="adm-kv-v">v2.6 · 6 bölmə</dd>
+            <dt class="adm-kv-k">Ehtiyat nüsxə</dt>
+            <dd class="adm-kv-v">Hər gecə 02:00-da avtomatik alınır</dd>
+          </dl>
+
+          <div class="field">
+            <label class="field-label" for="ayar-qeyd">Dəyişiklik qeydi <span class="req">*</span></label>
+            <input class="input" id="ayar-qeyd" name="qeyd" type="text" placeholder="Məsələn: Standart paketin qiyməti yeniləndi" required>
+            <p class="field-hint">Qeyd audit jurnalına yazılır və komanda üzvlərinə göstərilir.</p>
+            <p class="field-error" data-error-for="ayar-qeyd" hidden>Dəyişiklik qeydini yazın.</p>
+          </div>
+
+          <div class="adm-form-actions">
+            <button class="btn-brand" type="submit">Yadda saxla</button>
+            <button class="btn-ghost" type="reset">Dəyişiklikləri ləğv et</button>
+          </div>
+        </form>
+      </div>
+      <div class="adm-panel-foot">
+        <span class="adm-tag adm-tag--info">Demo rejimi</span>
+        <span class="adm-tag adm-tag--plain">Ayarlar jurnalı 90 gün saxlanılır</span>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="../assets/js/app.js?v=2"></script>
+<script src="../assets/js/admin.js?v=2"></script>
+</body>
+</html>

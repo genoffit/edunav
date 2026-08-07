@@ -1,0 +1,152 @@
+/* ==========================================================================
+   EduNav — page CSS for gizlilik.html
+   Every class here is prefixed `gizlilik-` (the page name) and is used on
+   this page only. Loaded after style.css; style.css is never edited here.
+   ========================================================================== */
+
+/* --- "last updated" line ------------------------------------------------- */
+.gizlilik-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 7px 13px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-pill);
+  background: var(--bg);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text);
+}
+.gizlilik-updated::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+/* --- sticky table of contents -------------------------------------------- */
+.gizlilik-toc {
+  position: sticky;
+  top: calc(var(--header-h) + 26px);
+  padding: 20px 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.gizlilik-toc-title {
+  margin-bottom: 14px;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+}
+.gizlilik-toc-list { display: flex; flex-direction: column; gap: 2px; }
+.gizlilik-toc-link {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-xxs);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+  transition: background-color .16s var(--ease), color .16s var(--ease);
+}
+.gizlilik-toc-link:hover { background: var(--bg); color: var(--ink); }
+.gizlilik-toc-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.gizlilik-toc-num {
+  flex: none;
+  font-family: var(--font-head);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted-2);
+}
+.gizlilik-toc-link:hover .gizlilik-toc-num { color: var(--brand-dark); }
+
+.gizlilik-toc-foot {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* --- article body -------------------------------------------------------- */
+.gizlilik-body { max-width: 78ch; }
+.gizlilik-body h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 10px;
+}
+.gizlilik-body h2:first-child { padding-top: 0; margin-top: 0; }
+.gizlilik-num {
+  flex: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+/* the table of contents jumps to these — keep them clear of the sticky header */
+.gizlilik-body h2 { scroll-margin-top: calc(var(--header-h) + 24px); }
+
+.gizlilik-callout {
+  margin: 0 0 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.gizlilik-foot {
+  margin-top: 36px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--brand-soft);
+  border-color: #F0E4BD;
+}
+.gizlilik-foot-title {
+  font-size: var(--fs-h4);
+  line-height: 1.3;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+.gizlilik-foot-text {
+  margin: 8px 0 16px;
+  max-width: 60ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.gizlilik-foot-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* --- responsive ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .gizlilik-toc { position: static; }
+  .gizlilik-body { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .gizlilik-toc { padding: 18px 16px 20px; }
+  .gizlilik-foot { padding: 20px 18px; }
+  .gizlilik-foot-actions .btn-brand,
+  .gizlilik-foot-actions .btn-ghost { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gizlilik-toc-link { transition: none; }
+}

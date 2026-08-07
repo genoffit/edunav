@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* ==========================================================================
+   EduNav.az — page stylesheet for muqayise.html
+   Loaded AFTER assets/css/style.css. style.css is never edited from here.
+   Every class is prefixed with the page name; the only unprefixed selectors
+   are element/attribute selectors scoped inside a .muqayise-* ancestor.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01  Toolbar above the comparison table
+   ========================================================================== */
+
+.muqayise-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.muqayise-toolbar-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.muqayise-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* ==========================================================================
+   02  The table — sticky row-label column
+   --------------------------------------------------------------------------
+   .table already ships the scroll shell (.table-wrap), the sticky <thead>
+   and the row borders. Here we only widen it, turn the head cells into
+   institution cards and pin the row-label column to the left edge.
+   ========================================================================== */
+
+.muqayise-table { min-width: 920px; }
+
+/* column head = the institution card */
+.muqayise-table thead th {
+  width: 236px;
+  min-width: 236px;
+  padding: 18px 16px;
+  vertical-align: top;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-2);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: normal;
+  color: var(--ink);
+}
+
+/* row labels + the empty corner cell stay put while the table scrolls */
+.muqayise-table th[scope="row"],
+.muqayise-table thead .muqayise-corner {
+  position: sticky;
+  left: 0;
+  width: 178px;
+  min-width: 178px;
+  background: var(--surface);
+}
+.muqayise-table th[scope="row"] {
+  z-index: 1;
+  vertical-align: middle;
+  border-right: 1px solid var(--line-4);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.muqayise-table thead .muqayise-corner {
+  z-index: 3;
+  border-right: 1px solid var(--line-4);
+}
+.muqayise-table tbody tr:hover th[scope="row"] { background: var(--surface-2); }
+
+.muqayise-table td {
+  vertical-align: middle;
+  font-size: 13.5px;
+  color: var(--text);
+}
+.muqayise-table td strong { color: var(--ink); }
+
+/* a cell that stacks a badge over a short explanation */
+.muqayise-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+.muqayise-cell-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+
+/* ==========================================================================
+   03  Column card — monogram, name, price, remove, profile link
+   ========================================================================== */
+
+.muqayise-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+.muqayise-col-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.muqayise-col-top .btn-icon { margin-left: auto; }
+
+.muqayise-mono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-xs);
+  background: var(--line-2);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.muqayise-mono--g1 { background: linear-gradient(140deg, #0F1420, #243049); color: #fff; }
+.muqayise-mono--g3 { background: linear-gradient(140deg, #FFC629, #FFE9A3); color: var(--ink); }
+.muqayise-mono--g4 { background: linear-gradient(140deg, #2C63C4, #8FB4F2); color: #fff; }
+
+.muqayise-name {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+.muqayise-name a { color: inherit; }
+.muqayise-name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.muqayise-name a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.muqayise-col-meta {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--muted);
+}
+.muqayise-price {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--ink);
+}
+.muqayise-per {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+
+/* ==========================================================================
+   04  The empty picker column
+   ========================================================================== */
+
+.muqayise-table thead .muqayise-head--add {
+  width: 212px;
+  min-width: 212px;
+  background: var(--surface);
+}
+.muqayise-add {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+.muqayise-add-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-xs);
+  border: 1px dashed var(--line-5);
+  background: var(--bg);
+  color: var(--brand-dark);
+}
+.muqayise-add-icon svg { width: 18px; height: 18px; }
+.muqayise-add-title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+.muqayise-add-text,
+.muqayise-add-hint {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.muqayise-add-hint + .muqayise-add-hint { margin-top: 12px; }
+.muqayise-add-cell {
+  vertical-align: top;
+  background: var(--surface);
+  border-left: 1px solid var(--line-4);
+}
+.muqayise-table tbody tr:hover td.muqayise-add-cell { background: var(--surface); }
+
+
+/* ==========================================================================
+   05  Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .muqayise-table { min-width: 780px; }
+  .muqayise-table thead th { width: 204px; min-width: 204px; }
+  .muqayise-table thead .muqayise-head--add { width: 180px; min-width: 180px; }
+  .muqayise-table th[scope="row"],
+  .muqayise-table thead .muqayise-corner { width: 138px; min-width: 138px; }
+}
+
+@media (max-width: 560px) {
+  .muqayise-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .muqayise-table th[scope="row"],
+  .muqayise-table thead .muqayise-corner { width: 122px; min-width: 122px; }
+  .muqayise-table th[scope="row"] { font-size: 10.5px; letter-spacing: .06em; }
+}

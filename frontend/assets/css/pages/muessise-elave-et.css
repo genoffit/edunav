@@ -1,0 +1,403 @@
+/* ==========================================================================
+   EduNav — page CSS for muessise-elave-et.html
+   Every class here is prefixed `muessise-` (the page name) and is used on
+   this page only. Loaded after style.css; style.css is never edited here.
+   ========================================================================== */
+
+/* --- sticky helper column ------------------------------------------------ */
+.muessise-aside {
+  position: sticky;
+  top: calc(var(--header-h) + 26px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.muessise-panel {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--bg);
+}
+.muessise-panel--soft { border-color: #F0E4BD; background: var(--brand-soft); }
+.muessise-panel--dark {
+  border-color: var(--ink);
+  background: linear-gradient(140deg, #0F1420, #243049);
+  color: #fff;
+}
+
+.muessise-panel-title {
+  font-size: var(--fs-h4);
+  line-height: 1.3;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+.muessise-panel--dark .muessise-panel-title { color: #fff; }
+
+.muessise-panel-text {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.muessise-panel--dark .muessise-panel-text { color: var(--muted-2); }
+
+.muessise-panel-list { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+.muessise-panel-item {
+  position: relative;
+  padding-left: 20px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+.muessise-panel-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.muessise-panel--dark .muessise-panel-item { color: var(--muted-2); }
+
+.muessise-panel-foot {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.muessise-panel--dark .muessise-panel-foot { border-top-color: rgba(255, 255, 255, .12); }
+
+.muessise-panel-phone {
+  font-family: var(--font-head);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.muessise-panel--dark .muessise-panel-phone { color: var(--brand); }
+
+/* --- 4-step progress indicator ------------------------------------------- */
+.muessise-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  counter-reset: none;
+}
+
+.muessise-steps-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  transition: border-color .18s var(--ease), box-shadow .18s var(--ease), transform .18s var(--ease);
+}
+.muessise-steps-link:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+.muessise-steps-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.muessise-steps-link--current { border-color: var(--brand); background: var(--brand-soft); }
+
+.muessise-steps-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+.muessise-steps-link--current .muessise-steps-num { background: var(--brand); }
+
+.muessise-steps-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.muessise-steps-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.muessise-steps-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+/* --- one step = one fieldset card ---------------------------------------- */
+.muessise-card {
+  padding: 26px 28px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--bg);
+}
+.muessise-card + .muessise-card { margin-top: 20px; }
+
+.muessise-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--line-4);
+}
+.muessise-card-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-xs);
+  background: var(--brand);
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+.muessise-card-title { font-size: 19px; line-height: 1.25; color: var(--ink); }
+.muessise-card-sub {
+  margin-top: 6px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.muessise-block { margin-top: 22px; }
+.muessise-block-title {
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink-2);
+}
+.muessise-block-hint {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* --- inline note --------------------------------------------------------- */
+.muessise-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #F0E4BD;
+  border-radius: var(--r-sm);
+  background: var(--brand-soft);
+}
+.muessise-note--info { border-color: #CFE0FA; background: var(--info-bg); }
+.muessise-note-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--brand-dark);
+}
+.muessise-note--info .muessise-note-icon { color: var(--info); }
+.muessise-note-icon svg { width: 14px; height: 14px; }
+.muessise-note-text { font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+
+/* --- service chips (checkbox inside a .chip label) ----------------------- */
+.muessise-chip { position: relative; cursor: pointer; }
+.muessise-chip:has(input:checked) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.muessise-chip:has(input:checked):hover { background: var(--ink-2); border-color: var(--ink-2); color: #fff; }
+.muessise-chip:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* --- document upload ----------------------------------------------------- */
+.muessise-upload {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px dashed var(--line-5);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color .18s var(--ease), background-color .18s var(--ease);
+}
+.muessise-upload:hover { border-color: var(--brand-deep); background: var(--brand-soft); }
+.muessise-upload:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+.muessise-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  border: 1px solid var(--line-3);
+  color: var(--ink);
+}
+.muessise-upload-icon svg { width: 19px; height: 19px; }
+.muessise-upload-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.muessise-upload-title { font-size: 13.5px; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.muessise-upload-hint { font-size: 12px; font-weight: 500; line-height: 1.45; color: var(--muted); }
+
+/* --- pricing cards ------------------------------------------------------- */
+.muessise-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px 22px 24px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-lg);
+  background: var(--bg);
+  transition: border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.muessise-plan:hover { border-color: var(--muted); }
+.muessise-plan--rec { border-color: var(--brand); box-shadow: var(--sh-2); }
+.muessise-plan:has(input:checked) { border-color: var(--ink); box-shadow: var(--sh-2); }
+.muessise-plan:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.muessise-plan-flag { position: absolute; top: -11px; left: 22px; }
+
+.muessise-plan-pick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.muessise-plan-radio {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--brand-deep);
+  cursor: pointer;
+}
+.muessise-plan-name {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+.muessise-plan-price {
+  margin-top: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -.026em;
+  color: var(--ink);
+}
+.muessise-plan-per {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.muessise-plan-desc {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.muessise-plan-list {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-4);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.muessise-plan-item {
+  position: relative;
+  padding-left: 19px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.muessise-plan-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .58em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+/* --- submit row ---------------------------------------------------------- */
+.muessise-submit {
+  margin-top: 22px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.muessise-submit-text { font-size: 12.5px; line-height: 1.5; color: var(--muted); max-width: 46ch; }
+.muessise-submit-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* --- responsive ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .muessise-aside { position: static; }
+  .muessise-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .muessise-card { padding: 22px 20px 24px; }
+}
+
+@media (max-width: 560px) {
+  .muessise-steps { grid-template-columns: minmax(0, 1fr); }
+  .muessise-card { padding: 20px 16px 22px; }
+  .muessise-plan { padding: 20px 18px 22px; }
+  .muessise-submit { padding: 18px 16px; }
+  .muessise-submit-actions { width: 100%; }
+  .muessise-submit-actions .btn-brand,
+  .muessise-submit-actions .btn-ghost { flex: 1 1 auto; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .muessise-steps-link,
+  .muessise-plan,
+  .muessise-upload { transition: none; }
+  .muessise-steps-link:hover { transform: none; }
+}

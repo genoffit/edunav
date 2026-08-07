@@ -1,0 +1,100 @@
+/* ==========================================================================
+   EduNav — page styles for xeber.html only.
+   Every class here is prefixed .xeber- and is loaded after style.css.
+   Nothing in this file may be reused by another page.
+   ========================================================================== */
+
+/* --- byline + share row --------------------------------------------------- */
+.xeber-byline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 22px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.xeber-byline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: auto;
+}
+
+.xeber-byline-name {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.xeber-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xeber-share-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--muted);
+}
+
+/* --- article deck --------------------------------------------------------- */
+.xeber-deck {
+  margin: 0 0 24px;
+  max-width: 72ch;
+  color: var(--ink-3);
+}
+
+/* --- quote attribution under the pull quote ------------------------------- */
+.xeber-quote-by {
+  display: block;
+  margin: -12px 0 22px;
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* --- tags + closing note -------------------------------------------------- */
+.xeber-tags {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.xeber-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.xeber-note-text {
+  margin: 0;
+  max-width: 52ch;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* --- responsive ----------------------------------------------------------- */
+@media (max-width: 560px) {
+  .xeber-byline { gap: 12px; }
+  .xeber-share-label { display: none; }
+  .xeber-note { padding: 16px 16px 18px; }
+}

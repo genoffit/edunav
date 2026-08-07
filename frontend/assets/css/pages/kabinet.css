@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* ==========================================================================
+   EduNav.az — page stylesheet for kabinet.html
+   Loaded AFTER assets/css/style.css. style.css is never edited from here.
+   Every class is prefixed with the page name.
+
+   app.js deliberately does not implement tabs, so the .tabs strip on this
+   page ships as anchors (COMPONENTS.md § 16). All five panels stay in the
+   document; the strip sticks under the header and the active underline
+   follows :target, falling back to the first tab.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01  Account summary card
+   ========================================================================== */
+
+.kabinet-user {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  box-shadow: var(--sh-1);
+}
+.kabinet-user-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.kabinet-user-name {
+  font-family: var(--font-head);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.kabinet-user-meta {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.kabinet-user-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.kabinet-user-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+
+/* ==========================================================================
+   02  Tab strip (anchors) + panels
+   ========================================================================== */
+
+.kabinet-tabs {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 30;
+  margin-top: 28px;
+  padding-top: 10px;
+  background: var(--bg);
+}
+.kabinet-panel { scroll-margin-top: calc(var(--header-h) + 78px); }
+
+/* default: the first tab reads as current until a section is targeted */
+.kabinet-shell:not(:has(.kabinet-panel:target)) .kabinet-tab--1,
+.kabinet-shell:has(#kabinet-muracietler:target) .kabinet-tab--1,
+.kabinet-shell:has(#kabinet-secilmisler:target) .kabinet-tab--2,
+.kabinet-shell:has(#kabinet-muqayise:target) .kabinet-tab--3,
+.kabinet-shell:has(#kabinet-bildirisler:target) .kabinet-tab--4,
+.kabinet-shell:has(#kabinet-ayarlar:target) .kabinet-tab--5 { color: var(--ink); }
+
+.kabinet-shell:not(:has(.kabinet-panel:target)) .kabinet-tab--1::after,
+.kabinet-shell:has(#kabinet-muracietler:target) .kabinet-tab--1::after,
+.kabinet-shell:has(#kabinet-secilmisler:target) .kabinet-tab--2::after,
+.kabinet-shell:has(#kabinet-muqayise:target) .kabinet-tab--3::after,
+.kabinet-shell:has(#kabinet-bildirisler:target) .kabinet-tab--4::after,
+.kabinet-shell:has(#kabinet-ayarlar:target) .kabinet-tab--5::after { opacity: 1; }
+
+.kabinet-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  margin-left: 7px;
+  padding: 0 6px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-2);
+}
+
+
+/* ==========================================================================
+   03  Panel helpers
+   ========================================================================== */
+
+.kabinet-note {
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.kabinet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.kabinet-status-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.kabinet-status-note {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.kabinet-table-org {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kabinet-form-wrap { max-width: 780px; }
+.kabinet-fieldset-title {
+  margin-bottom: 4px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+
+
+/* ==========================================================================
+   04  Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .kabinet-user-actions { margin-left: 0; width: 100%; }
+  .kabinet-tabs { position: static; margin-top: 24px; padding-top: 0; }
+}
+
+@media (max-width: 560px) {
+  .kabinet-user { padding: 16px; }
+  .kabinet-user-actions .btn-ghost { flex: 1 1 auto; justify-content: center; }
+}

@@ -1,0 +1,324 @@
+/* ==========================================================================
+   daxil-ol.html — split-screen sign-in layout
+   Page-scoped stylesheet. Loaded after style.css; every class is prefixed
+   `daxilol-` so nothing here can collide with the frozen global stylesheet.
+   Only tokens declared in style.css :root are used.
+   ========================================================================== */
+
+.daxilol-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  min-height: calc(100vh - var(--header-h));
+  background: var(--surface);
+}
+
+/* --- left: the form pane -------------------------------------------------- */
+
+.daxilol-pane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 52px var(--pad) 66px;
+}
+
+.daxilol-card {
+  width: 100%;
+  max-width: 470px;
+  padding: 30px 30px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--bg);
+  box-shadow: var(--sh-2);
+}
+
+.daxilol-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-2);
+  transition: color .16s var(--ease);
+}
+.daxilol-back svg { width: 14px; height: 14px; }
+.daxilol-back:hover { color: var(--ink); }
+.daxilol-back:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: var(--r-xxs); }
+
+.daxilol-title {
+  margin-top: 16px;
+  font-family: var(--font-head);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.026em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.daxilol-sub {
+  margin-top: 9px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-2);
+  text-wrap: pretty;
+}
+
+.daxilol-tabs { margin-top: 22px; }
+.daxilol-tabs .tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 14px;
+  font-size: 14px;
+}
+
+.daxilol-form { margin-top: 22px; }
+
+/* the "Məni xatırla" + "Şifrəni unutdum" line */
+.daxilol-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.daxilol-forgot {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+  border-bottom: 1px solid var(--line-5);
+  transition: color .16s var(--ease), border-color .16s var(--ease);
+}
+.daxilol-forgot:hover { color: var(--ink); border-color: var(--ink); }
+.daxilol-forgot:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.daxilol-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 22px 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.daxilol-divider::before,
+.daxilol-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-2);
+}
+
+.daxilol-alt { display: grid; gap: 10px; }
+
+.daxilol-foot {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-4);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+  text-align: center;
+}
+.daxilol-foot a { font-weight: 700; color: var(--ink); }
+.daxilol-foot a:hover { text-decoration: underline; }
+.daxilol-foot a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.daxilol-legal {
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  text-align: center;
+}
+.daxilol-legal a { font-weight: 600; color: var(--text); }
+.daxilol-legal a:hover { color: var(--ink); text-decoration: underline; }
+.daxilol-legal a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.daxilol-success { padding: 26px 0 8px; }
+
+/* --- right: the dark value-proposition pane ------------------------------- */
+
+.daxilol-aside {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 64px var(--pad);
+  background: linear-gradient(152deg, var(--ink) 0%, var(--ink-2) 46%, var(--ink-3) 100%);
+  color: #fff;
+}
+.daxilol-aside::before,
+.daxilol-aside::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.daxilol-aside::before {
+  top: -130px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 198, 41, .22), rgba(255, 198, 41, 0) 68%);
+}
+.daxilol-aside::after {
+  bottom: -150px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(200, 198, 244, .18), rgba(200, 198, 244, 0) 70%);
+}
+
+.daxilol-aside-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.daxilol-aside-title {
+  margin-top: 14px;
+  font-family: var(--font-head);
+  font-size: clamp(24px, 2.3vw, 33px);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -.026em;
+  color: #fff;
+  text-wrap: pretty;
+}
+.daxilol-aside-title em { font-style: normal; color: var(--brand); }
+
+.daxilol-aside-text {
+  margin-top: 13px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted-2);
+  text-wrap: pretty;
+}
+
+.daxilol-benefits {
+  display: grid;
+  gap: 13px;
+  margin-top: 26px;
+}
+.daxilol-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, .045);
+}
+.daxilol-benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-xxs);
+  background: var(--brand);
+  color: var(--ink);
+}
+.daxilol-benefit-icon svg { width: 17px; height: 17px; }
+.daxilol-benefit-body { min-width: 0; }
+.daxilol-benefit-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+}
+.daxilol-benefit-text {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--muted-2);
+}
+
+.daxilol-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+.daxilol-stat { min-width: 0; }
+.daxilol-stat-num {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.026em;
+  color: var(--brand);
+}
+.daxilol-stat-label {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--muted-2);
+}
+
+.daxilol-note {
+  margin-top: 22px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted-3);
+}
+.daxilol-note a { font-weight: 700; color: var(--brand); }
+.daxilol-note a:hover { text-decoration: underline; }
+.daxilol-note a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+/* --- responsive ----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .daxilol-split {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .daxilol-pane { padding: 40px var(--pad) 48px; }
+  .daxilol-aside { padding: 48px var(--pad) 56px; }
+  .daxilol-aside-inner { max-width: 620px; }
+}
+
+@media (max-width: 560px) {
+  .daxilol-card {
+    padding: 22px 18px 20px;
+    border-radius: var(--r-lg);
+  }
+  .daxilol-title { font-size: 24px; }
+  .daxilol-row {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .daxilol-stats { gap: 14px 22px; }
+}

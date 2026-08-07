@@ -1,0 +1,192 @@
+/* ==========================================================================
+   EduNav — page styles for admin/statistika.html only.
+   Every class here is prefixed .statistika- and is loaded after admin.css.
+   Nothing in this file may be reused by another page.
+   ========================================================================== */
+
+/* --- horizontal bar list (rayon paylanması, axtarış sorğuları, trafik) ---- */
+.statistika-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.statistika-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.statistika-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+
+.statistika-name {
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statistika-figs {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex: 0 0 auto;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.statistika-count {
+  font-family: var(--font-head);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.statistika-pct {
+  min-width: 46px;
+  font-family: var(--font-head);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.statistika-track {
+  display: block;
+  width: 100%;
+  height: 8px;
+  border-radius: var(--r-pill);
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.statistika-fill {
+  display: block;
+  height: 100%;
+  min-width: 5px;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+}
+
+.statistika-fill--info { background: var(--info); }
+.statistika-fill--ok { background: var(--ok); }
+.statistika-fill--kg { background: var(--kg-text); }
+
+/* --- müraciət hunisi ------------------------------------------------------ */
+.statistika-funnel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.statistika-step {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+
+.statistika-step-label {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.statistika-step-value {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.026em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.statistika-step-note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.statistika-step-conv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  background: var(--bg);
+  border: 1px solid var(--line-2);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.statistika-step-conv svg {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  color: var(--muted-2);
+}
+
+@media (max-width: 1024px) {
+  .statistika-funnel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .statistika-funnel { grid-template-columns: minmax(0, 1fr); }
+  .statistika-item-top { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .statistika-figs { gap: 8px; }
+  .statistika-pct { min-width: 0; text-align: left; }
+}
+
+/* --- eni faizlə verən köməkçi siniflər (inline style əvəzinə) ------------- */
+.statistika-w1{width:1%}.statistika-w2{width:2%}.statistika-w3{width:3%}.statistika-w4{width:4%}.statistika-w5{width:5%}.statistika-w6{width:6%}.statistika-w7{width:7%}.statistika-w8{width:8%}.statistika-w9{width:9%}.statistika-w10{width:10%}
+.statistika-w11{width:11%}.statistika-w12{width:12%}.statistika-w13{width:13%}.statistika-w14{width:14%}.statistika-w15{width:15%}.statistika-w16{width:16%}.statistika-w17{width:17%}.statistika-w18{width:18%}.statistika-w19{width:19%}.statistika-w20{width:20%}
+.statistika-w21{width:21%}.statistika-w22{width:22%}.statistika-w23{width:23%}.statistika-w24{width:24%}.statistika-w25{width:25%}.statistika-w26{width:26%}.statistika-w27{width:27%}.statistika-w28{width:28%}.statistika-w29{width:29%}.statistika-w30{width:30%}
+.statistika-w31{width:31%}.statistika-w32{width:32%}.statistika-w33{width:33%}.statistika-w34{width:34%}.statistika-w35{width:35%}.statistika-w36{width:36%}.statistika-w37{width:37%}.statistika-w38{width:38%}.statistika-w39{width:39%}.statistika-w40{width:40%}
+.statistika-w41{width:41%}.statistika-w42{width:42%}.statistika-w43{width:43%}.statistika-w44{width:44%}.statistika-w45{width:45%}.statistika-w46{width:46%}.statistika-w47{width:47%}.statistika-w48{width:48%}.statistika-w49{width:49%}.statistika-w50{width:50%}
+.statistika-w51{width:51%}.statistika-w52{width:52%}.statistika-w53{width:53%}.statistika-w54{width:54%}.statistika-w55{width:55%}.statistika-w56{width:56%}.statistika-w57{width:57%}.statistika-w58{width:58%}.statistika-w59{width:59%}.statistika-w60{width:60%}
+.statistika-w61{width:61%}.statistika-w62{width:62%}.statistika-w63{width:63%}.statistika-w64{width:64%}.statistika-w65{width:65%}.statistika-w66{width:66%}.statistika-w67{width:67%}.statistika-w68{width:68%}.statistika-w69{width:69%}.statistika-w70{width:70%}
+.statistika-w71{width:71%}.statistika-w72{width:72%}.statistika-w73{width:73%}.statistika-w74{width:74%}.statistika-w75{width:75%}.statistika-w76{width:76%}.statistika-w77{width:77%}.statistika-w78{width:78%}.statistika-w79{width:79%}.statistika-w80{width:80%}
+.statistika-w81{width:81%}.statistika-w82{width:82%}.statistika-w83{width:83%}.statistika-w84{width:84%}.statistika-w85{width:85%}.statistika-w86{width:86%}.statistika-w87{width:87%}.statistika-w88{width:88%}.statistika-w89{width:89%}.statistika-w90{width:90%}
+.statistika-w91{width:91%}.statistika-w92{width:92%}.statistika-w93{width:93%}.statistika-w94{width:94%}.statistika-w95{width:95%}.statistika-w96{width:96%}.statistika-w97{width:97%}.statistika-w98{width:98%}.statistika-w99{width:99%}.statistika-w100{width:100%}

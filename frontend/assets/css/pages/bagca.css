@@ -1,0 +1,585 @@
+/* ==========================================================================
+   EduNav — bagca.html (bağça profili)
+   Loads AFTER assets/css/style.css. Every class here is prefixed .bagca-
+   so nothing can leak into another page. style.css is never edited.
+   ========================================================================== */
+
+/* --- spacing bands -------------------------------------------------------- */
+
+.bagca-top { padding-top: 26px; }
+.bagca-nav { padding-top: 30px; }
+
+.bagca-block { scroll-margin-top: calc(var(--header-h) + 20px); }
+.bagca-block + .bagca-block { margin-top: 46px; }
+
+/* vertical breathing room between two stacked blocks inside one section */
+.bagca-gap { margin-top: 22px; }
+
+
+/* --- hero strip ----------------------------------------------------------- */
+/* The gradient itself comes from the .g2 utility in style.css — this rule must
+   never declare `background`, or it would win the cascade and kill it. */
+
+.bagca-hero {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: var(--r-lg);
+  padding: 30px 32px;
+  color: var(--kg-ink);
+  box-shadow: var(--sh-2);
+}
+.bagca-hero::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  top: -140px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.bagca-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+}
+
+.bagca-hero-mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  box-sizing: border-box;
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(26, 24, 64, .1);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, .62);
+  font-family: var(--font-head);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--kg-text);
+}
+
+.bagca-hero-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.bagca-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.bagca-hero-title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: clamp(25px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.026em;
+  text-wrap: pretty;
+  color: var(--kg-ink);
+}
+
+.bagca-hero-meta {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--kg-text);
+}
+
+.bagca-hero-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.bagca-hero .rating { color: var(--kg-ink); }
+.bagca-hero .rating-count { color: var(--kg-text); }
+
+.bagca-hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 0 1 300px;
+}
+
+.bagca-hero-plabel {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--kg-text);
+}
+
+.bagca-hero-price {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--kg-ink);
+}
+.bagca-hero-per {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--kg-text);
+}
+
+.bagca-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* ghost buttons on the soft purple gradient */
+.bagca-hero .btn-ghost {
+  border-color: rgba(26, 24, 64, .2);
+  background: rgba(255, 255, 255, .55);
+  color: var(--kg-ink);
+}
+.bagca-hero .btn-ghost:hover {
+  border-color: var(--kg-ink);
+  background: rgba(255, 255, 255, .85);
+  color: var(--kg-ink);
+}
+
+
+/* --- age-group cards (kurikulum) ------------------------------------------ */
+
+.bagca-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.bagca-card {
+  box-sizing: border-box;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.bagca-card-kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--kg-text);
+}
+
+.bagca-card-title {
+  margin: 0 0 8px;
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+
+.bagca-card-text {
+  margin: 0 0 12px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.bagca-card-list { display: grid; gap: 7px; }
+.bagca-card-list li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.bagca-card-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--kg);
+}
+
+
+/* --- daily rhythm / admission timeline ------------------------------------ */
+
+.bagca-tl {
+  position: relative;
+  padding-left: 30px;
+}
+.bagca-tl::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 10px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--line-2);
+}
+
+.bagca-tl-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+.bagca-tl-item:last-child { padding-bottom: 0; }
+.bagca-tl-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  background: var(--kg);
+  box-shadow: 0 0 0 1px var(--line-2);
+}
+.bagca-tl-item--now::before { background: var(--kg-ink); }
+
+.bagca-tl-date {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--kg-text);
+}
+.bagca-tl-title {
+  margin: 0 0 5px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.019em;
+  color: var(--ink);
+}
+.bagca-tl-text {
+  margin: 0;
+  max-width: 62ch;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+
+/* --- reviews -------------------------------------------------------------- */
+
+.bagca-rev-sum {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface);
+}
+.bagca-rev-score {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: none;
+}
+.bagca-rev-scorenum {
+  font-family: var(--font-head);
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+.bagca-rev-sumtext {
+  margin: 0;
+  flex: 1 1 260px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.bagca-rev-list { display: grid; gap: 14px; }
+
+.bagca-rev {
+  box-sizing: border-box;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+.bagca-rev-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.bagca-rev-id {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1 1 160px;
+  min-width: 0;
+}
+.bagca-rev-name {
+  font-family: var(--font-head);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.bagca-rev-meta {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--muted);
+}
+.bagca-rev-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.bagca-rev-tags { margin-top: 12px; }
+
+
+/* --- location and contact ------------------------------------------------- */
+
+.bagca-loc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.bagca-map {
+  position: relative;
+  height: 232px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(0deg, var(--surface-2) 0 26px, var(--line-4) 26px 27px),
+    repeating-linear-gradient(90deg, var(--surface-2) 0 26px, var(--line-4) 26px 27px);
+}
+.bagca-map-road {
+  position: absolute;
+  left: -10%;
+  top: 58%;
+  width: 120%;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--line-2);
+  transform: rotate(-7deg);
+}
+.bagca-map-pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: -40px 0 0 -20px;
+  border-radius: 50% 50% 50% 4px;
+  background: var(--kg);
+  color: var(--kg-ink);
+  box-shadow: var(--sh-1);
+  transform: rotate(-45deg);
+}
+.bagca-map-pin svg { transform: rotate(45deg); }
+
+.bagca-info {
+  display: grid;
+  gap: 0;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.bagca-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-4);
+}
+.bagca-info-row:last-child { border-bottom: 0; }
+.bagca-info-label {
+  flex: none;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.bagca-info-val {
+  flex: 1 1 auto;
+  text-align: right;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.bagca-info-val a { text-decoration: underline; text-underline-offset: 3px; }
+
+
+/* --- sticky sidebar ------------------------------------------------------- */
+
+.bagca-side {
+  position: sticky;
+  top: calc(var(--header-h) + 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bagca-side-card {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid var(--line-3);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  box-shadow: var(--sh-2);
+}
+.bagca-side-card--soft {
+  background: var(--kg-3);
+  border-color: var(--kg-2);
+  box-shadow: none;
+}
+
+.bagca-side-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.bagca-side-price {
+  margin: 0 0 6px;
+  font-family: var(--font-head);
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+.bagca-side-per {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.bagca-side-note {
+  margin: 0 0 16px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+.bagca-side-actions {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+.bagca-side-title {
+  margin: 0 0 6px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.019em;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.bagca-side-text {
+  margin: 0 0 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.bagca-side .bagca-info { border-radius: var(--r-sm); }
+
+
+/* --- responsive ----------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .bagca-side { position: static; }
+  .bagca-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bagca-hero { padding: 26px 24px; }
+}
+
+@media (max-width: 768px) {
+  .bagca-hero-inner { gap: 20px; }
+  .bagca-hero-mono { width: 72px; height: 72px; font-size: 25px; }
+  .bagca-hero-side { flex: 1 1 100%; }
+  .bagca-loc { grid-template-columns: minmax(0, 1fr); }
+  .bagca-block + .bagca-block { margin-top: 38px; }
+}
+
+@media (max-width: 560px) {
+  .bagca-top { padding-top: 20px; }
+  .bagca-nav { padding-top: 24px; }
+  .bagca-hero { padding: 20px 17px; border-radius: var(--r-md); }
+  .bagca-hero-mono { width: 58px; height: 58px; font-size: 20px; border-radius: var(--r-sm); }
+  .bagca-hero-price { font-size: 27px; }
+  .bagca-hero-actions { width: 100%; }
+  .bagca-hero-actions > * { flex: 1 1 100%; }
+  .bagca-cards { grid-template-columns: minmax(0, 1fr); }
+  .bagca-rev-sum { padding: 16px; gap: 16px; }
+  .bagca-info-row { flex-direction: column; align-items: flex-start; }
+  .bagca-info-val { text-align: left; }
+  .bagca-map { height: 180px; }
+}

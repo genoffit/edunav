@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Müraciətlər | EduNav İdarə Paneli</title>
+<meta name="description" content="EduNav idarə panelində valideyn müraciətləri: müəssisə, sinif və status üzrə filtr, müsahibə növbəsi və hər müraciətin tam detalı bir ekranda.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1420">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC629'/%3E%3Cpath d='M4.6 13 16 7.8 27.4 13 16 18.2z' fill='%230F1420'/%3E%3Cpath d='M9.4 15.4v4.3c0 1.7 2.9 3.1 6.6 3.1s6.6-1.4 6.6-3.1v-4.3' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M26.4 13.4v5.4' fill='none' stroke='%230F1420' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../assets/css/admin.css?v=2">
+</head>
+<body class="adm">
+<a class="skip-link" href="#adm-content">Əsas məzmuna keç</a>
+
+<div class="adm-side-backdrop" data-adm-side-close aria-hidden="true"></div>
+<aside class="adm-side" id="adm-side" aria-label="İdarə paneli naviqasiyası">
+  <div class="adm-side-head">
+    <a class="logo" href="index.html" aria-label="EduNav İdarə Paneli — ana səhifə">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 18 18" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M2.6 6.4 9 3.2l6.4 3.2L9 9.6z" fill="currentColor"/><path d="M5.3 8.5v3.2c0 1.05 1.66 1.9 3.7 1.9s3.7-.85 3.7-1.9V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.1 6.6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-text">EduNav</span>
+    </a>
+    <button class="adm-side-close" type="button" data-adm-side-close aria-label="Menyunu bağla">
+      <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="adm-nav" aria-label="Bölmələr">
+    <p class="adm-nav-group">Ümumi baxış</p>
+    <a class="adm-nav-link" href="index.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 8.4 10 3l7 5.4V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 17v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">İdarə paneli</span>
+    </a>
+    <a class="adm-nav-link" href="statistika.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3 17h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 17V9M10 17V4M14 17v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Statistika</span>
+    </a>
+
+    <p class="adm-nav-group">Müəssisələr</p>
+    <a class="adm-nav-link" href="muessiseler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 17V5.5L10 3l6.5 2.5V17" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 17h13M8 17v-4h4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisələr</span>
+    </a>
+    <a class="adm-nav-link" href="muessise-detal.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3.5" y="3" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6.8 7.5h6.4M6.8 10.5h6.4M6.8 13.5h3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Müəssisə detalı</span>
+    </a>
+    <a class="adm-nav-link" href="tesdiq.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="m6.8 10.3 2.3 2.3 4.1-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Təsdiq gözləyənlər</span>
+      <span class="badge badge--warn adm-nav-badge">7</span>
+    </a>
+
+    <p class="adm-nav-group">Məzmun</p>
+    <a class="adm-nav-link" href="xeberler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M6 8h5M6 11h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Xəbərlər</span>
+    </a>
+    <a class="adm-nav-link" href="elanlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 8.2v3.6h3l5 3.2V5L7 8.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.8 7.6a4 4 0 0 1 0 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Elanlar</span>
+    </a>
+    <a class="adm-nav-link" href="bloglar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M4 4.5h8.5L16 8v7.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 4.5V8h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Bloglar</span>
+    </a>
+    <a class="adm-nav-link" href="vakansiyalar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 6.5V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Vakansiyalar</span>
+    </a>
+
+    <p class="adm-nav-group">İcma</p>
+    <a class="adm-nav-link is-active" href="muracietler.html" aria-current="page">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M17 12.5a1.8 1.8 0 0 1-1.8 1.8H7.4L4 17.5V5.3A1.8 1.8 0 0 1 5.8 3.5h9.4A1.8 1.8 0 0 1 17 5.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Müraciətlər</span>
+      <span class="badge badge--info adm-nav-badge">12</span>
+    </a>
+    <a class="adm-nav-link" href="reyler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="m10 3.6 1.98 4.02 4.44.64-3.21 3.13.76 4.42L10 13.72l-3.97 2.09.76-4.42L3.58 8.26l4.44-.64z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Rəylər</span>
+    </a>
+    <a class="adm-nav-link" href="istifadeciler.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="8" cy="7.4" r="2.9" stroke="currentColor" stroke-width="1.6"/><path d="M2.8 16.4c0-2.6 2.33-4.4 5.2-4.4s5.2 1.8 5.2 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14.2 5.2a2.5 2.5 0 0 1 0 4.6M15.4 12.6c1.4.66 2.3 1.9 2.3 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">İstifadəçilər</span>
+    </a>
+
+    <p class="adm-nav-group">Sistem</p>
+    <a class="adm-nav-link" href="ayarlar.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8v2M10 15.2v2M17.2 10h-2M4.8 10h-2M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4M15.1 15.1l-1.4-1.4M6.3 6.3 4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="adm-nav-text">Ayarlar</span>
+    </a>
+    <a class="adm-nav-link" href="daxil-ol.html">
+      <svg class="adm-nav-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true" focusable="false"><path d="M12.4 14.2v1.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 15.6V4.4A1.4 1.4 0 0 1 5.4 3H11a1.4 1.4 0 0 1 1.4 1.4v1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M8.6 10h8.2M14.2 7.4 16.8 10l-2.6 2.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="adm-nav-text">Çıxış</span>
+    </a>
+  </nav>
+
+  <div class="adm-user">
+    <span class="adm-avatar" aria-hidden="true">RD</span>
+    <span class="adm-user-text">
+      <span class="adm-user-name">Rasif Dünyamalı</span>
+      <span class="adm-user-role">Baş administrator</span>
+    </span>
+  </div>
+</aside>
+
+<div class="adm-main">
+  <header class="adm-top">
+    <button class="adm-burger" type="button" data-adm-side-open aria-label="Menyunu aç" aria-expanded="false" aria-controls="adm-side">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
+    </button>
+
+    <h1 class="adm-top-title">Müraciətlər</h1>
+
+    <form class="adm-top-search" role="search" data-form="adm-search" novalidate>
+      <label class="field-label sr-only" for="adm-search">Axtarış</label>
+      <span class="adm-top-search-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <input class="input adm-top-input" id="adm-search" name="q" type="search" placeholder="Müəssisə, istifadəçi və ya elan axtar" autocomplete="off">
+    </form>
+
+    <div class="adm-top-actions">
+      <button class="adm-bell" type="button" data-adm-notifications aria-label="Bildirişlər — 3 yeni" aria-expanded="false">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true" focusable="false"><path d="M15.2 13.4V9a5.2 5.2 0 1 0-10.4 0v4.4L3.4 15.2h13.2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.2 15.2a1.9 1.9 0 0 0 3.6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="adm-bell-dot" aria-hidden="true"></span>
+      </button>
+      <span class="adm-avatar" aria-hidden="true">RD</span>
+    </div>
+  </header>
+
+  <main class="adm-content" id="adm-content">
+
+    <!-- Müraciət hunisi -->
+    <div class="adm-grid">
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <p class="adm-stat-label">Bu ay müraciət</p>
+        </div>
+        <p class="adm-stat-value">2 318</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +7.6%
+          </span>
+          <span class="adm-stat-note">keçən aya nisbətən</span>
+        </div>
+        <div data-adm-spark data-values="1642,1758,1830,1974,2065,2188,2318" data-label="Aylıq müraciət sayı, son 7 ay: 1642 → 2318"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--info" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <p class="adm-stat-label">Cavab gözləyən</p>
+        </div>
+        <p class="adm-stat-value">12</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta badge--warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +4
+          </span>
+          <span class="adm-stat-note">ən köhnəsi 2 gündür növbədə</span>
+        </div>
+        <div class="adm-spark--info" data-adm-spark data-values="21,18,15,11,9,8,12" data-label="Cavab gözləyən müraciətlər, son 7 ay: 21 → 12"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--kg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+          </span>
+          <p class="adm-stat-label">Müsahibə mərhələsi</p>
+        </div>
+        <p class="adm-stat-value">38</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta badge--info">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +9
+          </span>
+          <span class="adm-stat-note">bu həftə üçün planlanıb</span>
+        </div>
+        <div class="adm-spark--info" data-adm-spark data-values="22,24,27,29,31,34,38" data-label="Müsahibəyə çağırılanlar, son 7 ay: 22 → 38"></div>
+      </article>
+
+      <article class="adm-stat">
+        <div class="adm-stat-head">
+          <span class="adm-stat-ico adm-stat-ico--ok" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.3 2.4 2.4 5.2-5.4"/></svg>
+          </span>
+          <p class="adm-stat-label">Qəbul edilən</p>
+        </div>
+        <p class="adm-stat-value">486</p>
+        <div class="adm-stat-foot">
+          <span class="adm-stat-delta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+            +12.4%
+          </span>
+          <span class="adm-stat-note">qəbul nisbəti 21%</span>
+        </div>
+        <div class="adm-spark--ok" data-adm-spark data-values="312,338,364,401,428,455,486" data-label="Qəbul edilən müraciətlər, son 7 ay: 312 → 486"></div>
+      </article>
+    </div>
+
+    <!-- Səhifə paneli -->
+    <div class="adm-toolbar">
+      <h2 class="adm-toolbar-title">Valideyn müraciətləri</h2>
+      <span class="adm-toolbar-count">2 318 müraciətin son 24-ü</span>
+      <div class="adm-toolbar-actions">
+        <a class="btn-ghost btn-sm" href="statistika.html">Müraciət hesabatı</a>
+        <a class="btn-brand btn-sm" href="tesdiq.html">Təsdiq növbəsi</a>
+      </div>
+    </div>
+
+    <div data-adm-table data-page-size="10">
+      <div class="adm-filters">
+        <div class="adm-filters-row" data-adm-filter-group="status">
+          <button class="chip is-on" type="button" data-adm-value="">Hamısı</button>
+          <button class="chip" type="button" data-adm-value="gonderildi">Göndərildi</button>
+          <button class="chip" type="button" data-adm-value="baxilir">Baxılır</button>
+          <button class="chip" type="button" data-adm-value="musahibe">Müsahibə</button>
+          <button class="chip" type="button" data-adm-value="qebul">Qəbul edildi</button>
+          <button class="chip" type="button" data-adm-value="redd">Rədd edildi</button>
+        </div>
+
+        <span class="adm-filters-sep" aria-hidden="true"></span>
+
+        <div class="dd" data-dd data-name="muessise" data-adm-filter="muessise" data-placeholder="Müəssisə" data-label="Müəssisə">
+          <button class="dd-trigger" type="button">
+            <span class="dd-value is-placeholder" data-placeholder="Müəssisə">Müəssisə</span>
+            <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd-panel">
+            <div class="dd-list">
+              <button class="dd-option" type="button" data-value="Zəka Beynəlxalq Məktəbi"><span class="dd-label">Zəka Beynəlxalq Məktəbi</span></button>
+              <button class="dd-option" type="button" data-value="Horizon School"><span class="dd-label">Horizon School</span></button>
+              <button class="dd-option" type="button" data-value="Atlas Kolleci"><span class="dd-label">Atlas Kolleci</span></button>
+              <button class="dd-option" type="button" data-value="Alov Liseyi"><span class="dd-label">Alov Liseyi</span></button>
+              <button class="dd-option" type="button" data-value="Prestige School"><span class="dd-label">Prestige School</span></button>
+              <button class="dd-option" type="button" data-value="Beynəlxalq Akademiya"><span class="dd-label">Beynəlxalq Akademiya</span></button>
+              <button class="dd-option" type="button" data-value="STEM Liseyi"><span class="dd-label">STEM Liseyi</span></button>
+              <button class="dd-option" type="button" data-value="Günəş Kolleci"><span class="dd-label">Günəş Kolleci</span></button>
+              <button class="dd-option" type="button" data-value="Xoşbəxt Uşaqlar"><span class="dd-label">Xoşbəxt Uşaqlar</span></button>
+              <button class="dd-option" type="button" data-value="Gənc İstedad Bağçası"><span class="dd-label">Gənc İstedad Bağçası</span></button>
+              <button class="dd-option" type="button" data-value="Sevincim Kids"><span class="dd-label">Sevincim Kids</span></button>
+              <button class="dd-option" type="button" data-value="Balaca Ulduzlar"><span class="dd-label">Balaca Ulduzlar</span></button>
+              <button class="dd-option" type="button" data-value="Fəxrimiz Kids"><span class="dd-label">Fəxrimiz Kids</span></button>
+              <button class="dd-option" type="button" data-value="Ağıllı Uşaqlar"><span class="dd-label">Ağıllı Uşaqlar</span></button>
+              <button class="dd-option" type="button" data-value="Bal Arı Bağçası"><span class="dd-label">Bal Arı Bağçası</span></button>
+              <button class="dd-option" type="button" data-value="Nur Uşaq Mərkəzi"><span class="dd-label">Nur Uşaq Mərkəzi</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dd" data-dd data-name="tarix" data-adm-filter="tarix" data-placeholder="Tarix aralığı" data-label="Tarix aralığı">
+          <button class="dd-trigger" type="button">
+            <span class="dd-value is-placeholder" data-placeholder="Tarix aralığı">Tarix aralığı</span>
+            <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd-panel">
+            <div class="dd-list">
+              <button class="dd-option" type="button" data-value="Son 7 gün"><span class="dd-label">Son 7 gün</span></button>
+              <button class="dd-option" type="button" data-value="Son 30 gün"><span class="dd-label">Son 30 gün</span></button>
+              <button class="dd-option" type="button" data-value="İyul 2026"><span class="dd-label">İyul 2026</span></button>
+              <button class="dd-option" type="button" data-value="İyun 2026"><span class="dd-label">İyun 2026</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dd" data-dd data-name="nov" data-adm-filter="nov" data-placeholder="Növ" data-label="Növ">
+          <button class="dd-trigger" type="button">
+            <span class="dd-value is-placeholder" data-placeholder="Növ">Növ</span>
+            <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd-panel">
+            <div class="dd-list">
+              <button class="dd-option" type="button" data-value="Qəbul müraciəti"><span class="dd-label">Qəbul müraciəti</span></button>
+              <button class="dd-option" type="button" data-value="Transfer"><span class="dd-label">Transfer</span></button>
+              <button class="dd-option" type="button" data-value="Sınaq dərsi"><span class="dd-label">Sınaq dərsi</span></button>
+              <button class="dd-option" type="button" data-value="Bağça qeydiyyatı"><span class="dd-label">Bağça qeydiyyatı</span></button>
+            </div>
+          </div>
+        </div>
+
+        <label class="adm-filter-search">
+          <span class="sr-only">Müraciətlərdə axtar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          <input class="adm-search" type="search" placeholder="Valideyn, uşaq adı və ya müraciət nömrəsi" autocomplete="off">
+        </label>
+
+        <span class="adm-tag adm-tag--plain"><b data-adm-result-count>24</b> nəticə</span>
+
+        <button class="adm-filters-reset" type="button" data-adm-filter-reset>Filtri sıfırla</button>
+      </div>
+
+      <section class="adm-panel">
+        <div class="adm-panel-head">
+          <h2 class="adm-panel-title">Son müraciətlər</h2>
+          <div class="adm-panel-actions">
+            <span class="adm-tag adm-tag--info">12 cavab gözləyir</span>
+            <span class="adm-tag adm-tag--warn">5 müsahibə</span>
+          </div>
+          <p class="adm-panel-sub">14 məktəb və 10 bağça müraciəti — sətirdəki «Bax» düyməsi anketi, sənəd siyahısını və status idarəsini yan paneldə açır.</p>
+        </div>
+
+        <div class="adm-toolbar adm-toolbar--bulk" aria-hidden="true">
+          <span class="adm-toolbar-count" data-adm-selected>0 seçildi</span>
+          <div class="adm-toolbar-actions">
+            <button class="btn-ghost btn-sm" type="button" data-adm-bulk="reject" disabled>Toplu rədd</button>
+            <button class="btn-ghost btn-sm" type="button" data-adm-bulk="archive" disabled>Toplu arxiv</button>
+            <button class="btn-ghost btn-sm" type="button" data-adm-clear-selection>Seçimi ləğv et</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="adm-table">
+            <caption class="sr-only">Son 24 valideyn müraciəti — valideyn adı, uşağın adı, müəssisə, sinif və ya yaş qrupu, göndərilmə tarixi və status</caption>
+            <thead>
+              <tr>
+                <th class="adm-col-check" scope="col">
+                  <input class="adm-check" type="checkbox" data-adm-check-all aria-label="Hamısını seç">
+                </th>
+                <th scope="col" data-sort="text" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Valideyn
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Uşağın adı
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Müəssisə
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Sinif / yaş
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="date" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Göndərilmə
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col" data-sort="text" aria-sort="none">
+                  <button class="adm-sort" type="button">
+                    Status
+                    <span class="adm-sort-ico" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                    </span>
+                  </button>
+                </th>
+                <th scope="col">Əməliyyat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-status="gonderildi" data-muessise="Zəka Beynəlxalq Məktəbi" data-nov="Qəbul müraciəti" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Nərmin Əliyeva" data-adm-search="MR-2318 Aylin Əliyeva 1-ci sinif Nəsimi Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Nərmin Əliyeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">NƏ</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Nərmin Əliyeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2318</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Aylin Əliyeva</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Zəka Beynəlxalq Məktəbi</span>
+                  <span class="adm-cell-sub">Nəsimi</span>
+                </td>
+                <td data-adm-cell="sinif">1-ci sinif</td>
+                <td data-adm-cell="tarix">12 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 50 xxx xx 41&quot;,&quot;epoct&quot;:&quot;nermin.aliyeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Qızım hazırlıq qrupunu bitirib; ingilis dili gücləndirilmiş sinfə baxmaq istərdik.&quot;}" aria-label="Nərmin Əliyeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Nərmin Əliyeva — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Nərmin Əliyeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="gonderildi" data-muessise="Horizon School" data-nov="Transfer" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Elçin Məmmədov" data-adm-search="MR-2317 Murad Məmmədov 5-ci sinif Binəqədi Transfer">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Elçin Məmmədov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">EM</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Elçin Məmmədov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2317</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Murad Məmmədov</span>
+                  <span class="adm-cell-sub">Yarımillik transfer</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Horizon School</span>
+                  <span class="adm-cell-sub">Binəqədi</span>
+                </td>
+                <td data-adm-cell="sinif">5-ci sinif</td>
+                <td data-adm-cell="tarix">12 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 55 xxx xx 08&quot;,&quot;epoct&quot;:&quot;elcin.memmedov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Xasiyyətnamə, qiymət cədvəli&quot;,&quot;mesaj&quot;:&quot;Ailəliklə Binəqədiyə köçürük, oğlum üçün boş yerin olub-olmadığını bilmək istəyirik.&quot;}" aria-label="Elçin Məmmədov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Elçin Məmmədov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Elçin Məmmədov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="gonderildi" data-muessise="Xoşbəxt Uşaqlar" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Günel Hüseynova" data-adm-search="MR-2316 Nail Hüseynov 4 yaş Yasamal Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Günel Hüseynova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">GH</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Günel Hüseynova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2316</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Nail Hüseynov</span>
+                  <span class="adm-cell-sub">Orta qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Xoşbəxt Uşaqlar</span>
+                  <span class="adm-cell-sub">Yasamal</span>
+                </td>
+                <td data-adm-cell="sinif">4 yaş</td>
+                <td data-adm-cell="tarix">12 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 70 xxx xx 23&quot;,&quot;epoct&quot;:&quot;gunel.huseynova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə, peyvənd kartı&quot;,&quot;mesaj&quot;:&quot;Montessori qrupunda yer varmı? Sentyabrdan başlamağı planlaşdırırıq.&quot;}" aria-label="Günel Hüseynova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Günel Hüseynova — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Günel Hüseynova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="gonderildi" data-muessise="Atlas Kolleci" data-nov="Qəbul müraciəti" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Rəşad Quliyev" data-adm-search="MR-2315 Leyla Quliyeva 3-cü sinif Yasamal Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Rəşad Quliyev müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">RQ</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Rəşad Quliyev</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2315</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Leyla Quliyeva</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Atlas Kolleci</span>
+                  <span class="adm-cell-sub">Yasamal</span>
+                </td>
+                <td data-adm-cell="sinif">3-cü sinif</td>
+                <td data-adm-cell="tarix">11 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 51 xxx xx 76&quot;,&quot;epoct&quot;:&quot;resad.quliyev@nümunə.az&quot;,&quot;senedler&quot;:&quot;Şəhadətnamə surəti, qiymət cədvəli&quot;,&quot;mesaj&quot;:&quot;Cambridge proqramı ilə bağlı sınaq dərsinə yazılmaq istəyirik.&quot;}" aria-label="Rəşad Quliyev — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Rəşad Quliyev — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Rəşad Quliyev — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Sevincim Kids" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Aysel Nəbiyeva" data-adm-search="MR-2314 Elvin Nəbiyev 5 yaş Xətai Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Aysel Nəbiyeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">AN</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Aysel Nəbiyeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2314</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Elvin Nəbiyev</span>
+                  <span class="adm-cell-sub">Böyük qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Sevincim Kids</span>
+                  <span class="adm-cell-sub">Xətai</span>
+                </td>
+                <td data-adm-cell="sinif">5 yaş</td>
+                <td data-adm-cell="tarix">11 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 77 xxx xx 19&quot;,&quot;epoct&quot;:&quot;aysel.nebiyeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Tam gün qrupun günlük cədvəlini göndərə bilərsinizmi?&quot;}" aria-label="Aysel Nəbiyeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Aysel Nəbiyeva — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Aysel Nəbiyeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="gonderildi" data-muessise="Zəka Beynəlxalq Məktəbi" data-nov="Sınaq dərsi" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Kamran Səfərov" data-adm-search="MR-2313 Sara Səfərova 1-ci sinif Nəsimi Sınaq dərsi">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Kamran Səfərov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">KS</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Kamran Səfərov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2313</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Sara Səfərova</span>
+                  <span class="adm-cell-sub">Hazırlıq sinfi</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Zəka Beynəlxalq Məktəbi</span>
+                  <span class="adm-cell-sub">Nəsimi</span>
+                </td>
+                <td data-adm-cell="sinif">1-ci sinif</td>
+                <td data-adm-cell="tarix">11 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 50 xxx xx 62&quot;,&quot;epoct&quot;:&quot;kamran.seferov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə&quot;,&quot;mesaj&quot;:&quot;Şənbə günü keçirilən sınaq dərsində iştirak etmək istəyirik.&quot;}" aria-label="Kamran Səfərov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Kamran Səfərov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Kamran Səfərov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Alov Liseyi" data-nov="Transfer" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Lalə Rəhimova" data-adm-search="MR-2312 Rəvan Rəhimov 9-cu sinif Nərimanov Transfer">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Lalə Rəhimova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">LR</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Lalə Rəhimova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2312</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Rəvan Rəhimov</span>
+                  <span class="adm-cell-sub">Olimpiada qrupu</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Alov Liseyi</span>
+                  <span class="adm-cell-sub">Nərimanov</span>
+                </td>
+                <td data-adm-cell="sinif">9-cu sinif</td>
+                <td data-adm-cell="tarix">10 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 55 xxx xx 34&quot;,&quot;epoct&quot;:&quot;lale.rehimova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Xasiyyətnamə, olimpiada diplomları&quot;,&quot;mesaj&quot;:&quot;Oğlum riyaziyyat olimpiadalarında iştirak edir, ixtisas qrupuna keçmək istəyir.&quot;}" aria-label="Lalə Rəhimova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Lalə Rəhimova — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Lalə Rəhimova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="gonderildi" data-muessise="Balaca Ulduzlar" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Vüqar Cəfərov" data-adm-search="MR-2311 Aysu Cəfərova 3 yaş Nəsimi Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Vüqar Cəfərov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">VC</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Vüqar Cəfərov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2311</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Aysu Cəfərova</span>
+                  <span class="adm-cell-sub">Kiçik qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Balaca Ulduzlar</span>
+                  <span class="adm-cell-sub">Nəsimi</span>
+                </td>
+                <td data-adm-cell="sinif">3 yaş</td>
+                <td data-adm-cell="tarix">10 iyul 2026</td>
+                <td><span class="badge" data-adm-status data-adm-cell="statusad">Göndərildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 70 xxx xx 87&quot;,&quot;epoct&quot;:&quot;vuqar.ceferov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə, peyvənd kartı&quot;,&quot;mesaj&quot;:&quot;Loqoped dəstəyinin həftədə neçə dəfə təşkil olunduğunu öyrənmək istəyirik.&quot;}" aria-label="Vüqar Cəfərov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Vüqar Cəfərov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Vüqar Cəfərov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Prestige School" data-nov="Sınaq dərsi" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Sevinc Abbasova" data-adm-search="MR-2310 Kənan Abbasov 2-ci sinif Sabunçu Sınaq dərsi">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Sevinc Abbasova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">SA</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Sevinc Abbasova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2310</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Kənan Abbasov</span>
+                  <span class="adm-cell-sub">Sənət yönümlü sinif</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Prestige School</span>
+                  <span class="adm-cell-sub">Sabunçu</span>
+                </td>
+                <td data-adm-cell="sinif">2-ci sinif</td>
+                <td data-adm-cell="tarix">10 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 51 xxx xx 05&quot;,&quot;epoct&quot;:&quot;sevinc.abbasova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Şəhadətnamə surəti, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Sənət dərsinə sınaq iştirakı mümkündürmü?&quot;}" aria-label="Sevinc Abbasova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Sevinc Abbasova — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Sevinc Abbasova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Gənc İstedad Bağçası" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Orxan Bayramov" data-adm-search="MR-2309 Nərgiz Bayramova 6 yaş Binəqədi Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Orxan Bayramov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">OB</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Orxan Bayramov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2309</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Nərgiz Bayramova</span>
+                  <span class="adm-cell-sub">Hazırlıq qrupu</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Gənc İstedad Bağçası</span>
+                  <span class="adm-cell-sub">Binəqədi</span>
+                </td>
+                <td data-adm-cell="sinif">6 yaş</td>
+                <td data-adm-cell="tarix">9 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 77 xxx xx 58&quot;,&quot;epoct&quot;:&quot;orxan.bayramov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı, doğum şəhadətnaməsi&quot;,&quot;mesaj&quot;:&quot;Məktəbəhazırlıq proqramının həftəlik saat bölgüsünü soruşuruq.&quot;}" aria-label="Orxan Bayramov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Orxan Bayramov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Orxan Bayramov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="musahibe" data-muessise="Beynəlxalq Akademiya" data-nov="Qəbul müraciəti" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Ülviyyə Kərimova" data-adm-search="MR-2308 Toğrul Kərimov 10-cu sinif Xətai Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Ülviyyə Kərimova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">ÜK</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Ülviyyə Kərimova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2308</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Toğrul Kərimov</span>
+                  <span class="adm-cell-sub">IB Diploma</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Beynəlxalq Akademiya</span>
+                  <span class="adm-cell-sub">Xətai</span>
+                </td>
+                <td data-adm-cell="sinif">10-cu sinif</td>
+                <td data-adm-cell="tarix">9 iyul 2026</td>
+                <td><span class="badge badge--warn" data-adm-status data-adm-cell="statusad">Müsahibə</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 50 xxx xx 93&quot;,&quot;epoct&quot;:&quot;ulviyye.kerimova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Qiymət cədvəli, ingilis dili sertifikatı&quot;,&quot;mesaj&quot;:&quot;IB Diploma proqramına qəbul imtahanının tarixini bilmək istəyirik.&quot;}" aria-label="Ülviyyə Kərimova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Ülviyyə Kərimova — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Ülviyyə Kərimova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Ağıllı Uşaqlar" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Anar İsmayılov" data-adm-search="MR-2307 Mina İsmayılova 4 yaş Binəqədi Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Anar İsmayılov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">Aİ</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Anar İsmayılov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2307</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Mina İsmayılova</span>
+                  <span class="adm-cell-sub">Orta qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Ağıllı Uşaqlar</span>
+                  <span class="adm-cell-sub">Binəqədi</span>
+                </td>
+                <td data-adm-cell="sinif">4 yaş</td>
+                <td data-adm-cell="tarix">8 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 55 xxx xx 47&quot;,&quot;epoct&quot;:&quot;anar.ismayilov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə&quot;,&quot;mesaj&quot;:&quot;Nəqliyyat xidmətinin Binəqədi üzrə marşrutunu öyrənmək istəyirik.&quot;}" aria-label="Anar İsmayılov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Anar İsmayılov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Anar İsmayılov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="musahibe" data-muessise="STEM Liseyi" data-nov="Transfer" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Fidan Sultanova" data-adm-search="MR-2306 Uğur Sultanov 7-ci sinif Sumqayıt Transfer">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Fidan Sultanova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">FS</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Fidan Sultanova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2306</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Uğur Sultanov</span>
+                  <span class="adm-cell-sub">Robotexnika qrupu</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">STEM Liseyi</span>
+                  <span class="adm-cell-sub">Sumqayıt</span>
+                </td>
+                <td data-adm-cell="sinif">7-ci sinif</td>
+                <td data-adm-cell="tarix">8 iyul 2026</td>
+                <td><span class="badge badge--warn" data-adm-status data-adm-cell="statusad">Müsahibə</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 70 xxx xx 31&quot;,&quot;epoct&quot;:&quot;fidan.sultanova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Xasiyyətnamə, qiymət cədvəli&quot;,&quot;mesaj&quot;:&quot;Oğlum robotexnika ilə maraqlanır, IT laboratoriyasını yaxından görmək istərdik.&quot;}" aria-label="Fidan Sultanova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Fidan Sultanova — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Fidan Sultanova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="baxilir" data-muessise="Günəş Kolleci" data-nov="Qəbul müraciəti" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Tural Həsənov" data-adm-search="MR-2305 Ayan Həsənova 1-ci sinif Gəncə Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Tural Həsənov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">TH</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Tural Həsənov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2305</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Ayan Həsənova</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Günəş Kolleci</span>
+                  <span class="adm-cell-sub">Gəncə</span>
+                </td>
+                <td data-adm-cell="sinif">1-ci sinif</td>
+                <td data-adm-cell="tarix">7 iyul 2026</td>
+                <td><span class="badge badge--info" data-adm-status data-adm-cell="statusad">Baxılır</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 51 xxx xx 66&quot;,&quot;epoct&quot;:&quot;tural.hesenov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Musiqi məktəbi ilə birgə cədvəlin necə qurulduğunu soruşuruq.&quot;}" aria-label="Tural Həsənov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Tural Həsənov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Tural Həsənov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="musahibe" data-muessise="Fəxrimiz Kids" data-nov="Bağça qeydiyyatı" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Nigar Vəliyeva" data-adm-search="MR-2304 Rüfət Vəliyev 5 yaş Sabunçu Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Nigar Vəliyeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">NV</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Nigar Vəliyeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2304</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Rüfət Vəliyev</span>
+                  <span class="adm-cell-sub">Böyük qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Fəxrimiz Kids</span>
+                  <span class="adm-cell-sub">Sabunçu</span>
+                </td>
+                <td data-adm-cell="sinif">5 yaş</td>
+                <td data-adm-cell="tarix">7 iyul 2026</td>
+                <td><span class="badge badge--warn" data-adm-status data-adm-cell="statusad">Müsahibə</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 77 xxx xx 12&quot;,&quot;epoct&quot;:&quot;nigar.veliyeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı&quot;,&quot;mesaj&quot;:&quot;Nəqliyyat xidməti Sabunçu üzrə hansı saatlarda işləyir?&quot;}" aria-label="Nigar Vəliyeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Nigar Vəliyeva — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Nigar Vəliyeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="musahibe" data-muessise="Beynəlxalq Akademiya" data-nov="Qəbul müraciəti" data-tarix="Son 7 gün,Son 30 gün,İyul 2026" data-adm-label="Emin Axundov" data-adm-search="MR-2303 Nərmin Axundova 11-ci sinif Xətai Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Emin Axundov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">EA</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Emin Axundov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2303</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Nərmin Axundova</span>
+                  <span class="adm-cell-sub">IB Diploma</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Beynəlxalq Akademiya</span>
+                  <span class="adm-cell-sub">Xətai</span>
+                </td>
+                <td data-adm-cell="sinif">11-ci sinif</td>
+                <td data-adm-cell="tarix">6 iyul 2026</td>
+                <td><span class="badge badge--warn" data-adm-status data-adm-cell="statusad">Müsahibə</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 50 xxx xx 29&quot;,&quot;epoct&quot;:&quot;emin.axundov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Qiymət cədvəli, motivasiya məktubu&quot;,&quot;mesaj&quot;:&quot;Universitet qəbulu üzrə məsləhət xidmətinin necə təşkil olunduğunu soruşuruq.&quot;}" aria-label="Emin Axundov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Emin Axundov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Emin Axundov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="qebul" data-muessise="Nur Uşaq Mərkəzi" data-nov="Bağça qeydiyyatı" data-tarix="Son 30 gün,İyul 2026" data-adm-label="Şəbnəm Mirzəyeva" data-adm-search="MR-2302 Elnur Mirzəyev 2 yaş Xətai Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Şəbnəm Mirzəyeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">ŞM</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Şəbnəm Mirzəyeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2302</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Elnur Mirzəyev</span>
+                  <span class="adm-cell-sub">Erkən inkişaf qrupu</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Nur Uşaq Mərkəzi</span>
+                  <span class="adm-cell-sub">Xətai</span>
+                </td>
+                <td data-adm-cell="sinif">2 yaş</td>
+                <td data-adm-cell="tarix">5 iyul 2026</td>
+                <td><span class="badge badge--ok" data-adm-status data-adm-cell="statusad">Qəbul edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 55 xxx xx 74&quot;,&quot;epoct&quot;:&quot;sebnem.mirzeyeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə, peyvənd kartı&quot;,&quot;mesaj&quot;:&quot;Erkən inkişaf qrupunda uyğunlaşma dövrünün necə keçdiyini soruşduq.&quot;}" aria-label="Şəbnəm Mirzəyeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Şəbnəm Mirzəyeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="musahibe" data-muessise="Horizon School" data-nov="Qəbul müraciəti" data-tarix="Son 30 gün,İyul 2026" data-adm-label="Ramil Əhmədov" data-adm-search="MR-2301 Zəhra Əhmədova 6-cı sinif Binəqədi Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Ramil Əhmədov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">RƏ</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Ramil Əhmədov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2301</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Zəhra Əhmədova</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Horizon School</span>
+                  <span class="adm-cell-sub">Binəqədi</span>
+                </td>
+                <td data-adm-cell="sinif">6-cı sinif</td>
+                <td data-adm-cell="tarix">4 iyul 2026</td>
+                <td><span class="badge badge--warn" data-adm-status data-adm-cell="statusad">Müsahibə</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 70 xxx xx 50&quot;,&quot;epoct&quot;:&quot;ramil.ehmedov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Şəhadətnamə surəti, qiymət cədvəli&quot;,&quot;mesaj&quot;:&quot;Gücləndirilmiş ingilis qrupuna keçid üçün səviyyə testi tələb olunurmu?&quot;}" aria-label="Ramil Əhmədov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="reject" aria-label="Ramil Əhmədov — müraciəti rədd et">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Ramil Əhmədov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="qebul" data-muessise="Bal Arı Bağçası" data-nov="Bağça qeydiyyatı" data-tarix="Son 30 gün,İyul 2026" data-adm-label="Xəyalə Salmanova" data-adm-search="MR-2300 Aslan Salmanov 3 yaş Sumqayıt Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Xəyalə Salmanova müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">XS</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Xəyalə Salmanova</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2300</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Aslan Salmanov</span>
+                  <span class="adm-cell-sub">Kiçik qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Bal Arı Bağçası</span>
+                  <span class="adm-cell-sub">Sumqayıt</span>
+                </td>
+                <td data-adm-cell="sinif">3 yaş</td>
+                <td data-adm-cell="tarix">3 iyul 2026</td>
+                <td><span class="badge badge--ok" data-adm-status data-adm-cell="statusad">Qəbul edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 51 xxx xx 18&quot;,&quot;epoct&quot;:&quot;xeyale.salmanova@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı&quot;,&quot;mesaj&quot;:&quot;Yarım günlük qrupun saatları bizim iş rejimimizə çox uyğundur.&quot;}" aria-label="Xəyalə Salmanova — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Xəyalə Salmanova — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="redd" data-muessise="Atlas Kolleci" data-nov="Transfer" data-tarix="Son 30 gün,İyul 2026" data-adm-label="Cavid Novruzov" data-adm-search="MR-2299 Günay Novruzova 8-ci sinif Yasamal Transfer">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Cavid Novruzov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">CN</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Cavid Novruzov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2299</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Günay Novruzova</span>
+                  <span class="adm-cell-sub">Yarımillik transfer</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Atlas Kolleci</span>
+                  <span class="adm-cell-sub">Yasamal</span>
+                </td>
+                <td data-adm-cell="sinif">8-ci sinif</td>
+                <td data-adm-cell="tarix">2 iyul 2026</td>
+                <td><span class="badge badge--danger" data-adm-status data-adm-cell="statusad">Rədd edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 77 xxx xx 63&quot;,&quot;epoct&quot;:&quot;cavid.novruzov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Xasiyyətnamə&quot;,&quot;mesaj&quot;:&quot;8-ci sinifdə boş yerin olub-olmadığını soruşuruq.&quot;}" aria-label="Cavid Novruzov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Cavid Novruzov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="qebul" data-muessise="Alov Liseyi" data-nov="Qəbul müraciəti" data-tarix="Son 30 gün,İyul 2026" data-adm-label="Aynur Tağıyeva" data-adm-search="MR-2298 Ayxan Tağıyev 4-cü sinif Nərimanov Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Aynur Tağıyeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">AT</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Aynur Tağıyeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2298</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Ayxan Tağıyev</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Alov Liseyi</span>
+                  <span class="adm-cell-sub">Nərimanov</span>
+                </td>
+                <td data-adm-cell="sinif">4-cü sinif</td>
+                <td data-adm-cell="tarix">1 iyul 2026</td>
+                <td><span class="badge badge--ok" data-adm-status data-adm-cell="statusad">Qəbul edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 50 xxx xx 85&quot;,&quot;epoct&quot;:&quot;aynur.tagiyeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Şəhadətnamə surəti, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Fransız dili qrupuna yazılmaq istəyirik.&quot;}" aria-label="Aynur Tağıyeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Aynur Tağıyeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="qebul" data-muessise="Xoşbəxt Uşaqlar" data-nov="Bağça qeydiyyatı" data-tarix="Son 30 gün,İyun 2026" data-adm-label="İlqar Babayev" data-adm-search="MR-2297 Sona Babayeva 5 yaş Yasamal Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="İlqar Babayev müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">İB</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">İlqar Babayev</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2297</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Sona Babayeva</span>
+                  <span class="adm-cell-sub">Böyük qrup</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Xoşbəxt Uşaqlar</span>
+                  <span class="adm-cell-sub">Yasamal</span>
+                </td>
+                <td data-adm-cell="sinif">5 yaş</td>
+                <td data-adm-cell="tarix">30 iyun 2026</td>
+                <td><span class="badge badge--ok" data-adm-status data-adm-cell="statusad">Qəbul edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 55 xxx xx 39&quot;,&quot;epoct&quot;:&quot;ilqar.babayev@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı, doğum şəhadətnaməsi&quot;,&quot;mesaj&quot;:&quot;Açıq bağ sahəsində keçirilən məşğələləri çox bəyəndik.&quot;}" aria-label="İlqar Babayev — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="İlqar Babayev — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="redd" data-muessise="Zəka Beynəlxalq Məktəbi" data-nov="Qəbul müraciəti" data-tarix="Son 30 gün,İyun 2026" data-adm-label="Zeynəb Mustafayeva" data-adm-search="MR-2296 Mahmud Mustafayev 1-ci sinif Nəsimi Qəbul müraciəti">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Zeynəb Mustafayeva müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">ZM</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Zeynəb Mustafayeva</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2296</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Mahmud Mustafayev</span>
+                  <span class="adm-cell-sub">2026/2027 tədris ili</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Zəka Beynəlxalq Məktəbi</span>
+                  <span class="adm-cell-sub">Nəsimi</span>
+                </td>
+                <td data-adm-cell="sinif">1-ci sinif</td>
+                <td data-adm-cell="tarix">29 iyun 2026</td>
+                <td><span class="badge badge--danger" data-adm-status data-adm-cell="statusad">Rədd edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 70 xxx xx 07&quot;,&quot;epoct&quot;:&quot;zeyneb.mustafayeva@nümunə.az&quot;,&quot;senedler&quot;:&quot;Doğum haqqında şəhadətnamə&quot;,&quot;mesaj&quot;:&quot;Birinci siniflərə qəbul üçün müsahibə tarixini soruşuruq.&quot;}" aria-label="Zeynəb Mustafayeva — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Zeynəb Mustafayeva — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="qebul" data-muessise="Balaca Ulduzlar" data-nov="Bağça qeydiyyatı" data-tarix="Son 30 gün,İyun 2026" data-adm-label="Samir Qasımov" data-adm-search="MR-2295 Lamiyə Qasımova 6 yaş Nəsimi Bağça qeydiyyatı">
+                <td class="adm-col-check"><input class="adm-check" type="checkbox" data-adm-check aria-label="Samir Qasımov müraciətini seç"></td>
+                <td>
+                  <div class="adm-cell-media">
+                    <span class="adm-thumb" aria-hidden="true">SQ</span>
+                    <span>
+                      <a class="adm-cell-main" href="istifadeciler.html" data-adm-cell="ad">Samir Qasımov</a>
+                      <span class="adm-cell-sub" data-adm-cell="kod">MR-2295</span>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="usaq">Lamiyə Qasımova</span>
+                  <span class="adm-cell-sub">Hazırlıq qrupu</span>
+                </td>
+                <td>
+                  <span class="adm-cell-main" data-adm-cell="muessise">Balaca Ulduzlar</span>
+                  <span class="adm-cell-sub">Nəsimi</span>
+                </td>
+                <td data-adm-cell="sinif">6 yaş</td>
+                <td data-adm-cell="tarix">28 iyun 2026</td>
+                <td><span class="badge badge--ok" data-adm-status data-adm-cell="statusad">Qəbul edildi</span></td>
+                <td>
+                  <div class="adm-cell-actions">
+                    <button class="adm-icobtn" type="button" data-adm-drawer="muracet" data-adm-drawer-data="{&quot;telefon&quot;:&quot;+994 51 xxx xx 92&quot;,&quot;epoct&quot;:&quot;samir.qasimov@nümunə.az&quot;,&quot;senedler&quot;:&quot;Peyvənd kartı, tibbi arayış&quot;,&quot;mesaj&quot;:&quot;Məktəbəhazırlıq qrupuna sentyabrdan başlamağı planlaşdırırıq.&quot;}" aria-label="Samir Qasımov — müraciətə bax">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </button>
+                    <button class="adm-icobtn adm-icobtn--danger" type="button" data-adm-action="delete" aria-label="Samir Qasımov — müraciəti sil">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"/></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="adm-empty" hidden>
+          <span class="adm-empty-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          </span>
+          <p class="adm-empty-title">Nəticə tapılmadı</p>
+          <p class="adm-empty-text">Filtri dəyişib yenidən cəhd edin.</p>
+          <div class="adm-empty-actions">
+            <button class="btn-ghost btn-sm" type="button" data-adm-filter-reset>Filtri sıfırla</button>
+            <a class="btn-brand btn-sm" href="tesdiq.html">Təsdiq növbəsi</a>
+          </div>
+        </div>
+
+        <nav class="adm-pager" aria-label="Səhifələmə">
+          <span class="adm-pager-info">1–10 / 24 nəticə</span>
+          <div class="adm-pager-nav">
+            <button class="adm-pager-btn" type="button" disabled>Əvvəlki</button>
+            <button class="adm-pager-btn is-active" type="button" aria-current="page">1</button>
+            <button class="adm-pager-btn" type="button">2</button>
+            <button class="adm-pager-btn" type="button">3</button>
+            <button class="adm-pager-btn" type="button">Sonrakı</button>
+          </div>
+        </nav>
+      </section>
+    </div>
+
+    <aside class="adm-drawer" data-adm-drawer-id="muracet" aria-labelledby="drawer-muracet-title">
+      <div class="adm-drawer-head">
+        <div>
+          <h2 class="adm-drawer-title" id="drawer-muracet-title" data-adm-field="ad">Müraciət detalı</h2>
+          <span class="adm-drawer-sub" data-adm-field="muessise">Sətir seçilməyib</span>
+        </div>
+        <button class="adm-drawer-close" type="button" data-adm-drawer-close aria-label="Bağla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="adm-drawer-body">
+        <dl class="adm-kv">
+          <dt class="adm-kv-k">Müraciət nömrəsi</dt>
+          <dd class="adm-kv-v" data-adm-field="kod">—</dd>
+          <dt class="adm-kv-k">Uşağın adı</dt>
+          <dd class="adm-kv-v" data-adm-field="usaq">—</dd>
+          <dt class="adm-kv-k">Sinif / yaş</dt>
+          <dd class="adm-kv-v" data-adm-field="sinif">—</dd>
+          <dt class="adm-kv-k">Müəssisə</dt>
+          <dd class="adm-kv-v" data-adm-field="muessise">—</dd>
+          <dt class="adm-kv-k">Müraciətin növü</dt>
+          <dd class="adm-kv-v" data-adm-field="nov">—</dd>
+          <dt class="adm-kv-k">Göndərilmə tarixi</dt>
+          <dd class="adm-kv-v" data-adm-field="tarix">—</dd>
+          <dt class="adm-kv-k">Hazırkı status</dt>
+          <dd class="adm-kv-v"><span class="adm-tag adm-tag--info" data-adm-field="statusad">—</span></dd>
+          <dt class="adm-kv-k">Telefon</dt>
+          <dd class="adm-kv-v" data-adm-field="telefon">—</dd>
+          <dt class="adm-kv-k">E-poçt</dt>
+          <dd class="adm-kv-v" data-adm-field="epoct">—</dd>
+          <dt class="adm-kv-k">Əlavə sənədlər</dt>
+          <dd class="adm-kv-v" data-adm-field="senedler">—</dd>
+          <dt class="adm-kv-k">Valideyn qeydi</dt>
+          <dd class="adm-kv-v" data-adm-field="mesaj">—</dd>
+          <dt class="adm-kv-k">Yoxlayan</dt>
+          <dd class="adm-kv-v">Rasif Dünyamalı</dd>
+        </dl>
+
+        <ul class="adm-log">
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--info" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Anket valideyn kabinetindən <b>göndərildi</b> və müəssisənin qəbul komissiyasına düşdü.</p>
+              <span class="adm-log-time">12 iyul 2026 · 09:41</span>
+            </div>
+          </li>
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--ok" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Doğum haqqında şəhadətnamə və tibbi arayış <b>yoxlanıldı</b>.</p>
+              <span class="adm-log-time">12 iyul 2026 · 11:05</span>
+            </div>
+          </li>
+          <li class="adm-log-item">
+            <span class="adm-log-dot adm-log-dot--warn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+            </span>
+            <div class="adm-log-body">
+              <p class="adm-log-text">Müsahibə üçün <b>20 iyul 2026, 10:00</b> vaxtı təklif edildi — valideyn təsdiqi gözlənilir.</p>
+              <span class="adm-log-time">12 iyul 2026 · 14:20</span>
+            </div>
+          </li>
+        </ul>
+
+        <form id="form-muracet" data-adm-demo data-adm-demo-msg="Müraciətin statusu yeniləndi" novalidate>
+          <div class="field">
+            <span class="field-label" id="mr-status-label">Statusu dəyiş <span class="req">*</span></span>
+            <div class="dd" data-dd data-name="mr-status" data-placeholder="Yeni status seçin" data-labelledby="mr-status-label">
+              <button class="dd-trigger" type="button">
+                <span class="dd-value is-placeholder" data-placeholder="Yeni status seçin">Yeni status seçin</span>
+                <svg class="dd-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="dd-panel">
+                <div class="dd-list">
+                  <button class="dd-option" type="button" data-value="Göndərildi"><span class="dd-label">Göndərildi</span></button>
+                  <button class="dd-option" type="button" data-value="Baxılır"><span class="dd-label">Baxılır</span></button>
+                  <button class="dd-option" type="button" data-value="Müsahibə"><span class="dd-label">Müsahibə</span></button>
+                  <button class="dd-option" type="button" data-value="Qəbul edildi"><span class="dd-label">Qəbul edildi</span></button>
+                  <button class="dd-option" type="button" data-value="Rədd edildi"><span class="dd-label">Rədd edildi</span></button>
+                </div>
+              </div>
+            </div>
+            <p class="field-hint">Status dəyişikliyi valideynin kabinetində dərhal görünür.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="mr-musahibe">Müsahibə tarixi</label>
+            <input class="input" id="mr-musahibe" name="musahibe" type="date" value="2026-07-20">
+            <p class="field-hint">Yalnız «Müsahibə» statusu seçildikdə valideynə göndərilir.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="mr-qeyd">Daxili qeyd</label>
+            <textarea class="textarea" id="mr-qeyd" name="qeyd" rows="4" placeholder="Komissiya üçün qeyd — valideyn bu mətni görmür."></textarea>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Bildiriş</span>
+            <div class="field-row">
+              <label class="switch">
+                <input type="checkbox" data-adm-switch="Valideynə bildiriş" checked>
+                <span class="switch-track"></span>
+                <span class="switch-label">Valideynə e-poçt bildirişi göndər</span>
+              </label>
+            </div>
+            <div class="field-row">
+              <label class="switch">
+                <input type="checkbox" data-adm-switch="Müəssisəyə bildiriş" checked>
+                <span class="switch-track"></span>
+                <span class="switch-label">Müəssisənin qəbul komissiyasına bildir</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="adm-drawer-foot">
+        <button class="btn-brand btn-sm" type="submit" form="form-muracet">Statusu yenilə</button>
+        <a class="btn-ghost btn-sm" href="istifadeciler.html">Valideyn profili</a>
+        <button class="btn-ghost btn-sm" type="button" data-adm-drawer-close>Bağla</button>
+      </div>
+    </aside>
+
+  </main>
+</div>
+<script src="../assets/js/app.js?v=2"></script>
+<script src="../assets/js/admin.js?v=2"></script>
+</body>
+</html>
